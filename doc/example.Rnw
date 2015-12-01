@@ -9,7 +9,7 @@
 % \renewcommand*{\chaptername}{Appendix}
 % \addto\captionsenglish{\renewcommand\chaptername{Part}}
 \usepackage{import}            % for figures in chapter subdirectories
-%\usepackage{float}             % Allow figures and tables to be controlled better (avoid the floating).
+\usepackage{float}             % Allow figures and tables to be controlled better (avoid the floating).
 
 % Had these for YMR Eqns appendix:
 % \renewcommand{\footrulewidth}{0.4pt}
@@ -188,7 +188,7 @@
 %% Note the start and end bracketing for this knitr chunk <<>>= and @.
 %% Sourcing all code here, then calling the plot functions later will be much faster
 %% and make for more maintanable code.
-<<>>=
+<<echo=FALSE,  message=FALSE, results='hide'>>=
 ## Inside this block is R code so comment character is different
 ## cache=TRUE tells knitr to build all the plots into a cahce directory
 ## which is defined here as knitr-cache/

@@ -1,13 +1,7 @@
 ## Example plot for latex-knitr
-## Not all these libraries are needed but an example of what we use
 ## xtable is an important one for the latex table formatting
 require(plot3D)
 require(KernSmooth)
-#require(PBSmodelling)
-## require(tcltk)
-## require(coda)
-## require(reshape2)
-## require(Hmisc)
 require(xtable) # For tables which can be inserted into latex docs with knitr
 
 half.torus <- function(){
@@ -63,8 +57,8 @@ load.galaxy.data <- function(){
 }
 
 plot.galaxy.data <- function(){
-  plot(dec ~ ra, data=A, pch=".")
-  plot(dec ~ ra, data=A, pch=".", xlim=c(10, 11), ylim=c(-10, -9))
+  ## plot(dec ~ ra, data=A, pch=".")
+  ## plot(dec ~ ra, data=A, pch=".", xlim=c(10, 11), ylim=c(-10, -9))
   A <- subset(A, ra > 9.5 & ra < 11.5 & dec > -10.3 & dec < -8.5)
   plot(dec ~ ra, data=A, pch=".")
 
@@ -77,6 +71,55 @@ plot.galaxy.data <- function(){
   est <- bkde2D(G[c("ra", "dec")], bandwidth=c(0.07, 0.07), gridsize=c(101, 101))
   with(est, contour(x1, x2, fhat, drawlabels=FALSE, add=TRUE))
 }
+
+get.align <- function(num){
+  # return a character vector used in the align argument of the xtable command.
+  # For tables where the first column is left-aligned and the rest are right-aligned,
+  # e.g. posterior output tables, reference point tables. Most tables really.
+  # num is the number of columns in the table
+  align <- c("l","l")
+  for(i in 1:(num-1)){
+    align <- c(align, "r")
+  }
+  return(align)
+}
+
+make.xtable <- function(## seed is a vector of seeds to use for randomness
+                        seed,
+                        ## num.rows are the number of rows you want in the table
+                        num.rows = 20,
+                        ## Caption to use in an xtable
+                        xcaption = "default",
+                        ## xlabel is the reference label to use in an xtable
+                        xlabel = "default"
+                        ){
+  ## This function allows you to make professional-looking tables in latex, by accessing the
+  ## R data/output directly and avoiding having to type values into the latex document.
+  ## If the values change for any reason, simply re-run the latex script to rebuild the
+  ## document and the tables will be rebuilt.
+  tab <- data.frame(x=1:num.rows)
+  colnames <- "\\textbf{ID}"
+  for(s in seed){
+    ## Generate num.rows random numbers between 1 and 20 and add as a new column
+    tab <- cbind(tab, runif(num.rows, 1, 20))
+    ## The $ signs tell latex to render the name as a math expression
+    colnames <- c(colnames, paste0("$R_{s=",s,"}$"))
+  }
+  ## Take mean of columns
+  tab <- cbind(tab, apply(tab[,2:(length(seed)+1)], 1, mean))
+  ## Two \\ are needed to escape latex control functions
+  colnames <- c(colnames, "$\\overline{R}$")
+
+  ## Take standard deviation of columns
+  tab <- cbind(tab, apply(tab[,2:(length(seed)+1)], 1, sd))
+  colnames <- c(colnames, "$\\sigma$")
+  colnames(tab) <- colnames
+
+  return(print(xtable(tab, caption=xcaption, label=xlabel, align=get.align(ncol(tab))),
+               caption.placement = "top", include.rownames=FALSE, sanitize.text.function=function(x){x}))
+}
+
+a=make.xtable(seed=c(1,2,3,4))
 
 x <- rnorm(1000,sd=5,mean=20)
 y <- 2.5*x - 1.0 + rnorm(1000,sd=9,mean=0)
