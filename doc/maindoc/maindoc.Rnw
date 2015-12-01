@@ -1,0 +1,308 @@
+% mainDoc.Rnw - Main part of the document
+% Note the variables such as \fishname are passed down automatically from the calling file (example.Rnw)
+
+\nonumsection*{ABSTRACT}\addcontentsline{toc}{section}{ABSTRACT}
+\fishname\ (\emph{\sciencename}, \commonname) are an important component of the bottom trawl fishery in \bc. They are managed as a coastwide stock, with a TAC of 15,000 t and catch of 10,679 t in 2014. Prior to the introduction of freezer trawlers in the mid-2000s, most of the historical catch of \fishname\ is understood to have been discarded at sea. This was largely due to proteolysis, which occurs in the muscle tissue of this species a short time after it is caught, making the flesh unpalatable. In the past five years, markets have been established for fillets that have been frozen at sea, and the freezer trawl fleet has taken an increasing proportion of the coastwide catch............ Management advice is provided in the form of decision tables which forecast the impacts of a range of 2015 catch levels on \fishname\ stock status relative to these reference points. The Reference Case decision table suggests that a 2015 catch equal to any of the catch levels tested, ranging from 0 t to 30,000 t (twice the 2014 TAC), would result in a 2016 biomass above all of the candidate biomass-based reference points tested, and 2015 harvest rate below the estimated \emph{U}\subscr{MSY}. Large uncertainty in the assessment is however, emphasised. The magnitude of catch and discards prior to 1996 is a major source of uncertainty in this assessment that could provide critical information about the scale and productivity of this stock. Ageing of archived otoliths from the freezer trawl fleet is a high priority recommendation.\\
+
+\newpage	%French abstract must appear on new page
+
+% \section*{R\'esum\'e}\addcontentsline{toc}{section}{R\'ESUM\'E}
+\nonumsection*{R\'ESUM\'E}\addcontentsline{toc}{section}{R\'ESUM\'E}
+
+% \addcontentsline{toc}{section}{R\'ESUM\'E}
+
+\clearpage
+
+% Need numbering back to Arabic.
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{INTRODUCTION}
+%\fishname\ (\emph{\sciencename}, Family \familyname), also commonly called \commonname, is a species of flatfish that occurs in the offshore waters of \bc. \fishname\ are primarily taken by the groundfish bottom trawl fishery. Here is a citation reference from the bibliography file: \citet{arf2001}.\\
+Hello world \\
+
+\subsection{PURPOSE OF DOCUMENT}
+To show how knitr and latex work together. See the figures \ref{fig:example-random-stuff}, \ref{fig:example-brownian-motion}, \ref{fig:example-half-torus}, and \ref{fig:example-galaxy}. Here's how you execute simple stats using from R inside latex text block: The mean of x = $\Sexpr{mean(x)}, sd = $\Sexpr{sd(x)} \\
+\bigskip
+
+%Appendix \ref{chap:appendix-1}). This assessment identifies reference points for \fishname\ that are consistent with the DFO Decision-making Framework Incorporating the Precautionary Approach (\citet{dfo09}) and characterizes stock status relative to these reference points, using a Bayesian, age-structured stock assessment model. Management advice is provided in the form of decision tables which forecast the impacts of a range of harvest levels on \fishname\ stock status relative to these reference points.\\
+
+Here are some equations:
+
+\begin{align} \label{eq:sweptareaindex}
+B_y = \sum_{i=1}^kC_{y_i}A_i=\sum_{i=1}^kB_{y_i}
+\end{align}
+\begin{addmargin}[3em]{1em}
+where $C_{y_i}$ is the mean CPUE density ($kg/km^2$) for species $s$ in stratum $i$, $A_i$ is the area of stratum $i$, $B_{y_i}$ is the biomass of \fishname\ in stratum $i$ for year $y$, and $k$ is the number of strata.
+\end{addmargin}
+
+CPUE ($C_{y_i}$) for \fishname\ in stratum $i$ for year $y$ was calculated as a density in $kg/km^2$ by:
+
+\begin{align} \label{eq:cpuecalc}
+C_{y_i}=\frac{\sum\limits_{j=1}^{n_{y_i}} \left[\frac{W_{y_i,j}}{D_{y_i,j}w_{y_i,j}}\right]}{n_{y_i}}
+\end{align}
+\begin{addmargin}[3em]{1em}
+where $W_{y_i,j}$ is the catch weight in $kg$ for \fishname\ in stratum $i$, year $y$, and tow $j$, $D_{y_i,j}$ is the distance travelled in $km$ for tow $j$ in stratum $i$ and year $y$, $w_{y_i,j}$ is the net opening in $km$ by tow $j$, stratum $i$, and year $y$, and $n_{y_i}$ is the number of tows in stratum $i$.
+\end{addmargin}
+
+The variance of the survey biomass estimate $V_y$ for \fishname\ in year $y$ is calculated in $kg^2$ as follows:
+\begin{align} \label{eq:indexvariance}
+V_y=\sum_{i=1}^k\left[\frac{\sigma_{y_i}^2A_i^2}{n_{y_i}}\right]=\sum_{i=1}^kV_{y_i}
+\end{align}
+\begin{addmargin}[3em]{1em}
+where $sigma_{y_i}^2$ is the variance of the CPUE in $kg^2/km^4$ for year $y$ in stratum $i$, $V_{y_i}$ is the variance of \fishname\ in stratum $i$ for year $y$, where $sigma_{y_i}^2$ was obtained from bootstrapped samples (see below).
+\end{addmargin}
+
+The CV for \fishname\ for each year $y$ was calculated as follows:
+\begin{align} \label{eq:indexcv}
+CV_y=\frac{\sqrt{V_y}}{B_y}
+\end{align}
+\begin{addmargin}[3em]{1em}
+where $CV_y$ is the CV for year $y$.
+\end{addmargin}
+
+\subsubsection{A new section} \label{sec:a-new-section}
+The label allows us to reference the section later.\\
+
+Here is a list or enumeration:
+\begin{enumerate}[noitemsep,nolistsep]
+  \item Item 1
+  \item Item 2
+  \item Item 3
+  \item Item 4
+\end{enumerate}
+
+Italics with subscripts: \emph{F}\subscr{MSY} and \emph{U}\subscr{MSY} refer to catch of the vulnerable biomass $VB_t$, which is determined by the selectivity function, i.e. (another equation):
+
+\begin{align} \label{eq:vulnBiomassSel}
+VB_t = \sum_{a}N_{a,t}w_{a,t}v_{a,t}
+\end{align}
+\begin{addmargin}[3em]{1em}
+where $a$ is age, $t$ is year, $N$ is the population number, $w$ is the average weight-at-age, and $v$ is the vulnerability-at-age in the trawl fishery (i.e. selectivity).
+\end{addmargin}
+
+When showing special characters, use backslash to escape: 95\% credibility interval. Use math notation to emphasize numbers in the same way as equations: $139,212$ tonnes \\
+
+\subsubsection{Alternative values of variance parameters $\vartheta^2$ and $\rho$} \label{sec:variance}
+Use this format (must be inside surrounding dollar signs) for greek letters $\vartheta^2$ and $\rho$ \\
+
+An example of overline usage: $\overline{R}_{init}$.\\
+
+Double dashes are great: $0.308 y^{-1}$--$0.406 y^{-1}$.\\
+
+Here's how you show a fraction: $\frac{B_{2016}}{B_{ReferencePoint}} < 1$.\\
+\bigskip
+
+
+\section{ACKNOWLEDGEMENTS}
+
+Here's a reference to an appendix: % \ref{chap:propfemale} and \ref{chap:agecompweight}.\\
+
+\addcontentsline{toc}{section}{BIBLIOGRAPHY}
+\bibliographystyle{resDoc}
+\bibliography{../../all}
+
+\clearpage
+
+\section{TABLES}
+
+%<<results='asis', echo=FALSE>>=
+%cap <- "Coastwide landings and discards in tonnes for \\fishname. See also Figure \\ref{fig:totalcatch}."
+%makeTable(1, 10, digits=3, retxtable=TRUE, xcaption=cap, xlabel="tab:totalcatch")
+%@
+
+%<<results='asis', echo=FALSE>>=
+%cap <- "Coastwide landings and discards in tonnes for \\fishname\\ by area."
+%makeTable(1, 11, digits=3, retxtable=TRUE, xcaption=cap, xlabel="tab:totalcatchbyarea")
+%@
+
+%% \begin{table}[!htp]
+%% \centering
+%% \caption{\label{tab:surveySuitability} Attributes of fishery-independent surveys and evaluation of suitability for stock indexing. RS=Random stratified design, BT=Bottom trawl gear.}
+%% \begin{tabular}{lcccc}
+%% \hline
+%% \textbf{Attribute}              & \textbf{WCVISS} & \textbf{HSSS} & \textbf{HSMSAS} & \textbf{QCSSS} \\
+%% \hline
+%% \textbf{Design}                   &            RS &            RS &             RS &            RS \\
+%% \textbf{Gear}                     &            BT &            BT &             BT &            BT \\
+%% \textbf{Year Range (years)}       & 2004-2014 (6) & 2005-2013 (5) & 1984-2003 (11) & 2003-2013 (7) \\
+%% \textbf{Set Range (avg)}          & 106-179 (153) & 156-236 (189) &   88-161 (105) & 260-281 (269) \\
+%% \textbf{PFMA Areas}               &         3C,3D &         5C,5D &          5C,5D &         5A,5B \\
+%% \textbf{Depth Range (m)}          &        41-660 &        19-420 &         18-232 &        41-626 \\
+%% \textbf{Ageing done (yrs)}        &       Yes (5) &       Yes (5) &        Yes (1) &       Yes (4) \\
+%% \textbf{Comment}                  &               &               &                &               \\
+%% \hline
+%% \end{tabular}
+%% \end{table}
+
+%<<results='asis', echo=FALSE>>=
+%cap <- "Annual female-only indices of abundance and CVs for the four indices used in this assessment."
+%makeTable(1, 8, ci=ci, burnthin=burnthin, digits=3, retxtable=TRUE, xcaption=cap, xlabel="tab:Indices")
+%@
+
+\clearpage
+
+\begin{table}[b]
+\centering
+\caption{\label{tab:parampriors}Estimated and fixed parameters and prior probablilty distributions used in the Reference Case.}
+\begin{tabular}{lcrr}
+\hline
+\textbf{Parameter} & \specialcell{\textbf{Number}\\\textbf{estimated}} & \specialcell{\textbf{Bounds}\\\textbf{[low,high]}} & \specialcell{\textbf{Prior (Mean, SD)}\\\textbf{(single value=fixed)}} \\
+\hline
+Log recruitment ($\ln(R_0)$)                                &  1 & [-2,6]  & Uniform \\
+Steepness ($h$)                                            &  1 & [0.2,1] & Beta($\alpha=13.4$,$\beta=2.40$) \\
+Log natural mortality ($\ln(M)$)                           &  1 & [-5,0]  & Normal($\ln(0.2)$,$0.2$) \\
+Log mean recruitment ($\ln(\overline{R})$)                  &  1 & [-2,6]  & Uniform \\
+Log initial recruitment ($\ln(\overline{R}_{init})$)         &  1  & [-2,6] & Uniform \\
+Variance ratio ($\rho$)                                     &  0 & Fixed   & $0.059$ \\
+Inverse total variance ($\vartheta^2$)                     &  0 & Fixed   & $1.471$ \\
+Survey age at 50\% selectivity ($\hat{a}_k$)               &  3 & [0,1]   & None \\
+Fishery age at 50\% selectivity ($\hat{a}_k$)               &  1 & [0,1]   & None \\
+Survey SD of logistic selectivity ($\hat{\gamma}_k$)        &  3 & [0,Inf) & None \\
+Fishery SD of logistic selectivity ($\hat{\gamma}_k$)       &  1 & [0,Inf) & None \\
+Survey catchability ($q_k$)                                 &  4 & None    & Normal($0.5$,$1.0$) \\
+Log fishing mortality values ($\Gamma_{k,t}$)                & 19 & [-30,3] & [-30,3] \\
+Log recruitment deviations ($\omega_t$)                     & 19 & None    & Normal($0$,$\tau$) \\
+Initial log recruitment deviations ($\omega_{init,t}$)        & 19 & None    & Normal($0$,$\tau$) \\
+\hline
+\end{tabular}
+\end{table}
+
+%% <<results='asis', echo=FALSE, fig.pos='b'>>=
+%% cap <- "Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} percentile) and MPD estimates of key parameters from the Reference Case. Subscripts on $q$ (catchability), $\\hat{a}$ (selectivity age-at-50\\%), and $\\hat{\\gamma}$ (selectivity standard deviation-at-50\\%) parameters indicate: 1 = Trawl fishery, 2 = QCSSS, 3 = HSMAS, 4 = HSSS, 5 = WCVISS."
+%% makeTable(1, 1, ci=ci, burnthin=burnthin, digits=3, retxtable=TRUE, xcaption=cap, xlabel="tab:paramest")
+%% @
+%% <<results='asis', echo=FALSE>>=
+%% cap="Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} percentile) of proposed reference points. Biomass numbers are in thousands of tonnes."
+%% makeTable(1, 2, ci=ci, burnthin=burnthin, digits=3, retxtable=TRUE, xcaption=cap, xlabel="tab:refpoints")
+%% @
+%% <<results='asis', echo=FALSE>>=
+%% cap <- "Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} percentile) and MPD estimates of female spawning biomass (1000 t) for the Reference Case."
+%% makeTable(1, 3, ci=ci, burnthin=burnthin, digits=3, retxtable=TRUE, xcaption=cap, xlabel="tab:spawnbiomass")
+%% @
+%% <<results='asis', echo=FALSE>>=
+%% cap <- "Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} percentile) and MPD estimates of recruitment (millions) for the Reference Case."
+%% makeTable(1, 4, ci=ci, burnthin=burnthin, digits=3, retxtable=TRUE, xcaption=cap, xlabel="tab:recruitment")
+%% @
+%% <<results='asis', echo=FALSE>>=
+%% cap <- "Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} percentile) and MPD estimates of fishing mortality, F, for the Reference Case."
+%% makeTable(1, 5, ci=ci, burnthin=burnthin, digits=3, retxtable=TRUE, xcaption=cap, xlabel="tab:F")
+%% @
+%% <<results='asis', echo=FALSE>>=
+%% cap <- "Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} percentile) and MPD estimates of annual harvest rate, U, for the Reference Case."
+%% makeTable(1, 6, ci=ci, burnthin=burnthin, digits=3, retxtable=TRUE, xcaption=cap, xlabel="tab:U")
+%% @
+%% <<results='asis', echo=FALSE>>=
+%% cap <- "Derived posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} percentile) and MPD values of relative female spawning biomass for the Reference Case."
+%% makeTable(1, 9, ci=ci, burnthin=burnthin, digits=3, retxtable=TRUE, xcaption=cap, xlabel="tab:depletion")
+%% @
+
+\begin{table}[b]
+\centering
+\caption{\label{tab:sensitivities}Sensitivity cases and their parameters.}
+\begin{tabular}{lrr}
+\hline
+\textbf{Scenario   } & \textbf{Description}                         & \textbf{Parameters} \\
+\hline
+1           & Reference Case                               & See Table \ref{tab:parampriors} \\
+2           & Decrease $\sigma$ to 0.1                      & $\vartheta^2=1.538$; $\rho=0.015$ \\
+3           & Estimate Total Variance                       & $\vartheta^2$ estimated; $\rho=0.059$ \\
+4           & Increase $\tau$ to 1.0                        & $\vartheta^2=0.962$; $\rho=0.038$ \\
+5           & Decrease $\tau$ to 0.6                        & $\vartheta^2=2.500$; $\rho=0.100$ \\
+6           & Decrease mean of $h$ prior to 0.72            & $h$ = Beta($\alpha=12.7$, $\beta=5.0$) \\
+7           & Decrease SD of $\ln(M)$ prior to 0.05          & $\ln(M)$ = Normal($\ln(0.2)$, $0.05$) \\
+8           & Increase SD of $\ln(M)$ prior to 0.25          & $\ln(M)$ = Normal($\ln(0.2)$, $0.25$) \\
+9           & Increase mean of $\ln(M)$ prior to ln($1.0$)   & $\ln(M)$ = Normal($\ln(0.3)$, $0.20$) \\
+10          & Increase mean of $\ln(q_k)$ prior to ln($1.0$) & $\ln(q_k)$ = Normal($\ln(1.0)$, $1.0$) \\
+11          & Increase SD of $\ln(q_k)$ prior to 1.5         & $\ln(q_k)$ = Normal($\ln(0.5)$, $1.5$) \\
+12          & Selectivity Ogive = Maturity Ogive            & $\hat{a}$ = $4.99$ yrs; $\hat{\gamma}$ = $1.27$ yrs \\
+13          & Age-at-50\%-harvest set to 6 yrs              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[b]
+\centering
+\caption{\label{tab:sensitivities-q}Sensitivity cases for $q_k$; posterior quantiles.}
+\begin{tabular}{lcccccc}
+\hline
+\textbf{Index}  & \multicolumn{3}{c}{\textbf{Sensitivity 10}} & \multicolumn{3}{c}{\textbf{Sensitivity 11}} \\
+\hline
+ $\mathbf{q_k}$ & \textbf{2.5\%} & \textbf{50\%} & \textbf{97.5\%} & \textbf{2.5\%} & \textbf{50\%} & \textbf{97.5\%} \\
+\hline
+QCSSS  & 0.081 & 0.158 & 0.508 & 0.029 & 0.083 & 0.226 \\
+HSMAS  & 0.079 & 0.121 & 0.155 & 0.035 & 0.081 & 0.136 \\
+HSSS   & 0.070 & 0.118 & 0.200 & 0.027 & 0.067 & 0.136 \\
+WCVISS & 0.061 & 0.104 & 0.172 & 0.022 & 0.059 & 0.118 \\
+\hline
+\end{tabular}
+\end{table}
+
+%% <<results='asis', echo=FALSE>>=
+%% # Note that the first column will not be set to have any decimal digits because it is the TAC/Catch projection
+%% cap <- "Decision Table for the Reference Case showing posterior probabilities that 2016 projected biomass B\\subscr{t} is below a set of candidate reference points and benchmarks (Table \\ref{tab:refpoints}), and probabilities that the 2015 projected harvest rate U\\subscr{t} is above U\\subscr{2014} or U\\subscr{MSY} for a given level of female-only catch."
+%% makeTable(1, 7, ci=ci, burnthin=burnthin, digits=3, retxtable=TRUE, xcaption=cap, xlabel="tab:Decisions")
+%% @
+%% <<results='asis', echo=FALSE>>=
+%% # Note that the first column will not be set to have any decimal digits because it is the TAC/Catch projection
+%% cap <- "Decision Table for a sensitivity model (Selectivity = Maturity, Table \\ref{tab:sensitivities}) showing posterior probabilities that 2016 projected biomass B\\subscr{t} is below a set of candidate reference points and benchmarks (Table \\ref{tab:refpoints}), and probabilities that the 2015 projected harvest rate U\\subscr{t} is above U\\subscr{2014} or U\\subscr{MSY} for a given level of female-only catch."
+%% makeTable(12, 7, ci=ci, burnthin=burnthin, digits=3, retxtable=TRUE, xcaption=cap, xlabel="tab:DecisionsSelMat")
+%% @
+
+\clearpage
+
+\section{FIGURES}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htp]
+\begin{center}
+<<fig.height=9, fig.width=8>>=
+random.stuff()
+@
+\end{center}
+%\vspace{0mm}
+\caption{Random points example... Degrees are represented in latex like this 0.1$^\circ$ and superscript like this km$^2$)}
+\label{fig:example-random-stuff}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htp]
+\begin{center}
+<<fig.height=5, fig.width=8>>=
+brownian.motion()
+@
+\end{center}
+%\vspace{0mm}
+\caption{Brownian motion example..}
+\label{fig:example-brownian-motion}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htp]
+\begin{center}
+<<fig.height=9, fig.width=8>>=
+half.torus()
+@
+\end{center}
+%\vspace{0mm}
+\caption{Half torus example..}
+\label{fig:example-half-torus}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htp]
+\begin{center}
+<<fig.height=9, fig.width=8>>=
+plot.galaxy.data()
+@
+\end{center}
+%\vspace{0mm}
+\caption{Galaxy example}
+\label{fig:example-galaxy}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%

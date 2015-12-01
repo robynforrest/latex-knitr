@@ -1,0 +1,16 @@
+*.log
+*.aux
+*.bbl
+*.blg
+*~
+*.dvi
+*.ps
+.RData
+.RHistory
+*.7z
+*.toc
+*.out
+resDoc.pdf
+doc/cache/*
+doc/figure/*
+doc/resDoc.tex
