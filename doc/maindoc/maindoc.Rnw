@@ -19,7 +19,7 @@
 
 \section{INTRODUCTION}
 %\fishname\ (\emph{\sciencename}, Family \familyname), also commonly called \commonname, is a species of flatfish that occurs in the offshore waters of \bc. \fishname\ are primarily taken by the groundfish bottom trawl fishery. Here is a citation reference from the bibliography file: \citet{arf2001}.\\
-Hello world \\
+Hello world \citet{arf2001} \\
 
 \subsection{PURPOSE OF DOCUMENT}
 To show how knitr and latex work together. See the figures \ref{fig:example-random-stuff}, \ref{fig:example-brownian-motion}, \ref{fig:example-half-torus}, and \ref{fig:example-galaxy}. Here's how you execute simple stats using from R inside latex text block: The mean of x = $\Sexpr{mean(x)}, sd = $\Sexpr{sd(x)} \\

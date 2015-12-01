@@ -152,7 +152,7 @@
 % \lhead{DRAFT -- Non-citable working paper}  % Omit for final ResDoc.
 \lhead{}
 \rhead{}
-\lfoot{\fishname}           % Species common name for left footer
+\lfoot{Example latex-knitr}           % Species common name for left footer
 \rfoot{DRAFT - DO NOT CITE}           % The area of the assessment for right footer
 %\rfoot{WP 2012/P02a}       % Change to appendix number for appendices
                             % Will probably delete footers in main text
