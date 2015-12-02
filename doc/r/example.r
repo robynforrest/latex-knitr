@@ -1,5 +1,5 @@
 ## Example plot for latex-knitr
-## xtable is an important one for the latex table formatting
+## xtable is important for the latex table formatting
 require(plot3D)
 require(KernSmooth)
 require(xtable) # For tables which can be inserted into latex docs with knitr
@@ -52,13 +52,10 @@ load.galaxy.data <- function(){
   file <- "R/datasets/a85_extended_NEDsearch.txt"
   A <<- read.table(paste(url, file, sep="/"), sep="|", skip=20, header=TRUE)
   close(url(paste(url, file, sep="/")))     # close connection after use
-  ## dim(A)          # Show dimensions of data frame: rows columns
   colnames(A)[c(2, 3, 4, 5)] <<- c("name", "ra", "dec", "type")
 }
 
 plot.galaxy.data <- function(){
-  ## plot(dec ~ ra, data=A, pch=".")
-  ## plot(dec ~ ra, data=A, pch=".", xlim=c(10, 11), ylim=c(-10, -9))
   A <- subset(A, ra > 9.5 & ra < 11.5 & dec > -10.3 & dec < -8.5)
   plot(dec ~ ra, data=A, pch=".")
 
@@ -119,7 +116,7 @@ make.xtable <- function(## seed is a vector of seeds to use for randomness
                caption.placement = "top", include.rownames=FALSE, sanitize.text.function=function(x){x}))
 }
 
-a=make.xtable(seed=c(1,2,3,4))
-
 x <- rnorm(1000,sd=5,mean=20)
 y <- 2.5*x - 1.0 + rnorm(1000,sd=9,mean=0)
+
+load.galaxy.data() ## Creates global data frame 'A'
