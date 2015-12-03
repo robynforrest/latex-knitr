@@ -18,38 +18,66 @@ Usually the french version of the abstract goes here, but it is included here to
 \setcounter{page}{1}
 
 \section{INTRODUCTION}
-The purpose of this document is to show how knitr and \latex work together to make a PDF file from code. When reading this PDF document, you should also look at the code files to compare. Start with example.Rnw and maindoc/maindoc.Rnw. This introduction and most of the rest of the document can be found in maindoc.Rnw. \latex allows you to write commands into the text. For example the command \verb!\fishname! =  \fishname\ and \verb!\sciencename! = \emph{\sciencename}. These are defined in example.Rnw and can be used throughout the document, and in any of the appendices without further modification. \\
+The purpose of this document is to show how knitr and \latex work together to make a PDF file from code. When reading this PDF document, you should also look at the code files to compare. Start with \rnwexamplefile\ and \rnwmaindocfile. This introduction and most of the rest of the document can be found in \rnwmaindocfile. \latex allows you to write commands into the text. For example the command \verb!\fishname! =  \fishname\ and \verb!\sciencename! = \emph{\sciencename}. These are defined in \rnwexamplefile\ and can be used throughout the document, and in any of the appendices without further modification. \\
 
 \section{Building this document} \label{sec:building}
+Before building this document, you need to install a couple of things which allow for the rendering of \emph{knitr} code in the document for example purposes. Open Rgui and do the following:
+
+\begin{lstlisting}[language=R]
+  install.packages("devtools")
+  devtools::install_github("thell/knitliteral")
+\end{lstlisting}
+
 To build this document, open a command line and enter \textbf{buildtex.bat}. When you run buildtex.bat two things happen:
 \begin{enumerate}[noitemsep,nolistsep]
-  \item Rscript calls knitr which goes through and \emph{knits} your \emph{example.Rnw} file, which means it runs all the R code it finds, stores figures in the \emph{knitr-cache} directory, and creates a \tex file which \latex can then understand. It also creates a file called knitrOutput.log which contains all output and errors encountered during the knitting procedure. That is where to first look when there are problems compiling your document. Here is the line in buildtex.bat that does this:
- %% verbatim allows us to enter code with a bunch of special characters without having to escape all of them explicitly.
-    \begin{verbatim}
-      Rscript -e "library(knitr);knit('./example.Rnw')" 1> knitrOutput.log 2>&1
-    \end{verbatim}
-  \item \latex runs through the newly-created \tex file (\emph{example.tex}) and calls \emph{bibtex} to find the references and make the bibliography. There are three output formats of the document: .ps, .dvi, and .pdf. The .ps and .dvi formats require special viewers (Yap and GhostView respectively) and do not incorporate the reference links that are so convinient in the .pdf file. During development of very complex documents, you can leave the last part of this call out to avoid PDF generation, and put it back in when ready to complete the document.
-    \begin{verbatim}
-      @latex -synctex=1 "example.tex" && bibtex "example" && latex "example.tex"
-        && latex "example.tex" && dvips "example.dvi" && ps2pdf "example.ps"
-    \end{verbatim}
+  \item Rscript calls knitr which goes through and \emph{knits} your \emph{\rnwexamplefile} file, which means it runs all the R code it finds, stores figures in the \emph{knitr-cache} directory, and creates a \tex file which \latex can then understand. It also creates a file called knitrOutput.log which contains all output and errors encountered during the knitting procedure. That is where to first look when there are problems compiling your document. Here is the line in buildtex.bat that does this:
+ %% alltt allows us to enter code with a bunch of special characters without having to escape all of them explicitly.
+    \begin{alltt}
+      Rscript -e "library(knitr);knit('./\rnwexamplefile')" 1> knitrOutput.log 2>&1
+    \end{alltt}
+  \item \latex runs through the newly-created \tex file (\emph{\texfile}) and calls \emph{bibtex} to find the references and make the bibliography. There are three output formats of the document: .ps, .dvi, and .pdf. The .ps and .dvi formats require special viewers (Yap and GhostView respectively) and do not incorporate the reference links that are so convinient in the .pdf file. During development of very complex documents, you can leave the last part of this call out to avoid PDF generation, and put it back in when ready to complete the document.
+    \begin{alltt}
+      @latex -synctex=1 "\texfile" && bibtex "example" && latex "\texfile"
+        && latex "\texfile" && dvips "example.dvi" && ps2pdf "example.ps"
+    \end{alltt}
 \end{enumerate}
 
-\subsection{What to do if there's an error}
-
-If there's an error, the first thing to do is check the \emph{knitrOutput.log} file. This will contain all messages both regular and error which \emph{knitr} outputs. If there was an error during the knitting process, you will find it here. The last lines of the file should say something like \emph{file example.tex created}. If you see this message and the file \emph{example.tex} exists then the \latex part of the compilation has failed. The message in that case will be something like \emph{l.132...error message}. In that case, the error happened on line 132 of the \emph{example.tex} file. Sometimes errors earlier on can trigger something later to fail, which makes it very hard to debug. The best advice is to compile after every change to make sure it is still working. A lot of time can be wasted tracking down errors if you haven't compiled in a long time and made many changes, where more than one error may have been introduced. Matching parenthesis errors can be particular insidious.
-
-If there is an error stating \emph{**** Could not open the file example.pdf} it means that you still have the PDF open and you need to close it and re-compile.
+Some \latex packages may have to be installed. If so, the package manager dialog will open. You must choose to install from internet, then make sure to select \emph{ctan} using \emph{HTTP} protocol from \emph{BC}. The default settings will most likely not work.
 
 \subsection{The knitting process}
 
-\emph{Knitr} is called as shown in section \ref{sec:building}. When called, it parses the example.Rnw file, looking for special parenthesis characters which are called \emph{R code chunks}. The chunks begin with a set of parentheses and equals sign \verb!<< >>=! and end with the \emph{at} symbol \verb!@!. Anything between them is an R code chunk which will be evaluated by \emph{knitr}. Inside the beginning parentheses, you can define many \emph{chunk options}. The official page for these options is here: \href{http://yihui.name/knitr/options/}{Knitr chunk options}. In this document the file \emph{example.Rnw} holds one chunk which loads the R environment, and maindoc/maindoc.Rnw holds the figure chunks (one for each figure) which each hold simple commands to plot some examples.
+When \emph{knitr} is called, it parses the \emph{\rnwexamplefile} file, looking for special parenthesis characters which are called \emph{R code chunks}. The chunks begin with a set of parentheses and equals sign \verb!<< >>=! and end with the \emph{at} symbol \verb!@!. Anything between them is an R code chunk which will be evaluated by \emph{knitr}. Inside the beginning parentheses, you can define many \emph{chunk options}. The official page listing these options is here: \href{http://yihui.name/knitr/options/}{Knitr chunk options}. In this document the file \emph{\rnwexamplefile} holds one chunk which loads the R environment, and \emph{\rnwmaindocfile} holds the figure chunks (one for each figure) which each hold simple commands to plot some examples. For example, figure \ref{fig:example-half-torus} is called like this (without the eval=FALSE):
 
-\section{RUNNING R CODE DIRECTLY IN TEXT}
-Here's how you execute some simple stats using from R inside \latex text block: For example to get the mean of x you would use: \$\ShowSexpr{mean(x)}\$ = $\Sexpr{mean(x)}$. The \verb!$\Sexpr{}$! construct represents an S-expression, where S was the predecessor to R. In this example, the values for the x vector were read in from \emph{example.r} at the beginning of the knitting process and is accessible throughout the document. You can call simple R commands using the \verb!$\Sexpr{}$! command inside \latex. You can do more than one command by separating with a semicolon, for example \$\ShowSexpr{z=x+y;mean(z)}\$ = $\Sexpr{z=x+y;mean(z)}$.\\
+%% Outputs the chunk as code into the document by using eval=FALSE and literal=TRUE
+<<fig.height=9, fig.width=8, eval=FALSE, literal=TRUE>>=
+half.torus()
+@
+
+\subsubsection{Running R code directly in text}
+One should always write calculated values or data by using a reference to the R objects instead of typing the numbers in as text. This way, if something changes you don't have to read and verify every number in your document, they will be updated automatically by \emph{knitr}.
+
+Here's how you write some values by reference from your R environment inside \latex text block: For example to get the mean of x you would use the command: \$\ShowSexpr{mean(x)}\$ which in this case evaluates to $\Sexpr{mean(x)}$. The \verb!$\Sexpr{}$! construct represents an S-expression, where S was the predecessor to R. For some reason it hasn't yet been changed to \verb!$\Rexpr{}$!. In this example, the values for the x vector were read in from \emph{example.r} at the beginning of the knitting process and is accessible throughout the document. You can call simple R commands using the \verb!$\Sexpr{}$! command inside \latex. You can do more than one command by separating with a semicolon, for example the command \$\ShowSexpr{z=x+y;mean(z)}\$ evaluates to $\Sexpr{z=x+y;mean(z)}$ for the x and y values loaded from \emph{example.r}.\\
+
+\subsection{What to do if there's an error}
+
+If there's an error, the first thing to do is check the \emph{knitrOutput.log} file. This will contain all messages both regular and error which \emph{knitr} outputs. If there was an error during the knitting process, you will find it there. The last lines of the file should say:
+\begin{alltt}
+  output file: \texfile
+
+  [1] "\texfile"
+\end{alltt}
+If you see this message and the file \emph{\texfile} exists then the \emph{knitr} part has worked but the \latex part of the compilation has failed. The message in the case that \latex has failed will be something like \emph{l.132...error message}. In that case, the error happened on line 132 of the \emph{\texfile} file. You will have to look at this file first to see where the error is, then go back to your \rnwexamplefile\ file and fix it. Sometimes errors earlier on can trigger something later to fail, which makes it very hard to debug. The best advice is to compile after every change to make sure it is still working. A lot of time can be wasted tracking down errors if you haven't compiled in a long time and made many changes, where more than one error may have been introduced. Matching parenthesis errors can be particular insidious.
+
+If there is an error stating:
+
+\emph{**** Could not open the file example.pdf}
+
+it means that you still have the PDF open and you need to close it and re-compile. If you have the GhostView viewer, you can keep the postscript (\emph{example.ps}) file open instead while developing. You won't get an error even if it stays open.
+
 \bigskip
 
-Here are some example equations with added margins for captions. Note that they are numbered automatically.:
+\section{Equations in \latex}
+Equations are fairly straightforward, and if organized using the same label prefix (\textbf{eq:}), they will be numbered automatically. Here are some example equations from the 2015 \fishname\ assessment with added margins for captions:
 
 \begin{align} \label{eq:sweptareaindex}
 B_y = \sum_{i=1}^kC_{y_i}A_i=\sum_{i=1}^kB_{y_i}
@@ -83,19 +111,19 @@ CV_y=\frac{\sqrt{V_y}}{B_y}
 where $CV_y$ is the CV for year $y$.
 \end{addmargin}
 
-\subsubsection{Alternative values of variance parameters $\vartheta^2$ and $\rho$} \label{sec:variance}
-Use this format (must be inside surrounding dollar signs) for greek letters $\vartheta^2$ and $\rho$ \\
+\subsubsection{A few more equation tidbits}
 
-An example of overline usage: $\overline{R}_{init}$.\\
+Here is an example of overline usage: $\overline{R}_{init}$.
 
-Double dashes are great: $0.308 y^{-1}$--$0.406 y^{-1}$.\\
+Double dashes can be used to make a longer solid line to show value ranges: $0.308 y^{-1}$--$0.406 y^{-1}$.
 
-Here's how you show a fraction: $\frac{B_{2016}}{B_{ReferencePoint}} < 1$.\\
+Here's how you show a fraction inline: $\frac{B_{2016}}{B_{ReferencePoint}} < 1$.
+
 \bigskip
 
 \section{HOW REFERENCES WORK} \label{sec:how.refs.work}
 \subsection{How the bibliography works} \label{subsec:how.bib.works}
-The bibliography is automatically generated by \latex. The file all.bib contains thousands of references and is added to on an ongoing basis. The format of that file is simple and self-explanatory. When you cite a document, you use a \emph{citet} command to get a reference to a paper. For example, \verb!\citet{arf2001}! = \citet{arf2001}. You can also click the reference to go to its entry in the bibliography. Press Alt-left arrow to come back to where you were after. The \emph{bibtex} program, which is called up by \latex, searches all.bib for this and inserts the correct reference in a file called \emph{example.bbl} which is then used to generate the bibliography. The bibliography is generated at the end of the process, and only those references included in the document by you (and in example.bbl) are included in the bibliography. Here are a bunch more references: \citet{fournier1982}, \citet{sr95schnute,richards1997visualizing}, \citet{mcallister1997,gavaris2002}. Check the bibliography to see that they are all there. You can use these references anywhere in the document, including in child documents like \emph{maindoc} and any appendices.\\
+The bibliography is automatically generated by \latex. The file all.bib contains thousands of references and is added to on an ongoing basis. The format of that file is simple and self-explanatory. When you cite a document, you use a \emph{citet} command to get a reference to a paper. For example, \verb!\citet{arf2001}! = \citet{arf2001}. You can also click the reference to go to its entry in the bibliography. Press Alt-left arrow to come back to where you were after. The \emph{bibtex} program, which is called up by \latex, searches all.bib for this and inserts the correct reference in a file called \emph{example.bbl} which is then used to generate the bibliography. The bibliography is generated at the end of the process, and only those references included in the document by you (and in example.bbl) are included in the bibliography. Here are a bunch more references: \citet{fournier1982}, \citet{sr95schnute,richards1997visualizing}, \citet{mcallister1997,gavaris2002}. Check the bibliography to see that they are all there. You can use these references anywhere in the document, including in child documents like \emph{\rnwmaindocfile} and any appendices.\\
 
 \subsection{How the figure and table references work} \label{subsec:how.figure.refs.work}
 
@@ -111,14 +139,25 @@ A figure/table reference works by adding a reference name to a figure/table, the
   \item     \textbf{eq}: - equation
   \item    \textbf{lst}: - code listing
   \item    \textbf{itm}: - enumerated list item (like this list)
-  \item    \textbf{app}: - appendix
+  \item   \textbf{chap}: - appendix
 \end{enumerate}
 
+\subsection{How appendix references work} \label{subsec:how.appendix.refs.work}
+
+Appendix references are much like chapters of a book. They can be added or commented out easily at the bottom of \emph{\rnwexamplefile}. This helps with the incremental form of development where you make sure the main document is compiling and then when ready, uncomment the appendix inclusion code and the appendix will be included in the document. Once included, any appendix references will be resolved. To reference an appendix, use this syntax: \verb!\ref{chap:example.1}! which resolves to appendix \ref{chap:example.1}. This is also clickable and will take you directly to the appendix.
+
+The code which adds an appendix is \emph{knitr} code because you want the appendix added before the knitting process so that any figures or R expressions are resolved, just like in the main document. This is an example of how appendix code is added:
+
+\verb!\rfoot{Appendix A -- Example appendix 1}!
+
+<<appendix-1, child='appendix-1/appendix-1.Rnw', eval=FALSE, literal=TRUE>>=
+
+@
 
 \bigskip
 
 
-\section{ACKNOWLEDGEMENTS}
+\section{Summary}
 
 Here's a reference to an appendix: % \ref{chap:propfemale} and \ref{chap:agecompweight}.\\
 

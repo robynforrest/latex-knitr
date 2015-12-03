@@ -9,8 +9,8 @@
 
 \clearpage
 
-\chapter{MODEL DESCRIPTION AND EQUATIONS}
-\label{chap:equations}
+\chapter{Example appendix 1}
+\label{chap:example.1}
 
 \section{INTRODUCTION}
 

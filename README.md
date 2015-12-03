@@ -11,6 +11,12 @@ _____________________________________________________________
 * R (version 3.22 "Fire Safety" or later)
 * R Package 'knitr' and its dependencies.
 * Other R packages used in the example: plot3D, KernSmooth, xtable
+* To provide knitr code examples in the document, you need to install devtools and the knitliteral package. Open Rgui and type the following:
+
+```R
+  install.packages("devtools")
+  devtools::install_github("thell/knitliteral")
+```
 
 ---
 ## How to run the example and create example.pdf

@@ -20,7 +20,8 @@
 % \renewcommand{\footrulewidth}{0.4pt}
 % \renewcommand{\headrulewidth}{0pt}
 
-% For appendices:
+\usepackage{alltt}             %% Allows symbols inside a verbatim-type section
+\usepackage{listings}          %% For code listing with syntax highlighting
 \usepackage{graphicx}          % For inclusion of figures
 \usepackage{verbatim,fancyvrb} % verbatim package allows blocks with special characters to be shown easily.
 \usepackage{xifthen}           % provides \ifthenelse and \isempty
@@ -129,6 +130,14 @@
 }
 
 %% ** Declare global variables (commands) here **
+%% Filenames used for this project
+\newcommand{\rfile}{example.r}
+\newcommand{\texfile}{example.tex}
+\newcommand{\rnwexamplefile}{example.Rnw}
+\newcommand{\rnwmaindocfile}{maindoc.Rnw}
+\newcommand{\rnwappendixonefile}{appendix-1.Rnw}
+\newcommand{\rnwappendixtwofile}{appendix-2.Rnw}
+
 %% Next two lines provide the LaTeX and TeX symbols (from xspace package)
 \newcommand{\latex}{\LaTeX\xspace}
 \newcommand{\tex}{\TeX\xspace}
@@ -172,6 +181,13 @@
 %% \def\StartP{102}         %% page start
 
 \begin{document}
+
+%% This is included so that this example can show code chunks in the actual output docment without
+%% evaluating them. All you have to do is set eval=FALSE and literal=TRUE inside the << >> to output
+%% the chunk to the document.
+<<"knitr-setup", include=FALSE, cache=FALSE>>=
+knitLiteral::kast_on()
+@
 
 %% Start by sourcing your R code here. The R environment will persist throughout the latex code,
 %% so anything sourced or required here will be accessible later on in the latex knitr chunks.
