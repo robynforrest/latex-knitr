@@ -212,7 +212,7 @@ opts_chunk$set(dev='cairo_ps',fig.path='knitr-cache/', fig.dpi=96, fig.width=7.5
 ## constantly compiling the document. If you do this, you will need to
 ## put the require or library statements that the functions use because the
 ## saved environment does not save the libraries as well.
-use.binary.envir <- TRUE
+use.binary.envir <- T
 if(use.binary.envir){
   require(plot3D)
   require(KernSmooth)
