@@ -2,6 +2,8 @@ ____
 # latex-knitr
 
 latex-knitr is an example project to allow you to get started using R's knitr package with latex on MS Windows.
+Look at the PDF file example-doc.pdf in the doc directory. This is the expected output when you compile this
+latex/knitr code. It is really an extension to this Readme and has important information about compilation.
 
 _____________________________________________________________
 
