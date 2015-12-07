@@ -26,8 +26,6 @@ We can also reference any equation found anywhere, such as \ref{eq:sweptareainde
 
 \section{ANALYTIC METHODS: EQUILIBRIUM CONSIDERATIONS}
 
-Another section. The numbering happens automatically.
-
 \subsection{A Steady-State Age-Structured Model}
 
 Here is another equation written in a slightly different way than in the maindoc. Latex allows for lots of different ways to do things:

@@ -28,6 +28,8 @@ Before building this document, you need to install a couple of things which allo
   devtools::install_github("thell/knitliteral")
 \end{lstlisting}
 
+Open the file \rnwexamplefile. Look at the first R code chunk, starting on approximately line 197. This is where the R environment is loaded so that the figures and tables can be made, and values can be referenced later in the document. There are two choices: source the R file, or load a binary R environment. Sourcing the file works fine, but if there is a lot of loading of data or calculations that have to happen during the sourcing the build will take a long time. A much quicker way is to open an R session, and source the \rfile\ manually, then save the R environment to a file called \rdata\ in the \emph{r} directory. If this method is used, make sure to set \textbf{\lstinline{use.binary.envir <- TRUE}} on line ~216 of \rnwexamplefile.
+
 To build this document, open a command line and enter \textbf{buildtex.bat}. When you run buildtex.bat two things happen:
 \begin{enumerate}[noitemsep,nolistsep]
   \item Rscript calls knitr which goes through and \emph{knits} your \emph{\rnwexamplefile} file, which means it runs all the R code it finds, stores figures in the \emph{knitr-cache} directory, and creates a \tex file which \latex can then understand. It also creates a file called knitrOutput.log which contains all output and errors encountered during the knitting procedure. That is where to first look when there are problems compiling your document. Here is the line in buildtex.bat that does this:
@@ -144,16 +146,17 @@ A figure/table reference works by adding a reference name to a figure/table, the
 
 \subsection{How appendix references work} \label{subsec:how.appendix.refs.work}
 
-Appendix references are much like chapters of a book. They can be added or commented out easily at the bottom of \emph{\rnwexamplefile}. This helps with the incremental form of development where you make sure the main document is compiling and then when ready, uncomment the appendix inclusion code and the appendix will be included in the document. Once included, any appendix references will be resolved. To reference an appendix, use this syntax: \verb!\ref{chap:example.1}! which resolves to appendix \ref{chap:example.1}. This is also clickable and will take you directly to the appendix.
+Appendix references are much like chapters of a book. They can be added or commented out easily at the bottom of \emph{\rnwexamplefile}. This helps with the incremental form of development where you make sure the main document is compiling and then when ready, uncomment the appendix inclusion code and the appendix will be included in the document. Once included, any appendix references will be resolved.
 
 The code which adds an appendix is \emph{knitr} code because you want the appendix added before the knitting process so that any figures or R expressions are resolved, just like in the main document. This is an example of how appendix code is added:
 
 \verb!\rfoot{Appendix A -- Example appendix 1}!
 
-<<appendix-1, child='appendix-1/appendix-1.Rnw', eval=FALSE, literal=TRUE>>=
+\verb!<<appendix-1, child='appendix-1/appendix-1.Rnw'>>=! \\
+\verb!@!
 
-@
-
+ To reference this appendix, use this syntax: \verb!\ref{chap:example.1}! which resolves to appendix \ref{chap:example.1}. This is also clickable and will take you directly to the appendix. The reference must be defined at the beginning of \emph{\rnwappendixonefile} like this: \verb!\label{chap:example.1}!. This method is repeated for all appendices. They will be lettered in the order in which they appear in \rnwexamplefile, so it is very easy to change the order of appendices and rebuild the document.
+ 
 \bigskip
 
 

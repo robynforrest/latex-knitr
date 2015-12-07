@@ -131,6 +131,7 @@
 
 %% ** Declare global variables (commands) here **
 %% Filenames used for this project
+\newcommand{\rdata}{.RData}
 \newcommand{\rfile}{example.r}
 \newcommand{\texfile}{example.tex}
 \newcommand{\rnwexamplefile}{example.Rnw}
@@ -237,7 +238,7 @@ if(use.binary.envir){
 \renewcommand{\theequation}{\arabic{equation}}
 
 %% Here is where the maindoc Rnw file is inserted.
-%% It is simply pasted in here, before the knitting is done,
+%% It is simply pasted in here by knitr, just before the knitting is done,
 %% So the final tex file will include everything.
 <<main-doc, child='maindoc/maindoc.Rnw'>>=
 @
@@ -270,9 +271,9 @@ if(use.binary.envir){
 <<appendix-1, child='appendix-1/appendix-1.Rnw'>>=
 @
 
-%% \rfoot{Appendix B -- Example appendix 2}
-%% <<appendix-2, child='appendix-1/appendix-1.Rnw'>>=
-%% @
+\rfoot{Appendix B -- Example appendix 2}
+<<appendix-2, child='appendix-2/appendix-2.Rnw'>>=
+@
 
 %% Used when you need to insert outside documents:
 %% \setcounter{page}{68}
