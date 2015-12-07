@@ -21,14 +21,7 @@ Usually the french version of the abstract goes here, but it is included here to
 The purpose of this document is to show how knitr and \latex work together to make a PDF file from code. When reading this PDF document, you should also look at the code files to compare. Start with \rnwexamplefile\ and \rnwmaindocfile. This introduction and most of the rest of the document can be found in \rnwmaindocfile. \latex allows you to write commands into the text. For example the command \verb!\fishname! =  \fishname\ and \verb!\sciencename! = \emph{\sciencename}. These are defined in \rnwexamplefile\ and can be used throughout the document, and in any of the appendices without further modification. \\
 
 \section{Building this document} \label{sec:building}
-Before building this document, you need to install a couple of things which allow for the rendering of \emph{knitr} code in the document for example purposes. Open Rgui and do the following:
-
-\begin{lstlisting}[language=R]
-  install.packages("devtools")
-  devtools::install_github("thell/knitliteral")
-\end{lstlisting}
-
-Open the file \rnwexamplefile. Look at the first R code chunk, starting on approximately line 197. This is where the R environment is loaded so that the figures and tables can be made, and values can be referenced later in the document. There are two choices: source the R file, or load a binary R environment. Sourcing the file works fine, but if there is a lot of loading of data or calculations that have to happen during the sourcing the build will take a long time. A much quicker way is to open an R session, and source the \rfile\ manually, then save the R environment to a file called \rdata\ in the \emph{r} directory. If this method is used, make sure to set \textbf{\lstinline{use.binary.envir <- TRUE}} on line ~216 of \rnwexamplefile.
+Open the file \rnwexamplefile. Look at the first R code chunk, starting on line 191. This is where the R environment is loaded so that the figures and tables can be made, and values can be referenced later in the document. There are two choices: source the R file, or load a binary R environment. Sourcing the file works fine, but if there is a lot of loading of data or calculations that have to happen during the sourcing the build will take a long time. A much quicker way is to open an R session, and source the \rfile\ manually, then save the R environment to a file called \rdata\ in the \emph{r} directory. If this method is used, make sure to set \textbf{\lstinline{use.binary.envir <- TRUE}} on line 209 of \rnwexamplefile.
 
 To build this document, open a command line and enter \textbf{buildtex.bat}. When you run buildtex.bat two things happen:
 \begin{enumerate}[noitemsep,nolistsep]
@@ -48,12 +41,12 @@ Some \latex packages may have to be installed. If so, the package manager dialog
 
 \subsection{The knitting process}
 
-When \emph{knitr} is called, it parses the \emph{\rnwexamplefile} file, looking for special parenthesis characters which are called \emph{R code chunks}. The chunks begin with a set of parentheses and equals sign \verb!<< >>=! and end with the \emph{at} symbol \verb!@!. Anything between them is an R code chunk which will be evaluated by \emph{knitr}. Inside the beginning parentheses, you can define many \emph{chunk options}. The official page listing these options is here: \href{http://yihui.name/knitr/options/}{Knitr chunk options}. In this document the file \emph{\rnwexamplefile} holds one chunk which loads the R environment, and \emph{\rnwmaindocfile} holds the figure chunks (one for each figure) which each hold simple commands to plot some examples. For example, figure \ref{fig:example-half-torus} is called like this (without the eval=FALSE):
+When \emph{knitr} is called, it parses the \emph{\rnwexamplefile} file, looking for special parenthesis characters which are called \emph{R code chunks}. The chunks begin with a set of parentheses and equals sign \verb!<< >>=! and end with the \emph{at} symbol \verb!@!. Anything between them is an R code chunk which will be evaluated by \emph{knitr}. Inside the beginning parentheses, you can define many \emph{chunk options}. The official page listing these options is here: \href{http://yihui.name/knitr/options/}{Knitr chunk options}. In this document the file \emph{\rnwexamplefile} holds one chunk which loads the R environment, and \emph{\rnwmaindocfile} holds the figure chunks (one for each figure) which each hold simple commands to plot some examples. For example, figure \ref{fig:example-half-torus} is called like this:
 
 %% Outputs the chunk as code into the document by using eval=FALSE and literal=TRUE
-<<fig.height=9, fig.width=8, eval=FALSE, literal=TRUE>>=
-half.torus()
-@
+\verb!<<fig.height=9, fig.width=8>>=! \\
+\verb!half.torus()! \\
+\verb!@!
 
 \subsubsection{Running R code directly in text}
 One should always write calculated values or data by using a reference to the R objects instead of typing the numbers in as text. This way, if something changes you don't have to read and verify every number in your document, they will be updated automatically by \emph{knitr}.
