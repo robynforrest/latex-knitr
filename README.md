@@ -1,4 +1,4 @@
-____
+added____
 # latex-knitr
 
 latex-knitr is an example project to allow you to get started using R's knitr package with latex on MS Windows.
