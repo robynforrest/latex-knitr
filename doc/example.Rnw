@@ -183,13 +183,6 @@
 
 \begin{document}
 
-%% This is included so that this example can show code chunks in the actual output docment without
-%% evaluating them. All you have to do is set eval=FALSE and literal=TRUE inside the << >> to output
-%% the chunk to the document.
-<<"knitr-setup", include=FALSE, cache=FALSE>>=
-knitLiteral::kast_on()
-@
-
 %% Start by sourcing your R code here. The R environment will persist throughout the latex code,
 %% so anything sourced or required here will be accessible later on in the latex knitr chunks.
 %% Note the start and end bracketing for this knitr chunk <<>>= and @.
