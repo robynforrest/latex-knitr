@@ -37,9 +37,9 @@
 %% START - COMMENTED OUT TO AVOID HYPERREF COLLISIONS
 %% \usepackage[bookmarks,bookmarksopen,bookmarksdepth=4]{hyperref}
 
-%% \hypersetup{                   % Set up the hyperref options here
-%%     pdftitle={Arrowtooth Flounder},
-%%     pdfauthor={Chris Grandin},
+%%  \hypersetup{                   % Set up the hyperref options here
+%%     pdftitle={Linking environmental factors to distribution and productivity of %%     groundfish species in the Hecate Strait and Queen Charlotte Sound, British Columbia},
+%%     pdfauthor={Robyn Forrest, Jean-Baptiste Lecomte and Brock Ramshaw},
 %%     pdfsubject={Stock Assessment},
 %%     %pdfkeywords={keyword1, keyword2},
 %%     bookmarksnumbered=true,
@@ -150,10 +150,96 @@
 \newcommand{\bM}[1]{\mathlarger{\mathlarger{#1}}}
 %% Allow newline breaks in a table cell: syntax is \specialcell{first line\\secondline}
 \newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
-\newcommand{\fishname}{Arrowtooth Flounder}
-\newcommand{\sciencename}{Atheresthes stomias}
-\newcommand{\familyname}{Pleuronectidae}
-\newcommand{\commonname}{Turbot}
+\newcommand{\fishnameARF}{Arrowtooth Flounder}
+\newcommand{\sciencenameARF}{Atheresthes stomias}
+\newcommand{\familynameARF}{Pleuronectidae}
+\newcommand{\commonnameARF}{Turbot}
+
+\newcommand{\fishnameCAR}{Canary Rockfish}
+\newcommand{\sciencenameCAR}{Sebastes pinniger}
+\newcommand{\familynameCAR}{Sebastidae}
+\newcommand{\commonnameCAR}{}
+
+\newcommand{\fishnameDOG}{Spiny Dogfish}
+\newcommand{\sciencenameDOG}{Squalus acanthias}
+\newcommand{\familynameDOG}{Squalidae}
+\newcommand{\commonnameDOG}{}
+
+\newcommand{\fishnameDOL}{Dover Sole}
+\newcommand{\sciencenameDOL}{Microstomus pacificus}
+\newcommand{\familynameDOL}{Pleuronectidae}
+\newcommand{\commonnameDOL}{}
+
+\newcommand{\fishnameENL}{English Sole}
+\newcommand{\sciencenameENL}{Parophrys vetulus}
+\newcommand{\familynameENL}{Pleuronectidae}
+\newcommand{\commonnameENL}{}
+
+\newcommand{\fishnameGSR}{Greenstripe Rockfish}
+\newcommand{\sciencenameGSR}{Sebastes elongatus}
+\newcommand{\familynameGSR}{Sebastidae}
+\newcommand{\commonnameGSR}{}
+
+\newcommand{\fishnameLST}{Longspine Thornyhead}
+\newcommand{\sciencenameLST}{Sebastolobus altivelis}
+\newcommand{\familynameLST}{Sebastidae}
+\newcommand{\commonnameLST}{}
+
+\newcommand{\fishnamePAC}{Pacific Cod}
+\newcommand{\sciencenamePAC}{Gadus macrocephalus}
+\newcommand{\familynamePAC}{Gadidae}
+\newcommand{\commonnamePAC}{}
+
+\newcommand{\fishnamePEL}{Petrale Sole}
+\newcommand{\sciencenamePEL}{Eopsetta jordani}
+\newcommand{\familynamePEL}{Pleuronectidae}
+\newcommand{\commonnamePEL}{}
+
+\newcommand{\fishnamePOP}{Pacific Ocean Perch}
+\newcommand{\sciencenamePOP}{Sebastidae}
+\newcommand{\familynamePOP}{Sebastidae}
+\newcommand{\commonnamePOP}{}
+
+\newcommand{\fishnameRAT}{Ratfish}
+\newcommand{\sciencenameRAT}{Hydrolagus colliei}
+\newcommand{\familynameRAT}{Chimaeridae}
+\newcommand{\commonnameRAT}{Spotted Ratfish}
+
+\newcommand{\fishnameROL}{Rock Sole}
+\newcommand{\sciencenameROL}{Lepidopsetta bilineata}
+\newcommand{\familynameROL}{Pleuronectidae}
+\newcommand{\commonnameROL}{}
+
+\newcommand{\fishnameRSR}{Redstripe Rockfish}
+\newcommand{\sciencenameRSR}{Sebastes proriger}
+\newcommand{\familynameRSR}{Sebastidae}
+\newcommand{\commonnameRSR}{}
+
+\newcommand{\fishname610RXL}{Rex Sole}
+\newcommand{\sciencenameRXL}{Glyptocephalus zachirus}
+\newcommand{\familynameRXL}{Pleuronectidae}
+\newcommand{\commonnameRXL}{}
+
+\newcommand{\fishnameSGR}{Silvergray Rockfish}
+\newcommand{\sciencenameSGR}{Sebastes brevispinis}
+\newcommand{\familynameSGR}{Sebastidae}
+\newcommand{\commonnameSGR}{}
+
+\newcommand{\fishnameSST}{Shortspine Thornyhead}
+\newcommand{\sciencenameSST}{Sebastolobus alascanus}
+\newcommand{\familynameSST}{Sebastidae}
+\newcommand{\commonnameSST}{}
+
+\newcommand{\fishnameWWR}{Widow Rockfish}
+\newcommand{\sciencenameWWR}{Sebastes entomelas}
+\newcommand{\familynameWWR}{Sebastidae}
+\newcommand{\commonnameWWR}{}
+
+\newcommand{\fishnameYMR}{Yellowmouth Rockfish}
+\newcommand{\sciencenameYMR}{Sebastes reedi}
+\newcommand{\familynameYMR}{Sebastidae}
+\newcommand{\commonnameYMR}{}
+
 \newcommand{\Avuln}{Age-at-50\%-vulnerability}
 \newcommand{\Amat}{Age-at-50\%-maturity}
 \newcommand{\amat}{age-at-50\%-maturity}
@@ -168,8 +254,8 @@
 %% \lhead{DRAFT -- Non-citable working paper}  % Omit for final ResDoc.
 \lhead{}
 \rhead{}
-\lfoot{Example \latex-knitr} %% Species common name for left footer
-\rfoot{DRAFT - DO NOT CITE} %% The area of the assessment for right footer
+\lfoot{SPERA} %% Species common name for left footer
+\rfoot{Pacific Region} %% The area of the assessment for right footer
 %% \rfoot{WP 2012/P02a}     %% Change to appendix number for appendices
                             %% Will probably delete footers in main text
                             %%  for final Res Doc.
@@ -201,7 +287,7 @@ opts_chunk$set(dev='cairo_ps',fig.path='knitr-cache/', fig.dpi=96, fig.width=7.5
 ## You can source your R code here. For projects with a long load time it will
 ## be better to source the file inside an R session, then save the environment
 ## as .RData (it asks you if you want to do this when you quit the R session),
-## then use the load() function to load the binary .RData envirnonment. This
+## then use the load() function to load the binary .RData environment. This
 ## is much, much faster and will help during development because you are
 ## constantly compiling the document. If you do this, you will need to
 ## put the require or library statements that the functions use because the
@@ -243,7 +329,7 @@ if(use.binary.envir){
 \appendix
 
 %% Now want to number sections, tables etc. as A.1, A.2, etc.
-%% Thought these wouldn't be with the appendix package, as
+%% Though these wouldn't be with the appendix package, as
 %%  automatic, but do need them even if use \begin{appendices}:
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
 \renewcommand{\thetable}{\thechapter.\arabic{table}}
@@ -254,17 +340,17 @@ if(use.binary.envir){
 %%  including the Appendix (chapter) names (not sections or
 %%  subsections):
 
-\lfoot{Example \latex-knitr}
+\lfoot{SPERA}
 
 %% Add an appendix. The appedices or any other Rnw files will be in the same scope as the main file,
 %% so they see the same R objects and those objects can be referenced directly.
 %% There is no difference between this and maindoc, they are both pasted in directly
 %% before the code is knitted.
-\rfoot{Appendix A -- Example appendix 1}
+\rfoot{Appendix A -- Species Results}
 <<appendix-1, child='appendix-1/appendix-1.Rnw'>>=
 @
 
-\rfoot{Appendix B -- Example appendix 2}
+\rfoot{Appendix B -- Modeling Inputs}
 <<appendix-2, child='appendix-2/appendix-2.Rnw'>>=
 @
 
