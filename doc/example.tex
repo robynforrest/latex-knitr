@@ -1,3 +1,348 @@
+%% example.Rnw
+%% A document to show how to use latex and knitr on Windows.
+%% C Grandin, November/December 2015.
+%% There are various commented-out lines which are from previous projects
+%% They are left in for examples of what can be done.
+%% There may be packages included which are not required for this example
+%%  document but would be required for a real CSAS document.
+\documentclass[11pt]{book}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage{resDocSty}
+\usepackage{appendix}
+\usepackage{cite}
+%% need array when specifying a ragged right column:  >{\raggedright\arraybackslash}{p2in}.
+\usepackage{longtable,array}
+%% \renewcommand{\chaptername}{Appendix}
+%% \addto\captionsenglish{\renewcommand\chaptername{Part}}
+\usepackage{import}            % for figures in chapter subdirectories
+\usepackage{float}             % Allow figures and tables to be controlled better (avoid the floating).
+
+% Had these for YMR Eqns appendix:
+% \renewcommand{\footrulewidth}{0.4pt}
+% \renewcommand{\headrulewidth}{0pt}
+
+\usepackage{alltt}             %% Allows symbols inside a verbatim-type section
+\usepackage{listings}          %% For code listing with syntax highlighting
+\usepackage{graphicx}          % For inclusion of figures
+\usepackage{verbatim,fancyvrb} % verbatim package allows blocks with special characters to be shown easily.
+\usepackage{xifthen}           % provides \ifthenelse and \isempty
+\usepackage{color, colortbl}
+\usepackage{arydshln}          % For dashed lines in tables (has to be loaded after other stuff)
+\usepackage{pdfpages}          % So we can import PDFs into the document (e.g. request for science advice).
+\usepackage[parfill]{parskip}  % So paragraphs will have a blank line between them
+\setlength{\parskip}{12pt}
+
+% For hyperlinked references (figures and citations, etc.). The bookmarksdepthlevel allows
+%  the TOC to be shown in the bookmarks tree in the output PDF.
+
+%% START - COMMENTED OUT TO AVOID HYPERREF COLLISIONS
+%% \usepackage[bookmarks,bookmarksopen,bookmarksdepth=4]{hyperref}
+
+%%  \hypersetup{                   % Set up the hyperref options here
+%%     pdftitle={Linking environmental factors to distribution and productivity of %%     groundfish species in the Hecate Strait and Queen Charlotte Sound, British Columbia},
+%%     pdfauthor={Robyn Forrest, Jean-Baptiste Lecomte and Brock Ramshaw},
+%%     pdfsubject={Stock Assessment},
+%%     %pdfkeywords={keyword1, keyword2},
+%%     bookmarksnumbered=true,
+%%     bookmarksopen=true,
+%%     bookmarksopenlevel=1,
+%%     colorlinks=false,   % Must be false for CSAS submission. This makes it harder to find the links but they stupidly require it.
+%%     hidelinks=true,     % Necessary to remove boxes around hyperlinks for submission
+%%     %linkcolor=blue,    % Commented out for the submission
+%%     %allcolors=blue,    % Commented out for the submission
+%%     %citecolor=cyan,    % Commented out for the submission
+%%     pdfstartview=Fit,
+%%     pdfpagemode=UseOutlines,
+%%     breaklinks=true     % Allows the list of figures and tables to have wrapping text (since they are actually hyperlinks).
+%%     %pdfpagelayout=TwoPageRight
+%% }
+%% END - COMMENTED OUT TO AVOID HYPERREF COLLISIONS
+
+%% Use the following codes for references within the document.
+%%   chap: chapter
+%%    sec: section
+%% subsec: subsection
+%%   fig: figure
+%%    tab: table
+%%     eq: equation
+%%    lst: code listing
+%%    itm: enumerated list item
+%%    app: appendix subsection
+\usepackage{xspace}            %% Provide the LaTeX and TeX symbols
+\usepackage{hypcap}            %% So links will anchor at figure, not caption
+\usepackage{subfig}            %% For two-panel plots
+\usepackage{scrextend}         %% For indenting blocks of text with 'addmargin'
+\usepackage{relsize}           %% For mathlarger, which makes equations bigger
+\usepackage{algorithm}         %% For display of pseudocode
+\usepackage{algpseudocode}     %% For display of pseudocode
+\usepackage{linegoal}          %% For display of pseudocode
+%% A \Let command for defining assignments within the algorithmic environment which
+%% supports automatic indentation when the second argument is too long to fit
+%% on one line
+\newcommand*{\Let}[2]{\State #1 $\gets$
+\parbox[t]{\linegoal}{#2\strut}}
+%% A \State command that supports automatic indentation when the argument's
+%% content is too long to fit on one line
+\newcommand*{\LongState}[1]{\State
+\parbox[t]{\linegoal}{#1\strut}}
+
+\usepackage{enumitem}          % To remove spacing between list items [noitemsep,nolistsep]
+\newlist{longitem}{enumerate}{5}
+\setlist[longitem,1]{label=\arabic*)}
+\setlist[longitem,2]{label=\alph*)}
+\setlist[longitem,3]{label=\roman*)}
+\setlist[longitem,4]{label=\arabic*)}
+\setlist[longitem,5]{label=\alph*)}
+
+\definecolor{rowclr}{RGB}{255, 192, 203}
+\newcommand{\sQuote}[1]{`#1'}
+\newcommand{\dQuote}[1]{``#1''}
+\newcommand{\eqn}[1]{\begin{equation}#1\end{equation}}
+\newcommand{\gfrac}[2]{\genfrac{}{}{}{0}{#1}{#2}}
+
+\newcommand\bestfig[6]{ % #1=filename, #2=main caption, #3=figure height, #4=short caption #5=file extension #6=directory
+	%% Needs package epstopdf to work
+	\begin{figure}[htpb] %[htbp]
+	\centering
+	\ifthenelse{ \isempty{#5} \OR \equal{#5}{eps} }
+		{\includegraphics[width=6.5in,height=#3in,keepaspectratio=TRUE]{#6#1.eps}}
+		{\setlength\fboxsep{0pt}
+		 \setlength\fboxrule{0pt}
+		 \fbox{\includegraphics[width=6.5in,height=#3in,keepaspectratio=TRUE]{#6#1.#5}}}
+	%% source: http://xelatex.blogspot.ca/2008/03/newcommand-with-optional-argument.html
+	\ifthenelse{\isempty{#4}}
+		{\caption[#2]{#2}}  % \vspace{-2ex}} AME removing
+		{\caption[#4]{#2}}  % \vspace{-2ex}}  ``
+	\label{fig:#1}
+	\end{figure}
+        }
+
+\newcommand\pbsfig[5]{    % #1=filename, #2=main caption, #3=figure height, #4=short caption, #5=directory
+	\begin{figure}[tp] %[htbp]  Rowan had ht!
+	\centering
+	\includegraphics[width=6.5in,height=#3in,keepaspectratio=TRUE]{#5#1.eps}
+	%% source: http://xelatex.blogspot.ca/2008/03/newcommand-with-optional-argument.html
+	\ifthenelse{\isempty{#4}}
+		{\caption[#2]{#2}\vspace{-2ex}}
+		{\caption[#4]{#2}\vspace{-2ex}}
+	\label{fig:#1}
+	\end{figure}
+	%\clearpage
+}
+
+%% ** Declare global variables (commands) here **
+%% Filenames used for this project
+\newcommand{\rdata}{.RData}
+\newcommand{\rfile}{example.r}
+\newcommand{\texfile}{example.tex}
+\newcommand{\rnwexamplefile}{example.Rnw}
+\newcommand{\rnwmaindocfile}{maindoc.Rnw}
+\newcommand{\rnwappendixonefile}{appendix-1.Rnw}
+\newcommand{\rnwappendixtwofile}{appendix-2.Rnw}
+
+%% Next two lines provide the LaTeX and TeX symbols (from xspace package)
+\newcommand{\latex}{\LaTeX\xspace}
+\newcommand{\tex}{\TeX\xspace}
+%% Allows the Sexpr command to be shown as text in the final document for example reasons
+\newcommand{\ShowSexpr}[1]{\texttt{{\char`\\}Sexpr\{#1\}}}
+%% eor - Show two things with a vertical bar between them
+\newcommand{\eor}[2]{{#1$\Vert$#2}}
+%% bM - makes equations larger
+\newcommand{\bM}[1]{\mathlarger{\mathlarger{#1}}}
+%% Allow newline breaks in a table cell: syntax is \specialcell{first line\\secondline}
+\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+\newcommand{\fishnameARF}{Arrowtooth Flounder}
+\newcommand{\sciencenameARF}{Atheresthes stomias}
+\newcommand{\familynameARF}{Pleuronectidae}
+\newcommand{\commonnameARF}{Turbot}
+
+\newcommand{\fishnameCAR}{Canary Rockfish}
+\newcommand{\sciencenameCAR}{Sebastes pinniger}
+\newcommand{\familynameCAR}{Sebastidae}
+\newcommand{\commonnameCAR}{}
+
+\newcommand{\fishnameDOG}{Spiny Dogfish}
+\newcommand{\sciencenameDOG}{Squalus acanthias}
+\newcommand{\familynameDOG}{Squalidae}
+\newcommand{\commonnameDOG}{}
+
+\newcommand{\fishnameDOL}{Dover Sole}
+\newcommand{\sciencenameDOL}{Microstomus pacificus}
+\newcommand{\familynameDOL}{Pleuronectidae}
+\newcommand{\commonnameDOL}{}
+
+\newcommand{\fishnameENL}{English Sole}
+\newcommand{\sciencenameENL}{Parophrys vetulus}
+\newcommand{\familynameENL}{Pleuronectidae}
+\newcommand{\commonnameENL}{}
+
+\newcommand{\fishnameGSR}{Greenstripe Rockfish}
+\newcommand{\sciencenameGSR}{Sebastes elongatus}
+\newcommand{\familynameGSR}{Sebastidae}
+\newcommand{\commonnameGSR}{}
+
+\newcommand{\fishnameLST}{Longspine Thornyhead}
+\newcommand{\sciencenameLST}{Sebastolobus altivelis}
+\newcommand{\familynameLST}{Sebastidae}
+\newcommand{\commonnameLST}{}
+
+\newcommand{\fishnamePAC}{Pacific Cod}
+\newcommand{\sciencenamePAC}{Gadus macrocephalus}
+\newcommand{\familynamePAC}{Gadidae}
+\newcommand{\commonnamePAC}{}
+
+\newcommand{\fishnamePEL}{Petrale Sole}
+\newcommand{\sciencenamePEL}{Eopsetta jordani}
+\newcommand{\familynamePEL}{Pleuronectidae}
+\newcommand{\commonnamePEL}{}
+
+\newcommand{\fishnamePOP}{Pacific Ocean Perch}
+\newcommand{\sciencenamePOP}{Sebastidae}
+\newcommand{\familynamePOP}{Sebastidae}
+\newcommand{\commonnamePOP}{}
+
+\newcommand{\fishnameRAT}{Ratfish}
+\newcommand{\sciencenameRAT}{Hydrolagus colliei}
+\newcommand{\familynameRAT}{Chimaeridae}
+\newcommand{\commonnameRAT}{Spotted Ratfish}
+
+\newcommand{\fishnameROL}{Rock Sole}
+\newcommand{\sciencenameROL}{Lepidopsetta bilineata}
+\newcommand{\familynameROL}{Pleuronectidae}
+\newcommand{\commonnameROL}{}
+
+\newcommand{\fishnameRSR}{Redstripe Rockfish}
+\newcommand{\sciencenameRSR}{Sebastes proriger}
+\newcommand{\familynameRSR}{Sebastidae}
+\newcommand{\commonnameRSR}{}
+
+\newcommand{\fishnameRXL}{Rex Sole}
+\newcommand{\sciencenameRXL}{Glyptocephalus zachirus}
+\newcommand{\familynameRXL}{Pleuronectidae}
+\newcommand{\commonnameRXL}{}
+
+\newcommand{\fishnameSGR}{Silvergray Rockfish}
+\newcommand{\sciencenameSGR}{Sebastes brevispinis}
+\newcommand{\familynameSGR}{Sebastidae}
+\newcommand{\commonnameSGR}{}
+
+\newcommand{\fishnameSST}{Shortspine Thornyhead}
+\newcommand{\sciencenameSST}{Sebastolobus alascanus}
+\newcommand{\familynameSST}{Sebastidae}
+\newcommand{\commonnameSST}{}
+
+\newcommand{\fishnameWWR}{Widow Rockfish}
+\newcommand{\sciencenameWWR}{Sebastes entomelas}
+\newcommand{\familynameWWR}{Sebastidae}
+\newcommand{\commonnameWWR}{}
+
+\newcommand{\fishnameYMR}{Yellowmouth Rockfish}
+\newcommand{\sciencenameYMR}{Sebastes reedi}
+\newcommand{\familynameYMR}{Sebastidae}
+\newcommand{\commonnameYMR}{}
+
+\newcommand{\Avuln}{Age-at-50\%-vulnerability}
+\newcommand{\Amat}{Age-at-50\%-maturity}
+\newcommand{\amat}{age-at-50\%-maturity}
+\newcommand{\bc}{British Columbia}
+%% For subscripts in text mode
+\newcommand{\subscr}[1]{$_{\text{#1}}$}
+
+%% Headers and footers
+%% For Res Doc, best to have a left and a right footer
+%%  (and/or header), not just one (for double-sided printing).
+%%
+%% \lhead{DRAFT -- Non-citable working paper}  % Omit for final ResDoc.
+\lhead{}
+\rhead{}
+\lfoot{SPERA} %% Species common name for left footer
+\rfoot{Pacific Region} %% The area of the assessment for right footer
+%% \rfoot{WP 2012/P02a}     %% Change to appendix number for appendices
+                            %% Will probably delete footers in main text
+                            %%  for final Res Doc.
+
+%% \linenumbers             %% Uncomment to add in line numbers
+%% \modulolinenumbers[5]    %% just number every 5th line
+%% \def\AppLet{F}           %% Appendix letter - we had this
+                            %%  to number equations in Appendix
+                            %%  F as (F.17) etc.
+%% \def\StartP{102}         %% page start
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+\def \KnitrHomePath {C:\GitHub\latex-knitr\doc}  %%added by BROCK, not sure if it is necessary
+
+%% Start by sourcing your R code here. The R environment will persist throughout the latex code,
+%% so anything sourced or required here will be accessible later on in the latex knitr chunks.
+%% Note the start and end bracketing for this knitr chunk <<>>= and @.
+%% Sourcing all code here, then calling the plot functions later will be much faster
+%% and make for more maintanable code.
+
+
+\input{preamble}            %% Table of contents, etc.
+% \setcounter{chapter}{0}
+% \setcounter{table}{0}
+% \setcounter{figure}{0}
+\setcounter{secnumdepth}{5} %% To number subsubheadings-ish
+
+%% To number sections, tables etc. as 1, 2, 3, not 1.1 etc. (where
+%%  the first 1 would be chapter number).
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\theequation}{\arabic{equation}}
+
+%% Here is where the maindoc Rnw file is inserted.
+%% It is simply pasted in here by knitr, just before the knitting is done,
+%% So the final tex file will include everything.
+
 %% mainDoc.Rnw - Main part of the document
 %% Note the variables such as \fishname are global from the calling file (example.Rnw)
 
@@ -71,7 +416,7 @@ When \emph{knitr} is called, it parses the \emph{\rnwexamplefile} file, looking 
 \subsubsection{Running R code directly in text}
 One should always write calculated values or data by using a reference to the R objects instead of typing the numbers in as text. This way, if something changes you don't have to read and verify every number in your document, they will be updated automatically by \emph{knitr}.
 
-Here's how you write some values by reference from your R environment inside \latex text block: For example to get the mean of x you would use the command: \$\ShowSexpr{mean(x)}\$ which in this case evaluates to $\Sexpr{mean(x)}$. The \verb!$\Sexpr{}$! construct represents an S-expression, where S was the predecessor to R. For some reason it hasn't yet been changed to \verb!$\Rexpr{}$!. In this example, the values for the x vector were read in from \emph{example.r} at the beginning of the knitting process and is accessible throughout the document. You can call simple R commands using the \verb!$\Sexpr{}$! command inside \latex. You can do more than one command by separating with a semicolon, for example the command \$\ShowSexpr{z=x+y;mean(z)}\$ evaluates to $\Sexpr{z=x+y;mean(z)}$ for the x and y values loaded from \emph{example.r}.\\
+Here's how you write some values by reference from your R environment inside \latex text block: For example to get the mean of x you would use the command: \$\ShowSexpr{mean(x)}\$ which in this case evaluates to $19.8623508$. The \verb!$\Sexpr{}$! construct represents an S-expression, where S was the predecessor to R. For some reason it hasn't yet been changed to \verb!$\Rexpr{}$!. In this example, the values for the x vector were read in from \emph{example.r} at the beginning of the knitting process and is accessible throughout the document. You can call simple R commands using the \verb!$\Sexpr{}$! command inside \latex. You can do more than one command by separating with a semicolon, for example the command \$\ShowSexpr{z=x+y;mean(z)}\$ evaluates to $68.3410075$ for the x and y values loaded from \emph{example.r}.\\
 
 \subsection{What to do if there's an error}
 
@@ -178,7 +523,7 @@ The code which adds an appendix is \emph{knitr} code because you want the append
 Here's a reference to an appendix: % \ref{chap:propfemale} and \ref{chap:agecompweight}.\\
 
 %\addcontentsline{toc}
-\{section}{REFERENCES}
+{section}{REFERENCES}
 \bibliographystyle{resDoc}
 %% This tells latex that the bilbliography file is two directories up and is called all.bib
 bibliography{../../all}
@@ -236,11 +581,40 @@ Initial log recruitment deviations ($\omega_{init,t}$)        & 19 & None    & N
 
 %% How you call an xtable from latex. Note there is no need for anything other than
 %% the R call to make.xtable. The label can be referenced elsewhere in the document.
-<<results='asis', echo=FALSE>>=
-make.xtable(seed=c(1,2,3,4), xcaption=paste0("Example using xtable with some pseudo-random seeded numbers. The function ",
-            "get.align makes the left column justified left and the rest justified right which ",
-            "is how most tables giving values are shown."), xlabel="tab:example-xtable")
-@
+% latex table generated in R 3.2.2 by xtable 1.8-0 package
+% Mon Dec 14 14:04:37 2015
+\begin{table}[ht]
+\centering
+\caption{Example using xtable with some pseudo-random seeded numbers. The function get.align makes the left column justified left and the rest justified right which is how most tables giving values are shown.} 
+\label{tab:example-xtable}
+\begin{tabular}{lrrrrrr}
+  \hline
+\textbf{ID} & $R_{s=1}$ & $R_{s=2}$ & $R_{s=3}$ & $R_{s=4}$ & $\overline{R}$ & $\sigma$ \\ 
+  \hline
+  1 & 1.52 & 11.57 & 12.54 & 16.04 & 10.42 & 6.23 \\ 
+    2 & 5.19 & 12.18 & 5.18 & 6.16 & 7.18 & 3.37 \\ 
+    3 & 11.12 & 16.99 & 11.56 & 19.04 & 14.68 & 3.94 \\ 
+    4 & 5.87 & 7.55 & 1.58 & 19.49 & 8.62 & 7.67 \\ 
+    5 & 14.75 & 8.27 & 15.46 & 5.33 & 10.95 & 4.96 \\ 
+    6 & 1.58 & 6.21 & 2.02 & 15.79 & 6.40 & 6.60 \\ 
+    7 & 15.16 & 3.91 & 3.79 & 8.43 & 7.82 & 5.35 \\ 
+    8 & 13.65 & 6.07 & 5.13 & 1.70 & 6.64 & 5.04 \\ 
+    9 & 19.58 & 14.46 & 10.44 & 13.04 & 14.38 & 3.85 \\ 
+   10 & 16.18 & 3.30 & 15.46 & 4.54 & 9.87 & 6.89 \\ 
+   11 & 12.75 & 8.52 & 8.08 & 18.19 & 11.88 & 4.70 \\ 
+   12 & 10.49 & 7.17 & 16.04 & 5.64 & 9.83 & 4.60 \\ 
+   13 & 5.80 & 17.18 & 11.04 & 13.30 & 11.83 & 4.75 \\ 
+   14 & 4.09 & 13.79 & 16.24 & 2.37 & 9.12 & 6.91 \\ 
+   15 & 6.30 & 9.46 & 4.25 & 17.04 & 9.26 & 5.61 \\ 
+   16 & 17.23 & 3.48 & 12.21 & 12.05 & 11.24 & 5.71 \\ 
+   17 & 3.71 & 1.65 & 2.14 & 9.24 & 4.18 & 3.48 \\ 
+   18 & 4.15 & 4.07 & 16.51 & 1.54 & 6.57 & 6.74 \\ 
+   19 & 19.46 & 16.45 & 18.98 & 5.80 & 15.17 & 6.39 \\ 
+   20 & 18.94 & 3.53 & 19.74 & 19.90 & 15.53 & 8.01 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
 
 \begin{table}[H]
 \centering
@@ -299,9 +673,11 @@ WCVISS & 0.061 & 0.104 & 0.172 & 0.022 & 0.059 & 0.118 \\
 %%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[H]
 \begin{center}
-<<fig.height=9, fig.width=8>>=
-random.stuff()
-@
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{knitr-cache/unnamed-chunk-3-1} 
+
+\end{knitrout}
 \end{center}
 %\vspace{0mm}
 \caption{Random points example... Degrees are represented in \latex like this 0.1$^\circ$ and superscript like this km$^2$)}
@@ -324,9 +700,11 @@ random.stuff()
 
 \begin{figure}[H]
 \begin{center}
-<<fig.height=5, fig.width=8>>=
-brownian.motion()
-@
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{knitr-cache/unnamed-chunk-4-1} 
+
+\end{knitrout}
 \end{center}
 %\vspace{0mm}
 \caption{Brownian motion example..}
@@ -337,9 +715,11 @@ brownian.motion()
 %%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[H]
 \begin{center}
-<<fig.height=9, fig.width=8>>=
-half.torus()
-@
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{knitr-cache/unnamed-chunk-5-1} 
+
+\end{knitrout}
 \end{center}
 %\vspace{0mm}
 \caption{Half torus example..}
@@ -351,12 +731,200 @@ half.torus()
 %%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[H]
 \begin{center}
-<<fig.height=9, fig.width=8>>=
-plot.galaxy.data()
-@
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{knitr-cache/unnamed-chunk-6-1} 
+
+\end{knitrout}
 \end{center}
 %\vspace{0mm}
 \caption{Galaxy example}
 \label{fig:example-galaxy}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+
+\addtocontents{toc}{\par {\bf \vspace{10mm} APPENDICES} \par}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+\appendix
+
+%% Now want to number sections, tables etc. as A.1, A.2, etc.
+%% Though these wouldn't be with the appendix package, as
+%%  automatic, but do need them even if use \begin{appendices}:
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thetable}{\thechapter.\arabic{table}}
+\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
+\renewcommand{\theequation}{\thechapter.\arabic{equation}}
+
+%% Not including Appendix figures and tables in contents, and just
+%%  including the Appendix (chapter) names (not sections or
+%%  subsections):
+
+\lfoot{SPERA}
+
+%% Add an appendix. The appedices or any other Rnw files will be in the same scope as the main file,
+%% so they see the same R objects and those objects can be referenced directly.
+%% There is no difference between this and maindoc, they are both pasted in directly
+%% before the code is knitted.
+\rfoot{Appendix A -- Species Results}
+
+% appendix-1.Rnw
+
+% Some macros for equations found in tables
+\def\beq{\vspace{-5ex} \begin{fleqn} \begin{equation}}
+\def\eeq{\end{equation} \end{fleqn} \vspace{-5ex}}
+\def\tabline{\vspace{2ex} \hrule \vspace{2ex}}
+% new page macro
+\def\newp{\vfill \break}
+
+\clearpage
+
+\chapter{Example appendix 1}
+\label{chap:example.1}
+
+\section{INTRODUCTION}
+
+Stock Assessment modelling was done using the Integrated Statistical Catch Age Model (iSCAM), developed by S. Martell (\citet{martell2011}). iSCAM is written in AD Model Builder and the source code and documentation for the original iSCAM is available at \hyperref[https://github.com/smartell/iSCAM]{\color{blue}https://github.com/smartell/iSCAM}. Code for the version used in this assessment can be found at \hyperref[https://github.com/cgrandin/iSCAM]{\color{blue}https://github.com/cgrandin/iSCAM}. iSCAM uses a statistical catch-at-age model implemented in a Bayesian estimation framework.
+
+Running of iSCAM and compilation of results figures was streamlined using the iscam-gui software package developed at the Pacific Biological Station by C. Grandin (\hyperref[https://github.com/cgrandin/iscam-gui]{\color{blue}https://github.com/cgrandin/iscam-gui}). iscam-gui is written in the statistical language R, and provides a graphical user interface that allows users to run and show output of multiple iSCAM model scenarios in a comparative fashion.
+
+\section{MODEL DESCRIPTION}
+
+Note we can reference tables in the main document by using the ref keyword. Here we reference the table with random numbers in it: Table \ref{tab:example-xtable}. Note that this reference \emph{tab:example-table} was given to the R function make.xtable as an argument. See maindoc.Rnw.
+
+We can also reference any equation found anywhere, such as \ref{eq:sweptareaindex} which is referenced by the tag \emph{eq:sweptareaindex} or \ref{eq:cpuecalc} which is referenced by \emph{eq:cpuecalc}.
+
+\section{ANALYTIC METHODS: EQUILIBRIUM CONSIDERATIONS}
+
+\subsection{A Steady-State Age-Structured Model}
+
+Here is another equation written in a slightly different way than in the maindoc. Latex allows for lots of different ways to do things:
+
+\[s_o=\frac{\kappa}{\phi_E},\]
+and the density-dependent term is given by:
+\[\beta=\frac{\kappa-1}{R_{{o}}\phi_{{E}}}\]
+
+Here is an example of an inline fraction: $s_o=\frac{\kappa}{\phi_E}$.
+
+\section{RESIDUALS, LIKELIHOODS, AND OBJECTIVE FUNCTION VALUE COMPONENTS}
+This is an example of nested lists using enumeration.. The objective function contains five major components:
+\begin{enumerate}[noitemsep,nolistsep]
+  \item The negative log-likelihood for the catch data
+  \item The negative log-likelihood for the relative abundance data
+  \item The negative log-likelihood for the age composition data
+  \item The prior distributions for model parameters
+  \item Three penalty functions that are invoked to regularize the solution during intermediate phases of the non-linear parameter estimation. The penalty functions:
+  \begin{enumerate}[noitemsep,nolistsep]
+    \item constrain the estimates of annual recruitment to conform to a Beverton-Holt stock-recruit function
+    \item weakly constrain the log recruitment deviations to a normal distribution
+    \item weakly constrain estimates of log fishing mortality to a normal distribution ($\sim N(\ln(0.2), 4.0)$) to prevent estimates of catch from exceeding estimated biomass.
+    \end{enumerate}
+\end{enumerate}
+
+
+This example shows the use of some other special functions such as \emph{widehat} both inline and in equation form:
+The residuals between the observed ($p_{t,a}$) and predicted proportions ($\widehat{p}_{t,a}$) is given by:
+\begin{equation}\label{eq:widehat}
+\eta_{t,a}=\ln(p_{t,a})-\ln(\widehat{p}_{t,a})-\frac{1}{A}\sum_{a=1}^A\left[\ln(p_{t,a})-\ln(\widehat{p}_{t,a}) \right]
+\end{equation}
+\clearpage
+
+\newpage
+
+\rfoot{Appendix B -- Modeling Inputs}
+
+\clearpage
+
+\chapter{WEIGHTING OF AGE PROPORTIONS}
+\label{chap:agecompweight}
+
+This appendix summarizes a method for representing commercial and survey age structures for a given species through weighting observed age frequencies~$x_a$ or proportions~$x^\prime_a$ by \eor{catch}{density} in defined strata. The methodology presented in this appendix is based on that presented by \citet{rocksole2014} for Rock Sole.\\
+\bigskip
+
+Ideally, sampling effort would be proportional to the amount of the species caught, but this is not usually the case. Therefore, the stratified weighting scheme presented below attempts to adjust for unequal sampling effort among strata. For commercial samples, strata comprise quarterly periods within a year, while for survey samples, the strata are defined by longitude, latitude, and depth. Within each stratum, commercial ages are weighted by the catch weight (kg) of the species in tows that were sampled, and survey ages are weighted by the catch density (kg/km$^2$) of the species in sampled tows. A second weighting is then applied: quarterly commercial ages are weighted by the commercial catch weight of the species from all tows within each quarter; stratum survey ages are weighted by stratum areas (km$^2$) in the survey. Throughout this section, we use the symbol \sQuote{$\Vert$} to delimit parallel values for commercial and survey analyses, respectively, as the mechanics of the weighting procedure are similar for both. \\
+\bigskip
+
+For simplicity we illustrate the weighting of age frequencies $x_a$, unless otherwise specified. The weighting occurs at two levels: $h$ (quarters for commercial ages, strata for survey ages) and $i$ (years if commercial, surveys in series if survey). Notation is summarised in Table~\ref{tab:wtdAges}.\\
+\bigskip
+
+\usefont{\encodingdefault}{\familydefault}{\seriesdefault}{\shapedefault}\small
+\begin{longtable}[1]{l>{\raggedright\arraybackslash}p{0.85\textwidth} }
+%\caption{Equations for weighting age frequencies or proportions for \fishname.\\(\bold{c})~= commercial, (\bold{s})~= survey}
+\caption{Equations for weighting age frequencies or proportions for Arrowtooth Flounder.\\(\textbf{c})~= commercial, (\textbf{s})~= survey}
+\label{tab:wtdAges} \\
+\hline
+Symbol & Description \\ %\tstrut \bstrut \\
+\hline
+%& \tstrut \textbf{Indices} \bstrut \\
+& \textbf{Indices} \\
+$\bM{a}$ & age class (1 to $A$, where $A$ is an accumulator age-class) \\
+$\bM{d}$ & (\textbf{c}) trip IDs as sample units \\
+& (\textbf{s}) sample IDs as sample units \\
+$\bM{h}$ & (\textbf{c}) quarters (1 to 4), 91.5 days each \\
+& (\textbf{s}) strata (area-depth combinations) \\
+$\bM{i}$ & (\textbf{c}) calendar years (1977 to present) \\
+& (\textbf{s}) survey IDs in survey series (e.g., QCS Synoptic) \\ %\bstrut \\
+\hline
+%& \tstrut \textbf{Data} \bstrut \\
+& \textbf{Data} \\
+$\bM{x_{adhi}}$ & observations-at-age $a$ for sample unit $d$ in \eor{quarter}{stratum} $h$ of \eor{year}{survey} $i$ \\
+$\bM{x^\prime_{adhi}}$ & proportion-at-age $a$ for sample unit $d$ in \eor{quarter}{stratum} $h$ of \eor{year}{survey} $i$ \\
+$\bM{C_{dhi}}$ & (\textbf{c}) commercial catch (kg) of a given species for sample unit $d$ in quarter $h$ of year $i$ \\
+& (\textbf{s}) density (kg/km$^2$) of a given species for sample unit $d$ in stratum $h$ of survey $i$ \\
+$\bM{C^\prime_{dhi}}$ & $C_{dhi}$ as a proportion of total \eor{catch}{density} $C_{hi} = \sum_{d} C_{dhi}$ \\
+$\bM{y_{ahi}}$ & weighted age frequencies at age $a$ in \eor{quarter}{stratum} $h$ of \eor{year}{survey} $i$ \\
+$\bM{K_{hi}}$ & (\textbf{c}) total commercial catch (kg) of species in quarter $h$ of year $i$ \\
+& (\textbf{s}) stratum area (km$^2$) of stratum $h$ in survey $i$ \\
+$\bM{K_{hi}^\prime}$ & $K_{hi}$ as a proportion of total \eor{catch}{area} $K_i = \sum_{h} K_{hi}$ \\
+$\bM{p_{ai}}$ & weighted frequencies at age $a$ in \eor{year}{survey} $i$ \\
+$\bM{p_{ai}^\prime}$ & weighted proportions at age $a$ in \eor{year}{survey} $i$ \\ %\bstrut \\
+\hline 
+% \end{tabular}
+% \end{center}
+\end{longtable}
+\usefont{\encodingdefault}{\familydefault}{\seriesdefault}{\shapedefault}\normalsize
+
+For each \eor{quarter}{stratum} $h$ we weight sample unit frequencies $x_{ad}$ by sample unit \eor{catch}{density} of the assessment species. For commercial ages, we use trip as the sample unit, though at times one trip may contain multiple samples. In these instances, multiple samples from a single trip will be merged into a single sample unit. Within any \eor{quarter}{stratum} $h$ and \eor{year}{survey} $i$ there is a set of sample \eor{catches}{densities} $C_{dhi}$ that can be transformed into a set of proportions:
+%
+\eqn{C_{dhi}^\prime = \gfrac{C_{dhi}}{\sum_{d} C_{dhi}}~.}
+%
+The proportion $C_{dhi}^\prime$ is used to weight the age frequencies $x_{adhi}$ summed over $d$, which yields weighted age frequencies by \eor{quarter}{stratum} for each \eor{year}{survey}:
+%
+\eqn{y_{ahi} = \sum_{d} \big(C_{dhi}^\prime x_{adhi}\big)~.}
+%
+This transformation reduces the frequencies $x$ from the originals, and so we rescale (multiply) $y_{ahi}$ by the factor
+%
+\eqn{\gfrac{\sum_{a} x_{ahi}}{\sum_{a} y_{ahi}}}
+%
+to retain the original number of observations.
+
+At the second level of stratification by \eor{year}{survey} $i$, we calculate the the annual proportion of quarterly catch (t) for commercial ages or the survey proportion of stratum areas (km$^2$) for survey ages
+%
+\eqn{K_{hi}^\prime = \gfrac{K_{hi}}{\sum_{h} K_{hi}}}
+%
+to weight $y_{ahi}$ and derive weighted age frequencies by \eor{year}{survey}:
+%
+\eqn{p_{ai} = \sum_{h} \big(K_{hi}^\prime y_{ahi}\big)~.}
+%
+Again, if this transformation is applied to frequencies, it reduces them from the original, and so we rescale (multiply) $p_{ai}$ by the factor
+%
+\eqn{\gfrac{\sum_{a} y_{ai}}{\sum_{a} p_{ai}}~.}
+%
+to retain the original number of observations.
+
+Finally, we standardise the weighted frequencies to represent proportions-at-age:
+%
+\eqn{p_{ai}^\prime = \gfrac{p_{ai}}{\sum_{a} p_{ai}}~.}
+%
+If initially we had used proportions $x_{adhi}^\prime$ instead of frequencies $x_{adhi}$ , the final standardisation would not be necessary. However, its application does not affect the outcome.\\
+\bigskip
+
+The choice of data input (frequencies $x$ \emph{vs}. proportions $x^\prime$) can sometimes matter: the numeric outcome can be very different, especially if the input samples comprise few observations. Theoretically, weighting frequencies emphasises our belief in individual observations at specific ages while weighting proportions emphasises our belief in sampled age distributions. Neither method yields inherently better results. However, if the original sampling methodology favoured sampling few fish from many tows rather than sampling many fish from few tows, then weighting frequencies probably makes more sense than weighting proportions. In this assessment, we weight age frequencies $x$.
+
+\newpage
+
+%% Used when you need to insert outside documents:
+%% \setcounter{page}{68}
+
+\end{document}
