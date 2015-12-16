@@ -9,10 +9,65 @@
 
 \clearpage
 
-\chapter{Example appendix 1}
+\chapter{Appendix A}
 \label{chap:example.1}
 
-\section{INTRODUCTION}
+\section{\fishnameARF}
+\subsection{\LH}
+
+\section{\fishnameCAR}
+\subsection{\LH}
+
+\section{\fishnameDOG}
+\subsection{\LH}
+
+\section{\fishnameDOL}
+\subsection{\LH}
+
+\section{\fishnameENL}
+\subsection{\LH}
+
+\section{\fishnameGSR}
+\subsection{\LH}
+
+\section{\fishnameLST}
+\subsection{\LH}
+
+\section{\fishnamePAC}
+\subsection{\LH}
+
+\section{\fishnamePEL}
+\subsection{\LH}
+
+\section{\fishnamePOP}
+\subsection{\LH}
+
+\section{\fishnameRAT}
+\subsection{\LH}
+
+\section{\fishnameROL}
+\subsection{\LH}
+
+\section{\fishnameRSR}
+\subsection{\LH}
+
+\section{\fishnameRXL}
+\subsection{\LH}
+
+\section{\fishnameSGR}
+\subsection{\LH}
+
+\section{\fishnameSST}
+\subsection{\LH}
+
+\section{\fishnameWWR}
+\subsection{\LH}
+
+\section{\fishnameYMR}
+\subsection{\LH}
+  
+
+\clearpage
 
 Stock Assessment modelling was done using the Integrated Statistical Catch Age Model (iSCAM), developed by S. Martell (\citet{martell2011}). iSCAM is written in AD Model Builder and the source code and documentation for the original iSCAM is available at \hyperref[https://github.com/smartell/iSCAM]{\color{blue}https://github.com/smartell/iSCAM}. Code for the version used in this assessment can be found at \hyperref[https://github.com/cgrandin/iSCAM]{\color{blue}https://github.com/cgrandin/iSCAM}. iSCAM uses a statistical catch-at-age model implemented in a Bayesian estimation framework.
 

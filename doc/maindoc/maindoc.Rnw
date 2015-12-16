@@ -41,98 +41,100 @@ Software: A version of the hierarchical Bayesian model has already been written 
 \subsection{Data Management}
 Spatially-gridded Canadian datasets and gridded predictions of distribution and abundance will be transferred to a database managed by the Pacific Groundfish Statistics program.  They will be available internally to Pacific stock assessment scientists, and by request externally. Maps will be incorporated into an intranet-based tool, making them available to Pacific scientists and managers. Methods, statistical results and graphic outputs will be published in a CSAS Research Document that will be publicly available through CSAS. Key results will also be published in the primary literature. 
 
-Open the file \rnwexamplefile. Look at the first R code chunk, starting on line 191. This is where the R environment is loaded so that the figures and tables can be made, and values can be referenced later in the document. There are two choices: source the R file, or load a binary R environment. Sourcing the file works fine, but if there is a lot of loading of data or calculations that have to happen during the sourcing the build will take a long time. A much quicker way is to open an R session, and source the \rfile\ manually, then save the R environment to a file called \rdata\ in the \emph{r} directory. If this method is used, make sure to set \textbf{\lstinline{use.binary.envir <- TRUE}} on line 209 of \rnwexamplefile.
+%%Open the file \rnwexamplefile. Look at the first R code chunk, starting on line 191. This is where the R environment is loaded so that the figures and tables can be made, and values can be referenced later in the document. There are two choices: source the R file, or load a binary R environment. Sourcing the file works fine, but if there is a lot of loading of data or calculations that have to happen during the sourcing the build will take a long time. A much quicker way is to open an R session, and source the \rfile\ manually, then save the R environment to a file called \rdata\ in the \emph{r} directory. If this method is used, make sure to set \textbf{\lstinline{use.binary.envir <- TRUE}} on line 209 of \rnwexamplefile.
 
-To build this document, open a command line and enter \textbf{buildtex.bat}. When you run buildtex.bat two things happen:
-\begin{enumerate}[noitemsep,nolistsep]
-  \item Rscript calls knitr which goes through and \emph{knits} your \emph{\rnwexamplefile} file, which means it runs all the R code it finds, stores figures in the \emph{knitr-cache} directory, and creates a \tex file which \latex can then understand. It also creates a file called knitrOutput.log which contains all output and errors encountered during the knitting procedure. That is where to first look when there are problems compiling your document. Here is the line in buildtex.bat that does this:
+%To build this document, open a command line and enter \textbf{buildtex.bat}. When you run buildtex.bat two things happen:
+%\begin{enumerate}[noitemsep,nolistsep]
+%  \item Rscript calls knitr which goes through and \emph{knits} your \emph{\rnwexamplefile} file, which means it runs all the R code it finds, stores figures in the \emph{knitr-cache} directory, and creates a \tex file which \latex can then understand. It also creates a file called knitrOutput.log which contains all output and errors encountered during the knitting procedure. That is where to first look when there are problems compiling your document. Here is the line in buildtex.bat that does this:
  %% alltt allows us to enter code with a bunch of special characters without having to escape all of them explicitly.
-    \begin{alltt}
-      Rscript -e "library(knitr);knit('./\rnwexamplefile')" 1> knitrOutput.log 2>&1
-    \end{alltt}
-  \item \latex runs through the newly-created \tex file (\emph{\texfile}) and calls \emph{bibtex} to find the references and make the bibliography. There are three output formats of the document: .ps, .dvi, and .pdf. The .ps and .dvi formats require special viewers (Yap and GhostView respectively) and do not incorporate the reference links that are so convinient in the .pdf file. During development of very complex documents, you can leave the last part of this call out to avoid PDF generation, and put it back in when ready to complete the document.
-    \begin{alltt}
-      @latex -synctex=1 "\texfile" && bibtex "example" && latex "\texfile"
-        && latex "\texfile" && dvips "example.dvi" && ps2pdf "example.ps"
-    \end{alltt}
-\end{enumerate}
+%    \begin{alltt}
+%      Rscript -e "library(knitr);knit('./\rnwexamplefile')" 1> knitrOutput.log 2>&1
+%    \end{alltt}
+%  \item \latex runs through the newly-created \tex file (\emph{\texfile}) and calls \emph{bibtex} to find the references and make the bibliography. There are three output formats of the document: .ps, .dvi, and .pdf. The .ps and .dvi formats require special viewers (Yap and GhostView respectively) and do not incorporate the reference links that are so convinient in the .pdf file. During development of very complex documents, you can leave the last part of this call out to avoid PDF generation, and put it back in when ready to complete the document.
+%    \begin{alltt}
+%      @latex -synctex=1 "\texfile" && bibtex "example" && latex "\texfile"
+%        && latex "\texfile" && dvips "example.dvi" && ps2pdf "example.ps"
+%    \end{alltt}
+%\end{enumerate}
 
-Some \latex packages may have to be installed. If so, the package manager dialog will open. You must choose to install from internet, then make sure to select \emph{ctan} using \emph{HTTP} protocol from \emph{BC}. The default settings will most likely not work.
+%Some \latex packages may have to be installed. If so, the package manager dialog will open. You must choose to install from internet, then make sure to select \emph{ctan} using \emph{HTTP} protocol from \emph{BC}. The default settings will most likely not work.
 
-\subsection{The knitting process}
+\subsection{More Results}
 
-When \emph{knitr} is called, it parses the \emph{\rnwexamplefile} file, looking for special parenthesis characters which are called \emph{R code chunks}. The chunks begin with a set of parentheses and equals sign \verb!<< >>=! and end with the \emph{at} symbol \verb!@!. Anything between them is an R code chunk which will be evaluated by \emph{knitr}. Inside the beginning parentheses, you can define many \emph{chunk options}. The official page listing these options is here: \href{http://yihui.name/knitr/options/}{Knitr chunk options}. In this document the file \emph{\rnwexamplefile} holds one chunk which loads the R environment, and \emph{\rnwmaindocfile} holds the figure chunks (one for each figure) which each hold simple commands to plot some examples. For example, figure \ref{fig:example-half-torus} is called like this:
+%When \emph{knitr} is called, it parses the \emph{\rnwexamplefile} file, looking for special parenthesis characters which are called \emph{R code chunks}. The chunks begin with a set of parentheses and equals sign \verb!<< >>=! and end with the \emph{at} symbol \verb!@!. Anything between them is an R code chunk which will be evaluated by \emph{knitr}. Inside the beginning parentheses, you can define many \emph{chunk options}. The official page listing these options is here: \href{http://yihui.name/knitr/options/}{Knitr chunk options}. In this document the file \emph{\rnwexamplefile} holds one chunk which loads the R environment, and \emph{\rnwmaindocfile} holds the figure chunks (one for each figure) which each hold simple commands to plot some examples. For example, figure \ref{fig:example-half-torus} is called like this:
 
 %% Outputs the chunk as code into the document by using eval=FALSE and literal=TRUE
-\verb!<<fig.height=9, fig.width=8>>=! \\
-\verb!half.torus()! \\
-\verb!@!
+%\verb!<<fig.height=9, fig.width=8>>=! \\
+%\verb!half.torus()! \\
+%\verb!@!
 
-\subsubsection{Running R code directly in text}
-One should always write calculated values or data by using a reference to the R objects instead of typing the numbers in as text. This way, if something changes you don't have to read and verify every number in your document, they will be updated automatically by \emph{knitr}.
+\subsubsection{Even more results}
+%One should always write calculated values or data by using a reference to the R objects instead of typing the numbers in as text. This way, if something changes you don't have to read and verify every number in your document, they will be updated automatically by \emph{knitr}.
 
-Here's how you write some values by reference from your R environment inside \latex text block: For example to get the mean of x you would use the command: \$\ShowSexpr{mean(x)}\$ which in this case evaluates to $\Sexpr{mean(x)}$. The \verb!$\Sexpr{}$! construct represents an S-expression, where S was the predecessor to R. For some reason it hasn't yet been changed to \verb!$\Rexpr{}$!. In this example, the values for the x vector were read in from \emph{example.r} at the beginning of the knitting process and is accessible throughout the document. You can call simple R commands using the \verb!$\Sexpr{}$! command inside \latex. You can do more than one command by separating with a semicolon, for example the command \$\ShowSexpr{z=x+y;mean(z)}\$ evaluates to $\Sexpr{z=x+y;mean(z)}$ for the x and y values loaded from \emph{example.r}.\\
+%Here's how you write some values by reference from your R environment inside \latex text block: For example to get the mean of x you would use the command: \$\ShowSexpr{mean(x)}\$ which in this case evaluates to $\Sexpr{mean(x)}$. The \verb!$\Sexpr{}$! construct represents an S-expression, where S was the predecessor to R. For some reason it hasn't yet been changed to \verb!$\Rexpr{}$!. In this example, the values for the x vector were read in from \emph{example.r} at the beginning of the knitting process and is accessible throughout the document. You can call simple R commands using the \verb!$\Sexpr{}$! command inside \latex. You can do more than one command by separating with a semicolon, for example the command \$\ShowSexpr{z=x+y;mean(z)}\$ evaluates to $\Sexpr{z=x+y;mean(z)}$ for the x and y values loaded from \emph{example.r}.\\
 
-\subsection{What to do if there's an error}
+\subsection{Even  more and more results}
 
-If there's an error, the first thing to do is check the \emph{knitrOutput.log} file. This will contain all messages both regular and error which \emph{knitr} outputs. If there was an error during the knitting process, you will find it there. The last lines of the file should say:
-\begin{alltt}
-  output file: \texfile
+%If there's an error, the first thing to do is check the \emph{knitrOutput.log} file. This will contain all messages both regular and error which \emph{knitr} outputs. If there was an error during the knitting process, you will find it there. The last lines of the file should say:
+%\begin{alltt}
+%  output file: \texfile
 
-  [1] "\texfile"
-\end{alltt}
-If you see this message and the file \emph{\texfile} exists then the \emph{knitr} part has worked but the \latex part of the compilation has failed. The message in the case that \latex has failed will be something like \emph{l.132...error message}. In that case, the error happened on line 132 of the \emph{\texfile} file. You will have to look at this file first to see where the error is, then go back to your \rnwexamplefile\ file and fix it. Sometimes errors earlier on can trigger something later to fail, which makes it very hard to debug. The best advice is to compile after every change to make sure it is still working. A lot of time can be wasted tracking down errors if you haven't compiled in a long time and made many changes, where more than one error may have been introduced. Matching parenthesis errors can be particular insidious.
+%  [1] "\texfile"
+%\end{alltt}
+%If you see this message and the file \emph{\texfile} exists then the \emph{knitr} part has worked but the \latex part of the compilation has failed. The message in the case that \latex has failed will be something like \emph{l.132...error message}. In that case, the error happened on line 132 of the \emph{\texfile} file. You will have to look at this file first to see where the error is, then go back to your \rnwexamplefile\ file and fix it. Sometimes errors earlier on can trigger something later to fail, which makes it very hard to debug. The best advice is to compile after every change to make sure it is still working. A lot of time can be wasted tracking down errors if you haven't compiled in a long time and made many changes, where more than one error may have been introduced. Matching parenthesis errors can be particular insidious.
 
-If there is an error stating:
+%If there is an error stating:
 
-\emph{**** Could not open the file example.pdf}
+%\emph{**** Could not open the file example.pdf}
 
-it means that you still have the PDF open and you need to close it and re-compile. If you have the GhostView viewer, you can keep the postscript (\emph{example.ps}) file open instead while developing. You won't get an error even if it stays open.
+%it means that you still have the PDF open and you need to close it and re-compile. If you have the GhostView viewer, you can keep the postscript (\emph{example.ps}) file open instead while developing. You won't get an error even if it stays open.
 
 \bigskip
 
-\section{Equations in \latex}
-Equations are fairly straightforward, and if organized using the same label prefix (\textbf{eq:}), they will be numbered automatically. Here are some example equations from the 2015 \fishnameARF\ assessment with added margins for captions:
+\section{RESULTS}
+%Equations are fairly straightforward, and if organized using the same label prefix (\textbf{eq:}), they will be numbered automatically. Here are some example equations from the 2015 \fishnameARF\ assessment with added margins for captions:
 
-\begin{align} \label{eq:sweptareaindex}
-B_y = \sum_{i=1}^kC_{y_i}A_i=\sum_{i=1}^kB_{y_i}
+\begin{align} \label{eq:length-temp-lm}
+\overline{L}_s = B_{0} + \overline{T}_{D_s} + Y_s + \overline{D}_{s} + \overline{T}_{D_s} * \overline{D}_{s} * Y_s
+%B_y = \sum_{i=1}^kC_{y_i}A_i=\sum_{i=1}^kB_{y_i}
 \end{align}
+
 \begin{addmargin}[3em]{1em}
-where $C_{y_i}$ is the mean CPUE density ($kg/km^2$) for species $s$ in stratum $i$, $A_i$ is the area of stratum $i$, $B_{y_i}$ is the biomass of \fishnameARF\ in stratum $i$ for year $y$, and $k$ is the number of strata.
+where $\overline{L}$ is the mean \fishnameARF\ length...
 \end{addmargin}
 
-CPUE ($C_{y_i}$) for \fishnameARF\ in stratum $i$ for year $y$ was calculated as a density in $kg/km^2$ by:
+%CPUE ($C_{y_i}$) for \fishnameARF\ in stratum $i$ for year $y$ was calculated as a density in $kg/km^2$ by:
 
-\begin{align} \label{eq:cpuecalc}
-C_{y_i}=\frac{\sum\limits_{j=1}^{n_{y_i}} \left[\frac{W_{y_i,j}}{D_{y_i,j}w_{y_i,j}}\right]}{n_{y_i}}
-\end{align}
-\begin{addmargin}[3em]{1em}
-where $W_{y_i,j}$ is the catch weight in $kg$ for \fishnameARF\ in stratum $i$, year $y$, and tow $j$, $D_{y_i,j}$ is the distance travelled in $km$ for tow $j$ in stratum $i$ and year $y$, $w_{y_i,j}$ is the net opening in $km$ by tow $j$, stratum $i$, and year $y$, and $n_{y_i}$ is the number of tows in stratum $i$.
-\end{addmargin}
+%%\begin{align} \label{eq:cpuecalc}
+%C_{y_i}=\frac{\sum\limits_{j=1}^{n_{y_i}} \left[\frac{W_{y_i,j}}{D_{y_i,j}w_{y_i,j}}\right]}{n_{y_i}}
+%\end{align}
+%\begin{addmargin}[3em]{1em}
+%where $W_{y_i,j}$ is the catch weight in $kg$ for \fishnameARF\ in stratum $i$, year $y$, and tow $j$, $D_{y_i,j}$ is the distance travelled in $km$ for tow $j$ in stratum $i$ and year $y$, $w_{y_i,j}$ is the net opening in $km$ by tow $j$, stratum $i$, and year $y$, and $n_{y_i}$ is the number of tows in stratum $i$.
+%\end{addmargin}
 
-The variance of the survey biomass estimate $V_y$ for \fishnameARF\ in year $y$ is calculated in $kg^2$ as follows:
-\begin{align} \label{eq:indexvariance}
-V_y=\sum_{i=1}^k\left[\frac{\sigma_{y_i}^2A_i^2}{n_{y_i}}\right]=\sum_{i=1}^kV_{y_i}
-\end{align}
-\begin{addmargin}[3em]{1em}
-where $\sigma_{y_i}^2$ is the variance of the CPUE in $kg^2/km^4$ for year $y$ in stratum $i$, $V_{y_i}$ is the variance of \fishnameARF\ in stratum $i$ for year $y$, where $\sigma_{y_i}^2$ was obtained from bootstrapped samples (see below).
-\end{addmargin}
+%The variance of the survey biomass estimate $V_y$ for \fishnameARF\ in year $y$ is calculated in $kg^2$ as follows:
+%\begin{align} \label{eq:indexvariance}
+%V_y=\sum_{i=1}^k\left[\frac{\sigma_{y_i}^2A_i^2}{n_{y_i}}\right]=\sum_{i=1}^kV_{y_i}
+%\end{align}
+%\begin{addmargin}[3em]{1em}
+%where $\sigma_{y_i}^2$ is the variance of the CPUE in $kg^2/km^4$ for year $y$ in stratum $i$, $V_{y_i}$ is the variance of \fishnameARF\ in stratum $i$ for year $y$, where $\sigma_{y_i}^2$ was obtained from bootstrapped samples (see below).
+%\end{addmargin}
 
-The CV for \fishnameARF\ for each year $y$ was calculated as follows:
-\begin{align} \label{eq:indexcv}
-CV_y=\frac{\sqrt{V_y}}{B_y}
-\end{align}
-\begin{addmargin}[3em]{1em}
-where $CV_y$ is the CV for year $y$.
-\end{addmargin}
+%The CV for \fishnameARF\ for each year $y$ was calculated as follows:
+%\begin{align} \label{eq:indexcv}
+%CV_y=\frac{\sqrt{V_y}}{B_y}
+%\end{align}
+%\begin{addmargin}[3em]{1em}
+%where $CV_y$ is the CV for year $y$.
+%\end{addmargin}
 
-\subsubsection{A few more equation tidbits}
+%\subsubsection{A few more equation tidbits}
 
-Here is an example of overline usage: $\overline{R}_{init}$.
+%Here is an example of overline usage: $\overline{R}_{init}$.
 
-Double dashes can be used to make a longer solid line to show value ranges: $0.308 y^{-1}$--$0.406 y^{-1}$.
+%Double dashes can be used to make a longer solid line to show value ranges: $0.308 y^{-1}$--$0.406 y^{-1}$.
 
-Here's how you show a fraction inline: $\frac{B_{2016}}{B_{ReferencePoint}} < 1$.
+%Here's how you show a fraction inline: $\frac{B_{2016}}{B_{ReferencePoint}} < 1$.
 
 \bigskip
 
@@ -163,7 +165,7 @@ Appendix references are much like chapters of a book. They can be added or comme
 
 The code which adds an appendix is \emph{knitr} code because you want the appendix added before the knitting process so that any figures or R expressions are resolved, just like in the main document. This is an example of how appendix code is added:
 
-\verb!\rfoot{Appendix A -- Example appendix 1}!
+\verb!\rfoot{Appendix A -- Species Results}!
 
 \verb!<<appendix-1, child='appendix-1/appendix-1.Rnw'>>=! \\
 \verb!@!
@@ -177,12 +179,14 @@ The code which adds an appendix is \emph{knitr} code because you want the append
 
 Here's a reference to an appendix: % \ref{chap:propfemale} and \ref{chap:agecompweight}.\\
 
-%\addcontentsline{toc}
-\{section}{REFERENCES}
+%\addcontentsline{toc}{section}{BIBLIOGRAPHY}
+
+\section{REFERENCES} 
+
 \bibliographystyle{resDoc}
-%% This tells latex that the bilbliography file is two directories up and is called all.bib
-bibliography{../../all}
-%\references{/all}
+%% This tells latex that the bibliography file is two directories up and is called all.bib
+\bibliography{../../all}
+
 \clearpage
 
 \section{TABLES}
@@ -242,26 +246,63 @@ make.xtable(seed=c(1,2,3,4), xcaption=paste0("Example using xtable with some pse
             "is how most tables giving values are shown."), xlabel="tab:example-xtable")
 @
 
+
+%\textbf{Parameter} & \specialcell{\textbf{Number}\\\textbf{estimated}} & \specialcell{\textbf{Bounds}\\\textbf{[low,high]}} & \specialcell{\textbf{Prior (Mean, SD)}\\\textbf{(single value=fixed)}} \\
+
+
 \begin{table}[H]
 \centering
-\caption{\label{tab:sensitivities}Sensitivity cases and their parameters.}
-\begin{tabular}{lrr}
+\caption{\label{tab:annmeansSD}\fishnameARF\ mean lengths (mm), maturity, sex and total sample weight (kg) ${\pm}$ standard deviation (SD) from 1984 to 2015.}
+\begin{tabular}{lrrrrrrrr}%%lrr puts first column left-justified and the next two columns right-justified
 \hline
-\textbf{Scenario   } & \textbf{Description}                         & \textbf{Parameters} \\
+\textbf{Survey Year} & \textbf{$\overline{L}$} & \textbf{SD} & \textbf{$\overline{S}$} & \textbf{SD} & \textbf{$\overline{M}$} & \textbf{SD} & \textbf{$\overline{TotWt}_s$} & \textbf{SD}\\ 
 \hline
-1           & Reference Case                               & See Table \ref{tab:parampriors} \\
-2           & Decrease $\sigma$ to 0.1                      & $\vartheta^2=1.538$; $\rho=0.015$ \\
-3           & Estimate Total Variance                       & $\vartheta^2$ estimated; $\rho=0.059$ \\
-4           & Increase $\tau$ to 1.0                        & $\vartheta^2=0.962$; $\rho=0.038$ \\
-5           & Decrease $\tau$ to 0.6                        & $\vartheta^2=2.500$; $\rho=0.100$ \\
-6           & Decrease mean of $h$ prior to 0.72            & $h$ = Beta($\alpha=12.7$, $\beta=5.0$) \\
-7           & Decrease SD of $\ln(M)$ prior to 0.05          & $\ln(M)$ = Normal($\ln(0.2)$, $0.05$) \\
-8           & Increase SD of $\ln(M)$ prior to 0.25          & $\ln(M)$ = Normal($\ln(0.2)$, $0.25$) \\
-9           & Increase mean of $\ln(M)$ prior to ln($1.0$)   & $\ln(M)$ = Normal($\ln(0.3)$, $0.20$) \\
-10          & Increase mean of $\ln(q_k)$ prior to ln($1.0$) & $\ln(q_k)$ = Normal($\ln(1.0)$, $1.0$) \\
-11          & Increase SD of $\ln(q_k)$ prior to 1.5         & $\ln(q_k)$ = Normal($\ln(0.5)$, $1.5$) \\
-12          & Selectivity Ogive = Maturity Ogive            & $\hat{a}$ = $4.99$ yrs; $\hat{\gamma}$ = $1.27$ yrs \\
-13          & Age-at-50\%-harvest set to 6 yrs              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+1984           & a                               & See Table \ref{tab:annmeansSD} \\
+1987             & a                      & $\vartheta^2=1.538$; $\rho=0.015$ \\
+1989             & a                       & $\vartheta^2$ estimated; $\rho=0.059$ \\
+1991             & a                        & $\vartheta^2=0.962$; $\rho=0.038$ \\
+1993             & a                       & $\vartheta^2=2.500$; $\rho=0.100$ \\
+1998             & a            & $h$ = Beta($\alpha=12.7$, $\beta=5.0$) \\
+2000             & a          & $\ln(M)$ = Normal($\ln(0.2)$, $0.05$) \\
+2002             & a          & $\ln(M)$ = Normal($\ln(0.2)$, $0.25$) \\
+2003           & a        & $\ln(M)$ = Normal($\ln(0.3)$, $0.20$) \\
+2004          & a         & $\ln(q_k)$ = Normal($\ln(1.0)$, $1.0$) \\
+2005          & a         & $\ln(q_k)$ = Normal($\ln(0.5)$, $1.5$) \\
+2007          & a            & $\hat{a}$ = $4.99$ yrs; $\hat{\gamma}$ = $1.27$ yrs \\
+2009          & a              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+2011         & Aa              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+2013          & a              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+2015         & a              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{\label{tab:meansSD}Fish species overall mean lengths (mm), maturity, sex and total sample weight (kg) ${\pm}$ standard deviation (SD) for all surveys (1984 to 2015).}
+\begin{tabular}{lrrrrrrrr}%%lrr puts first column left-justified and the next two columns right-justified
+\hline
+\textbf{Fish Species} & \textbf{$\overline{L}$} & \textbf{SD} & \textbf{$\overline{S}$} & \textbf{SD} & \textbf{$\overline{M}$} & \textbf{SD} & \textbf{$\overline{TotWt}_s$} & \textbf{SD} \\ 
+\hline
+\fishnameARF\           & a                               & See Table \ref{tab:meansSD} \\
+\fishnameCAR\             & a                      & $\vartheta^2=1.538$; $\rho=0.015$ \\
+\fishnameDOG\             & a                       & $\vartheta^2$ estimated; $\rho=0.059$ \\
+\fishnameDOL\             & a                        & $\vartheta^2=0.962$; $\rho=0.038$ \\
+\fishnameENL\             & a                       & $\vartheta^2=2.500$; $\rho=0.100$ \\
+\fishnameGSR\             & a            & $h$ = Beta($\alpha=12.7$, $\beta=5.0$) \\
+\fishnameLST\             & a          & $\ln(M)$ = Normal($\ln(0.2)$, $0.05$) \\
+\fishnamePAC\             & a          & $\ln(M)$ = Normal($\ln(0.2)$, $0.25$) \\
+\fishnamePEL\           & a  & $\ln(M)$ = Normal($\ln(0.3)$, $0.20$) \\
+\fishnamePOP\          & a & $\ln(q_k)$ = Normal($\ln(1.0)$, $1.0$) \\
+\fishnameRAT\          & a         & $\ln(q_k)$ = Normal($\ln(0.5)$, $1.5$) \\
+\fishnameROL\          & a            & $\hat{a}$ = $4.99$ yrs; $\hat{\gamma}$ = $1.27$ yrs \\
+\fishnameRSR\          & a              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+\fishnameRXL\          & Aa              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+\fishnameSGR\          & a              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+\fishnameSST\          & a              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+\fishnameWWR\          & Aa              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+\fishnameYMR\          & a              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
 \hline
 \end{tabular}
 \end{table}
