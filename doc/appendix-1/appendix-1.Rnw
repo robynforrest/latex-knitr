@@ -14,58 +14,135 @@
 
 \section{\fishnameARF}
 \subsection{\LH}
+\subsection{Prey and predators}
+not in 2015 stock assessment
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnameCAR}
 \subsection{\LH}
+\subsection{Prey and predators}
+no assessment - other ref though
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnameDOG}
 \subsection{\LH}
+\subsection{Prey and predators}
+ no information in assessment
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnameDOL}
 \subsection{\LH}
+\subsection{Prey and predators}
+no stock assessment available
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnameENL}
 \subsection{\LH}
+\subsection{Prey and predators}
+nothing in stock assessment
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnameGSR}
 \subsection{\LH}
+\subsection{Prey and predators}
+no stock assessment
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnameLST}
 \subsection{\LH}
+\subsection{Prey and predators}
+not within stock assessment
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnamePAC}
 \subsection{\LH}
+\subsection{Prey and predators}
+(From Forrest et al. 2013) \fishnamePAC\ are omnivores, eating a diet of mainly marine invertebrates, including amphipods, euphausiids, shrimp and crabs. At around 50-55 cm they also become piscivorous, with Pacific Sand Lance (Ammodytes hexapterus) and Pacific Herring (\emph{Clupea harengus pallasi}) becoming important components of the diet (Westrheim 1996). Juvenile Sablefish (\emph{Anoplopoma fimbria}) and adult Pacific Hake (\emph{Merluccius productus}) have also been reported in the diet of Pacific Cod off the west coast of Vancouver Island (Ware and McFarlane 1986). Pacific Cod have been reported in the diets of Pacific Halibut (\emph{Hippoglossus stenolepis}), North Pacific Spiny Dogfish (\emph{Squalus suckleyi}), sea birds, seals and sealions (Westrheim 1996).
+
+Walters et al. (1986) demonstrated a Pacific Cod-Herring predator-prey interaction in Hecate Strait, in contrast to Ware and McFarlane (1986). Simulation models were developed by Walters et al. (1986) to explicitly model the effects of Pacific Cod predation on Pacific Herring. The simulations were able to mimic recruitment trends in both species. Walters et al. (1986) concluded that availability of Pacific Herring prey could be an important driver of Pacific Cod production in Hecate Strait, and, similarly, that Pacific Cod predation could be a significant driver of Pacific Herring abundance. These authors acknowledged that there are
+alternative hypotheses for cycles in abundance of Pacific Cod and Pacific Herring (e.g., environmental forcing; see below) and suggested that large-scale management experiments may be the only way to distinguish among competing hypotheses.
+
+\subsection{Environment}
+(from Forrest et al 2013)A large number of studies have investigated linkages between recruitment and environmental indices for \fishnamePAC\ in Hecate Strait. The dominant hypothesis is an inverse relationship between recruitment and northward water transport (i.e., northward advection of larvae) (Tyler and Westrheim 1986; Tyler and Crawford 1991). Northward water transport has been shown to be positively correlated with mean annual sea level at Prince Rupert during the spawning season, which in turn has been used as an explanatory variable for recruitment by a number of authors (Fournier 1983; Sinclair et al. 2001; Sinclair and Crawford 2005; Sinclair and Starr 2005). Westrheim (1996) provides a review of the major alternative studies.
+
+\subsection{Other species}
+(Forrest et al 2013)Other species caught with \fishnamePAC\ include \fishnameARF\ (\emph{Atheresthes stomias}), Yellowtail Rockfish (\emph{Sebastes flavidus}), \fishnamePOP\ (\emph{S. alutus}), Lingcod (\emph{Ophiodon elongatus}), \fishnameSGR\ (\emph{S. brevispinis}), \fishnameENL\ (\emph{Parophrys vetulus}) and Big Skate (\emph{Raja binoculata}) (Figure 2). Vessels catching \fishnamePAC\ must hold quota for all quota species encountered. Since 1996, there has been 100\% at-sea observer coverage on commercial bottom trawl vessels in BC. At-sea releases are recorded by observers and counted against the vessel's quota, according to agreed-upon discard mortality rates published in the integrated fishery management plan (DFO 2015). 
 
 \section{\fishnamePEL}
 \subsection{\LH}
+\subsection{Prey and predators}
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnamePOP}
 \subsection{\LH}
+\subsection{Prey and predators}
+not in 2013 stock assessment
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnameRAT}
 \subsection{\LH}
+\subsection{Prey and predators}
+no reports
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnameROL}
 \subsection{\LH}
+\subsection{Prey and predators}
+no information in 2014 stock assessment
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnameRSR}
 \subsection{\LH}
+\subsection{Prey and predators}
+no reports
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnameRXL}
 \subsection{\LH}
+\subsection{Prey and predators}
+no reports
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnameSGR}
 \subsection{\LH}
+\subsection{Prey and predators}
+nothing in 2014 stock assessment
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnameSST}
 \subsection{\LH}
+\subsection{Prey and predators}
+no information in working paper
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnameWWR}
 \subsection{\LH}
+\subsection{Prey and predators}
+no reports
+\subsection{Environment}
+\subsection{Other species}
 
 \section{\fishnameYMR}
 \subsection{\LH}
-  
+\subsection{Prey and predators}
+no info in stock assessment
+\subsection{Environment}  
+\subsection{Other species}
 
 \clearpage
 

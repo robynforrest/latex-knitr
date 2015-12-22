@@ -179,9 +179,7 @@ The code which adds an appendix is \emph{knitr} code because you want the append
 
 Here's a reference to an appendix: % \ref{chap:propfemale} and \ref{chap:agecompweight}.\\
 
-%\addcontentsline{toc}{section}{BIBLIOGRAPHY}
-
-\section{REFERENCES} 
+\addcontentsline{toc}{section}{BIBLIOGRAPHY}
 
 \bibliographystyle{resDoc}
 %% This tells latex that the bibliography file is two directories up and is called all.bib
