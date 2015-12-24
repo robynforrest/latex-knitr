@@ -14,57 +14,89 @@
 
 \section{\fishnameARF}
 \subsection{\LH}
-\subsection{Prey and predators}
-not in 2015 stock assessment
+Larvae have been sampled between the surface and 200 m depth off northern \bc in June (Taylor 1967a from Hart, Hart 1988).
+They are mainly found on soft bottoms from Central California to the eastern Bering Sea at depth of 730 m to 900 m (Hart 1988) 
+
+\subsection{\PrPr}
+\fishnameARF\ larvae off the coast of \bc are known to eat juvenile and adult copepods and eggs. Adults feed on crustaceans and fishes that include shrimp species, Pacific Herring (Eschmeyer, W.N., E.S. Herald and H. Hammann, 1983. A field guide to Pacific coast fishes of North America. Houghton Mifflin Company, Boston, U.S.A. 336 p., Hart 1988) and Walleye Pollock \emph{Theragra chalcogramma} (Livingston 1993). 
+
+Predators include the bony fishes \emph{Anoplopoma fimbria}, \emph{Gadus macrocephalus}, \emph{Theragra chacogramma} and \emph{Reinhardtius stomias}. Steller sea lions (\emph{Eumetopias jubatus}) and the Pacific sleeper shark (\emph{Somniosus pacificus}) are also known predators.
 \subsection{Environment}
 \subsection{Other species}
+\fishnameARF\ is primarily taken by the groundfish bottom trawl fishery but is also caught in small quantities by hook and line fisheries, particularly those that are targeting Pacific Halibut (\emph{Hippglossus stenolepis}) (DFO 2015 ARF Stock assessment). 
 
 \section{\fishnameCAR}
 \subsection{\LH}
-\subsection{Prey and predators}
-no assessment - other ref though
+\fishnameCAR\ (\emph{Sebastes pinniger}) is one of over 102 rockfish species of the genus Sebastes, 96 of which are found in the North Pacific. There are over 39 species present in \bc waters(DFO 2009).
+
+\fishnameCAR\ are found from northern Baja California to the western Gulf of Alaska (Love et al. 2002), but populations are most abundant between northern California and \bc (DFO 2009). Little is known about the distribution of young \fishnameCAR\ in \bc waters although they have been captured by gillnets in nearshore sub-tidal depths. They appear to move deeper as they become older and larger. Most of the late stage juveniles and adults are caught over depths of 100 m to 225 m on the continental shelf. Most \fishnameCAR\ will probably die if released after capture (DFO 2009 recovery potential).
+
+Adults congregate in loose groups above hard bottoms (Lamb, A. and P. Edgell, 1986. Coastal fishes of the Pacific northwest. Harbour Publishing Co. Ltd., B.C., Canada. 224 p.)
+
+Mean size  or age in the \fishnameCAR\ samples tends to increase with depth but other than the assumption that juveniles aggregate over hard bottom, there are no known nursery areas (DFO 2009).
+
+\fishnameCAR\ give birth to live young (ovoviviparous) in January or later in \bc (Hart 1988). In California studies, larvae and pelagic juvenile \fishnameCAR\ are reported to occupy the top 100 m for up to 3-4 months after parturition, and then settle to benthic habitats gradually moving deeper as they grow and age (Love et al. 2002). However, little is actually known about the spatial distribution of larval and juvenile stages in \bc waters (DFO 2009). Later stage juveniles and adults are typically captured in \bc by hook-and-line (HL) or trawl gear over rocky, gravel, or sandy bottom on the continental shelf. \fishnameCAR\ are a marine and sub-tidal species; thus all Canadian habitat is within Federal waters.
+
+Like all rockfish, they have closed swim bladders and usually die if released after routine capture. Work in Oregon has shown that movements by adults that exceed 100 km are possible (DeMott 1983). Additional details on \fishnameCAR\ biology can be found in Love et al. (2002), Stanley et al. (2005), Stewart (2007a), and Stanley et al. (2009).
+
+\subsection{\PrPr}
+Pelagic juveniles feed on an array of planktonic items. Adults and subadults primarily eat krill and small fishes (  Eschmeyer, W.N., E.S. Herald and H. Hammann, 1983. A field guide to Pacific coast fishes of North America. Houghton Mifflin Company, Boston, U.S.A. 336 p.). Significant predators probably include lingcod (DFO 2009). 
+
 \subsection{Environment}
+Recent unpublished information (A. Sinclair pers. comm.) on observed declines in dissolved oxygen, which appear to be correlated with apparent shifts in distribution of many groundfishes species to shallower depths, may be a source of concern. These observations are preliminary and their longterm significance is unknown and it is not known if these shifts are outside expected long term variation. This observation could act to reduce both the quality and quantity of available habitat for \fishnameCAR\ (DFO 2009).
+
 \subsection{Other species}
 
 \section{\fishnameDOG}
 \subsection{\LH}
-\subsection{Prey and predators}
- no information in assessment
+In British Columbia, there are two discrete stocks of \fishnameDOG\; an outside stock that extends from Baja California to Alaska and an inside stock, in the Strait of Georgia. \fishnameDOG\, like most shark species grow slowly, mature late (35-36 years for females) and produce between 2 and 17 offspring (pups) per year resulting in very low intrinsic rates of population increase (DFO 2010).
+
+In Hecate Strait and Dixon Entrance, \fishnameDOG\ are available only during summer but it is unclear whether their movements are mainly horizontal or with depth (Hart 1988). \fishnameDOG\ occur in brackish to marine waters from the surface to depths of 730 m (Hart 1988,   Ebert, D.A., W.T. White, K.J. Goldman, L.J.V. Compagno, T.S. Daly-Engel and R.D. Ward, 2010. Resurrection and redescription of Squalus suckleyi (Girard, 1854) from the North Pacific, with comments on the Squalus acanthias subgroup (Squaliformes: Squalidae). Zootaxa 2612:22-40.). They  prefer 7 \textdegree C to 15 \textdegree C water and it is believed that they will migrate to follow this temperature preference (Ebert, D.A., 2003. Sharks, rays and chimaeras of California. California Natural History Guides No. 71. University of California Press. 284 p.).
+
+The \fishnameDOG\ is a small, gregarious shark belonging to the order Squaliformes and inhabiting temperate waters off the east and west coasts of North America. Recent reexamination of differences in natural history and demography between Pacific and Atlantic populations has resulted in a recommendation that these two populations should be reseparated into two different species, \emph{S. suckleyi} in the Pacific and \emph{S. acanthias} in the Atlantic (DFO 2010).
+
+Reproduction in the \fishnameDOG\ is carried out through internal fertilization. Breeding occurs during the late fall and early spring. Large eggs, approximately 35 mm in diameter and numbering 2 to 17, are released from the ovaries of the females, where they then pass through the shell gland for simultaneous fertilization and encapsulation in thick, rubbery "shells" before proceeding into the oviducts. Development is ovoviviparous (internal). Encapsulated eggs remain in the oviducts for nearly 2 years (18-22 months), a gestation period almost unmatched by any other species. During gestation, the shells dissolve and the free embryos are nourished by yolk material which they gradually deplete until they reach a full-term size averaging between 26 and 27 cm. In British Columbia waters, average fecundity in the \fishnameDOG\ is between six and seven (range from 2 to 16 pups) (DFO 2010). Young \fishnameDOG\, born as miniature replicas of their parents, are released in midwater layers overlying depths of 165 - 350 m.
+
+As a result of their low metabolic rate, \fishnameDOG\ in the Northeast Pacific exhibit exceptionally slow growth. Age-at-maturity in females is approximately 35-36 years (Strait of Georgia) corresponding to approximately 94 cm total length. The maximum recorded age in females is 80 years old, and the recorded maximum size is approximately 130 cm total length, which corresponds to an estimated age of 90 years, based on growth (DFO 2010).
+
+\subsection{\PrPr}
+After birth, juveniles immediately begin feeding on a variety of small invertebrates. As growth progresses and juveniles begin to assume a more bottomdwelling existence, their diet gradually shifts to fish (DFO 2010). As opportunistic feeders, adult spiny dogfish prey on a number of species of fish including herring, capelin and eulachon, rising only occasionally in the water column to feed on surface swarms of euphasiids (Hart 1988). They are also known to feed on commercial crab species, shrimps and octopus (Hart 1988). Digestion is a slow process in spiny dogfish, with an observed time between feeding events of 16 days in \bc waters. The relationship between \fishnameDOG\ and higher trophic level predators such as lingcod, sablefish, other shark species, and northern sea lions is not well understood (DFO 2010).
+
 \subsection{Environment}
 \subsection{Other species}
 
 \section{\fishnameDOL}
 \subsection{\LH}
-\subsection{Prey and predators}
+\subsection{\PrPr}
 no stock assessment available
 \subsection{Environment}
 \subsection{Other species}
 
 \section{\fishnameENL}
 \subsection{\LH}
-\subsection{Prey and predators}
+\subsection{\PrPr}
 nothing in stock assessment
 \subsection{Environment}
 \subsection{Other species}
 
 \section{\fishnameGSR}
 \subsection{\LH}
-\subsection{Prey and predators}
+\subsection{\PrPr}
 no stock assessment
 \subsection{Environment}
 \subsection{Other species}
 
 \section{\fishnameLST}
 \subsection{\LH}
-\subsection{Prey and predators}
+\subsection{\PrPr}
 not within stock assessment
 \subsection{Environment}
 \subsection{Other species}
 
 \section{\fishnamePAC}
 \subsection{\LH}
-\subsection{Prey and predators}
-(From Forrest et al. 2013) \fishnamePAC\ are omnivores, eating a diet of mainly marine invertebrates, including amphipods, euphausiids, shrimp and crabs. At around 50-55 cm they also become piscivorous, with Pacific Sand Lance (Ammodytes hexapterus) and Pacific Herring (\emph{Clupea harengus pallasi}) becoming important components of the diet (Westrheim 1996). Juvenile Sablefish (\emph{Anoplopoma fimbria}) and adult Pacific Hake (\emph{Merluccius productus}) have also been reported in the diet of Pacific Cod off the west coast of Vancouver Island (Ware and McFarlane 1986). Pacific Cod have been reported in the diets of Pacific Halibut (\emph{Hippoglossus stenolepis}), North Pacific Spiny Dogfish (\emph{Squalus suckleyi}), sea birds, seals and sealions (Westrheim 1996).
+\subsection{\PrPr}
+(All information is from Forrest et al. 2013) \fishnamePAC\ are omnivores, eating a diet of mainly marine invertebrates, including amphipods, euphausiids, shrimp and crabs. At around 50-55 cm they also become piscivorous, with Pacific Sand Lance (Ammodytes hexapterus) and Pacific Herring (\emph{Clupea harengus pallasi}) becoming important components of the diet (Westrheim 1996). Juvenile Sablefish (\emph{Anoplopoma fimbria}) and adult Pacific Hake (\emph{Merluccius productus}) have also been reported in the diet of Pacific Cod off the west coast of Vancouver Island (Ware and McFarlane 1986). Pacific Cod have been reported in the diets of Pacific Halibut (\emph{Hippoglossus stenolepis}), North Pacific Spiny Dogfish (\emph{Squalus suckleyi}), sea birds, seals and sealions (Westrheim 1996).
 
 Walters et al. (1986) demonstrated a Pacific Cod-Herring predator-prey interaction in Hecate Strait, in contrast to Ware and McFarlane (1986). Simulation models were developed by Walters et al. (1986) to explicitly model the effects of Pacific Cod predation on Pacific Herring. The simulations were able to mimic recruitment trends in both species. Walters et al. (1986) concluded that availability of Pacific Herring prey could be an important driver of Pacific Cod production in Hecate Strait, and, similarly, that Pacific Cod predation could be a significant driver of Pacific Herring abundance. These authors acknowledged that there are
 alternative hypotheses for cycles in abundance of Pacific Cod and Pacific Herring (e.g., environmental forcing; see below) and suggested that large-scale management experiments may be the only way to distinguish among competing hypotheses.
