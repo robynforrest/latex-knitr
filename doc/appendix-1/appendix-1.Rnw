@@ -9,33 +9,50 @@
 
 \clearpage
 
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+
 \chapter{Appendix A}
 \label{chap:example.1}
 
 \section{\fishnameARF}
 \subsection{\LH}
-Larvae have been sampled between the surface and 200 m depth off northern \bc in June (Taylor 1967a from Hart, Hart 1988).
+Larvae have been sampled between the surface and 200 m depth off northern \bc\ in June (Taylor 1967a from Hart, Hart 1988).
 They are mainly found on soft bottoms from Central California to the eastern Bering Sea at depth of 730 m to 900 m (Hart 1988) 
 
 \subsection{\PrPr}
-\fishnameARF\ larvae off the coast of \bc are known to eat juvenile and adult copepods and eggs. Adults feed on crustaceans and fishes that include shrimp species, Pacific Herring (Eschmeyer, W.N., E.S. Herald and H. Hammann, 1983. A field guide to Pacific coast fishes of North America. Houghton Mifflin Company, Boston, U.S.A. 336 p., Hart 1988) and Walleye Pollock \emph{Theragra chalcogramma} (Livingston 1993). 
+\fishnameARF\ larvae off the coast of \bc\ are known to eat juvenile and adult copepods and eggs. Adults feed on crustaceans and fishes that include shrimp species, Pacific Herring (Eschmeyer, W.N., E.S. Herald and H. Hammann, 1983. A field guide to Pacific coast fishes of North America. Houghton Mifflin Company, Boston, U.S.A. 336 p., Hart 1988) and Walleye Pollock \emph{Theragra chalcogramma} (Livingston 1993). 
 
 Predators include the bony fishes \emph{Anoplopoma fimbria}, \emph{Gadus macrocephalus}, \emph{Theragra chacogramma} and \emph{Reinhardtius stomias}. Steller sea lions (\emph{Eumetopias jubatus}) and the Pacific sleeper shark (\emph{Somniosus pacificus}) are also known predators.
 \subsection{Environment}
 \subsection{Other species}
 \fishnameARF\ is primarily taken by the groundfish bottom trawl fishery but is also caught in small quantities by hook and line fisheries, particularly those that are targeting Pacific Halibut (\emph{Hippglossus stenolepis}) (DFO 2015 ARF Stock assessment). 
+\newpage
+
+\subsection{FIGURES}
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ARF/SurveyCatchAllSurveys_grid_5km_gridded.eps}
+\end{center}
+%\vspace{0mm}
+% To get the grid size in km^2 for the caption:
+% While in the gui for the map, type mean(xtcall(PBSmap)$pdata$area) for the map you currently have loaded.
+\caption{Mean survey catch (kg) of \fishnameARF\ in grid cells 5 km x 5 km. The shaded cells give an approximation of the area where \fishnameARF\ was encountered by fishing events from all groundfish trawl surveys for all years. See Table XX for a list of surveys.}
+\label{fig:surveycatchARF}
+\end{figure}
+
+\newpage
 
 \section{\fishnameCAR}
 \subsection{\LH}
-\fishnameCAR\ (\emph{Sebastes pinniger}) is one of over 102 rockfish species of the genus Sebastes, 96 of which are found in the North Pacific. There are over 39 species present in \bc waters(DFO 2009).
+\fishnameCAR\ (\emph{Sebastes pinniger}) is one of over 102 rockfish species of the genus Sebastes, 96 of which are found in the North Pacific. There are over 39 species present in \bc\ waters(DFO 2009).
 
-\fishnameCAR\ are found from northern Baja California to the western Gulf of Alaska (Love et al. 2002), but populations are most abundant between northern California and \bc (DFO 2009). Little is known about the distribution of young \fishnameCAR\ in \bc waters although they have been captured by gillnets in nearshore sub-tidal depths. They appear to move deeper as they become older and larger. Most of the late stage juveniles and adults are caught over depths of 100 m to 225 m on the continental shelf. Most \fishnameCAR\ will probably die if released after capture (DFO 2009 recovery potential).
+\fishnameCAR\ are found from northern Baja California to the western Gulf of Alaska (Love et al. 2002), but populations are most abundant between northern California and \bc (DFO 2009). Little is known about the distribution of young \fishnameCAR\ in \bc\ waters although they have been captured by gillnets in nearshore sub-tidal depths. They appear to move deeper as they become older and larger. Most of the late stage juveniles and adults are caught over depths of 100 m to 225 m on the continental shelf. Most \fishnameCAR\ will probably die if released after capture (DFO 2009 recovery potential).
 
 Adults congregate in loose groups above hard bottoms (Lamb, A. and P. Edgell, 1986. Coastal fishes of the Pacific northwest. Harbour Publishing Co. Ltd., B.C., Canada. 224 p.)
 
 Mean size  or age in the \fishnameCAR\ samples tends to increase with depth but other than the assumption that juveniles aggregate over hard bottom, there are no known nursery areas (DFO 2009).
 
-\fishnameCAR\ give birth to live young (ovoviviparous) in January or later in \bc (Hart 1988). In California studies, larvae and pelagic juvenile \fishnameCAR\ are reported to occupy the top 100 m for up to 3-4 months after parturition, and then settle to benthic habitats gradually moving deeper as they grow and age (Love et al. 2002). However, little is actually known about the spatial distribution of larval and juvenile stages in \bc waters (DFO 2009). Later stage juveniles and adults are typically captured in \bc by hook-and-line (HL) or trawl gear over rocky, gravel, or sandy bottom on the continental shelf. \fishnameCAR\ are a marine and sub-tidal species; thus all Canadian habitat is within Federal waters.
+\fishnameCAR\ give birth to live young (ovoviviparous) in January or later in \bc\ (Hart 1988). In California studies, larvae and pelagic juvenile \fishnameCAR\ are reported to occupy the top 100 m for up to 3-4 months after parturition, and then settle to benthic habitats gradually moving deeper as they grow and age (Love et al. 2002). However, little is actually known about the spatial distribution of larval and juvenile stages in \bc\ waters (DFO 2009). Later stage juveniles and adults are typically captured in \bc\ by hook-and-line (HL) or trawl gear over rocky, gravel, or sandy bottom on the continental shelf. \fishnameCAR\ are a marine and sub-tidal species; thus all Canadian habitat is within Federal waters.
 
 Like all rockfish, they have closed swim bladders and usually die if released after routine capture. Work in Oregon has shown that movements by adults that exceed 100 km are possible (DeMott 1983). Additional details on \fishnameCAR\ biology can be found in Love et al. (2002), Stanley et al. (2005), Stewart (2007a), and Stanley et al. (2009).
 
@@ -60,38 +77,65 @@ Reproduction in the \fishnameDOG\ is carried out through internal fertilization.
 As a result of their low metabolic rate, \fishnameDOG\ in the Northeast Pacific exhibit exceptionally slow growth. Age-at-maturity in females is approximately 35-36 years (Strait of Georgia) corresponding to approximately 94 cm total length. The maximum recorded age in females is 80 years old, and the recorded maximum size is approximately 130 cm total length, which corresponds to an estimated age of 90 years, based on growth (DFO 2010).
 
 \subsection{\PrPr}
-After birth, juveniles immediately begin feeding on a variety of small invertebrates. As growth progresses and juveniles begin to assume a more bottomdwelling existence, their diet gradually shifts to fish (DFO 2010). As opportunistic feeders, adult spiny dogfish prey on a number of species of fish including herring, capelin and eulachon, rising only occasionally in the water column to feed on surface swarms of euphasiids (Hart 1988). They are also known to feed on commercial crab species, shrimps and octopus (Hart 1988). Digestion is a slow process in spiny dogfish, with an observed time between feeding events of 16 days in \bc waters. The relationship between \fishnameDOG\ and higher trophic level predators such as lingcod, sablefish, other shark species, and northern sea lions is not well understood (DFO 2010).
+After birth, juveniles immediately begin feeding on a variety of small invertebrates. As growth progresses and juveniles begin to assume a more bottomdwelling existence, their diet gradually shifts to fish (DFO 2010). As opportunistic feeders, adult spiny dogfish prey on a number of species of fish including herring, capelin and eulachon, rising only occasionally in the water column to feed on surface swarms of euphasiids (Hart 1988). They are also known to feed on commercial crab species, shrimps and octopus (Hart 1988). Digestion is a slow process in spiny dogfish, with an observed time between feeding events of 16 days in \bc\ waters. The relationship between \fishnameDOG\ and higher trophic level predators such as lingcod, sablefish, other shark species, and northern sea lions is not well understood (DFO 2010).
 
 \subsection{Environment}
+
 \subsection{Other species}
 
 \section{\fishnameDOL}
 \subsection{\LH}
+\fishnameDOL\ are distributed from the northern Baja California to the Bering Sea and are found at the surface to depths of 1,100 m (Hart 1973). Two discrete populations have been identified in \bc\ waters with the southern population occurring off the west coast of Vancouver Island while the northern populations occurs in Queen Charlotte Sound, Hecate Strait and the west coast of Haida Gwaii (Fargo 1999). Adults occur on mud bottoms (Eschmeyer, W.N., E.S. Herald and H. Hammann, 1983. A field guide to Pacific coast fishes of North America. Houghton Mifflin Company, Boston, U.S.A. 336 p.). 
+\fishnameDOL\ can live for 45 years. They spawn annually in deepwater during the winter at depths between 800 and 1,000 m. Females beging to spawn at age 5 while males begin to spawn at 4 year of age (Fargo 1999). 
+Spawning in California occurs between November and February. Their eggs range in diameter between 2.05 and 2.57 mm with an average of 2.33 mm. The pelagic life of larvae is prolonged over several months and is longer in duration than other flatfish species (Hart 1973).  Males are mature at 39 cm while females are mature at 45 cm in length. Off the coast of Oregon 50 percent of females are  mature at 38 to 40 cm in length (Hart 1973). Their reach a maximum length of 76.0 cm (Eschmeyer, W.N., E.S. Herald and H. Hammann, 1983. A field guide to Pacific coast fishes of North America. Houghton Mifflin Company, Boston, U.S.A. 336 p.) 
+This species does not appear to migrate along the coast; however, in Washington they have been observed to 200 km northward and 680 km southward. 
 \subsection{\PrPr}
-no stock assessment available
+Potential predators include the Pacific sleeper shark (\emph{Somniosus pacificus}), California sea lion (\emph{Zalophus californiaus}), harbour seal (\emph{Phoca vitulina}) and Pacific halibut (\emph{Hippoglossus stenolepis}).
+\fishnameDOL\ mainly prey upon zoobenthos which include worms, crustaceans, echinoderms and mollusks (Pearcy, W.G. and D. Hancock, 1978. Feeding habits of dover sole, Microstomus pacificus; rex sole, Glyptocephalus zachirus; slender sole, Lyopsetta exilis; and pacific sanddab, Citharichthys sordidus, in a region of diverse sediments and bathymetry off Oregon. Fish. Bull. 76(3):641-651.).
+
 \subsection{Environment}
 \subsection{Other species}
 
 \section{\fishnameENL}
 \subsection{\LH}
+\fishnameENL\ are distributed from California to south east Alaska, but abundance declines with increasing latitude and Hecate Strait is near the northern limit for this species (Fargo, J., A.R. Kronlund, J.T. Schnute, and R. Haigh. 2000. Stock assessment of rock sole and English sole in Hecate Strait for 2000/2001. DFO. Can. Stock. Assess. Sec. Res. Doc. 2000/166. 83p.). Their preferred depth range is between 5 and 150 m, with mature fish at deeper depths and the shallow depths being used by pre-recruits (Fargo, J. 1998. Flatfish Stock Assessments for the west coast of Canada for 1997 and recommended yield options for 1998. DFO. Can. Stock. Assess. Sec. Res. Doc. 1997/36. 55p.). Adults inhabit sand and mud bottoms (Clemens, W.A. and G.V. Wilby, 1961. Fishes of the Pacific coast of Canada. 2nd ed. Fish. Res. Bd. Canada Bull. (68):443 p.).
+Females attain larger sizes than  males and they reach sexual maturity  around 300 mm (Fargo, J., A.R. Kronlund, J.T. Schnute, and R. Haigh. 2000. Stock assessment of rock sole and English sole in Hecate Strait for 2000/2001. DFO. Can. Stock. Assess. Sec. Res. Doc. 2000/166. 83p.). After that age males stop growing and put their energy into reproduction. Females grow to a maximum length of approximately 500 mm. \fishnameENL\ are believed to live up to 22 years of age (Chilton, D.E. and R.J. Beamish. 1982. Age determination methods for fish studies by the groundfish program at the Pacific Biological Station. Can. Spec. Pub. Fish. Aquat. Sci. 60. 102 p., Starr 2009 ENL stock assessment for 2006/07).
+Spawning occurs in \bc\ from January to March (Hart 1973). Fifty percent maturity occurs at  29.5 cm for females and at 26.0 cm for males. \fishnameENL\ larvae are pelagic 6 to 10 weeks after they are laid as eggs (Hart 1973). Early on, juveniles occur in the intertidal zone and the shallow subtidal zone and move deeper as they age. In general, adults move into relatively shallow waters during the spring and deep water during the winter. 
+\fishnameENL\ can travel 7 km during a single day and are known to migrate as far as 960 km from \bc\ waters to northern California (Hart 1973). 
+
 \subsection{\PrPr}
-nothing in stock assessment
+\fishnameENL\ predators include the Pacific staghorn sculpin (\emph{Leptocottus armatus}), California sea lions and harbour seals. The crystal jelly (\emph{Aequorea victoria}) feeds on \fishnameENL\ larval stages.
+\fishnameENL\ feed on a variety of benthic crustaceans including ostracods, amphipods, shrimps, prawns, crabs and copepods. They also prey on worms, echinoderms, bivalves and gastropods.
+
 \subsection{Environment}
 \subsection{Other species}
 
 \section{\fishnameGSR}
 \subsection{\LH}
+\fishnameGSR\ inhabit inshore and offshore areas from the Baja California to the Gulf of Alaska \citet{hart1973}. They commonly occur at depths between 90 and 365 m and unlike other rockfish species they prefer mud or sand bottoms (Love, M., Yoklavich, M., and L. Thorsteinson. 2002. The rockfishes of the northeast Pacific. University of California Press, Berkely, Los Angeles, and London. 404 p. and Shaw, F.R., and D.R. Gunderson. 2006. Life history traits of the greenstriped rockfish, Sebastes elongates. California Fish and Game. 92:1-23.) 
+Both sexes mature between 18 and 24 cm but females grow larger than males (Love et al 2002).  Mating occurs in December through February, fertilization occurs in early spring, with birth occurring in late spring (Shaw and Gunderson 2006).
+From \bc\ to Oregon young \fishnameGSR\ are likely born in late spring or early summer. Larvae are approximately 5 mm when they are released (Hart 1973). 
+
 \subsection{\PrPr}
-no stock assessment
+Predators of \fishnameGSR\ include salmon (Mills et al. 2007).
+\fishnameGSR\ prey upon fish, krill, shrimps, copepods, amphipods and squid.
 \subsection{Environment}
 \subsection{Other species}
+Studies have found a higher abundance of \fishnameGSR\ at reefs with small numbers of piscivorous rockfish relative to reefs with higher numbers of piscivorous rockfish (Pacific Fishery Management Council) and NMFS (National Marine Fisheries Service). 2006.
+Proposed Acceptable Biological Catch and Optimum Yield Specifications and Management Measures for the 2007-2008 Pacific Coast Groundfish Fishery, and Amendment 16-4: Rebuilding Plans For Seven Depleted Pacific Coast Groundfish Species; Final Environmental Impact Statement Including Regulatory Impact Review and Initial Regulatory Flexibility Analysis. Pacific Fishery Management Council, Portland, OR. October 2006.)
 
 \section{\fishnameLST}
 \subsection{\LH}
+\fishnameLST\ occur on soft bottoms or offshore waters from southern Baja California to Aleutian Islands of Alaska at depths of 370 to 1,600 m (Hart 1973). They are abundant from 600 to 1200 m (Wakefield, W.W. 1990. Patterns in the distribution of demersal fishes on the upper continental shelf off central California with studies of ontogenetic vertical migration in particle flux. Ph.D. Thesis. University of California, San Diego. 281 p.) Juveniles occur in at midwater depths ( Eschmeyer, W.N., E.S. Herald and H. Hammann, 1983. A field guide to Pacific coast fishes of North America. Houghton Mifflin Company, Boston, U.S.A. 336 p.). \fishnameLST\ do not aggregate but are uniformly dispersed (Wakefield 1990).  
+Approximately 50 to 60\% of both sexes have reached sexual maturity at 190 mm (Ianelli, J.N., R.R. Lauth, and L.D. Jacobson. 1994. Status of the thornyhead (Sebastolobus sp.) resource in 1994 (Appendix D). In Appendices to the Status of the Pacific Coast Groundfish Fishery Through 1994 and Recommended Accepted Biological Catches for 1995. Appendix Vol. 1: Stock Assessment and Fishery Evaluation. Pacific Fishery Management Council, Portland Oregon, p. D1-D58).
+The larval phase is pelagic for a relatively long period of time and are dispersed over wide areas due to prevailing ocean currents (Jacobson, L.D. and R.D. Vetter. 1996. Bathymetric demography and niche separation of thornyhead rockfishes: Sebastolobus alascanus and Sebastolobus altivelis. Can. J. Fish. Aquat. Sci. 53:600-609). 
+
 \subsection{\PrPr}
-not within stock assessment
+\fishnameLST\ are consumed by \fishnameSST\ and sablefish (\emph{Anoplopoma fimbria}) (Jacobson and Vetter 1996, Buckley, T. W., G. E. Tyler, D. M. Smith, and P. A. Livingston. 1999. Food habits of some commercially important groundfish off the coasts of California, Oregon, Washington, and British Columbia. NOAA Technical Memorandum. NFMS-AFSC- 102. 173pp.)
 \subsection{Environment}
+
 \subsection{Other species}
+\fishnameLST\ are captured in fisheries with \fishnameDOL\ and sablefish.
 
 \section{\fishnamePAC}
 \subsection{\LH}
@@ -109,9 +153,13 @@ alternative hypotheses for cycles in abundance of Pacific Cod and Pacific Herrin
 
 \section{\fishnamePEL}
 \subsection{\LH}
+\fishnamePEL\ are distributed from northern Baja California to the Gulf of Alaska and Bering Sea. Individuals are distributed throughout coastal \bc\  with large concentrations along the west coast of Vancouver Island, off Cape Scott, through Queen Charlotte Sound and Hecate Strait, and in Dixon Entrance (\citet{hart1973}). They are usually occur in deep water (up to 550 m) but can be found near the surface \citet{hart1973}. Adults are found on sand bottoms
+
 \subsection{Prey and predators}
+Adult \fishnamePEL\ prey on herring, cephalopods, euphasiids, shrimp and bottom fishes (\citet{hart1973, abm04}, (Pearsall and Fargo 2007). \fishnamePEL\ show seasonal changes in diet by consuming more fish, primarily herring, in the winter diet than the summer and fall diets, and no fish during the summer (Pearsall and Fargo 2007).  
 \subsection{Environment}
 \subsection{Other species}
+Petrale sole is an important component of the offshore ecosystem. Studies indicate that this species is a top end predator whose diet overlaps with that of \fishnameARF\ (adult and juvenile), \fishnameDOG\, \fishnamePAC\ (adult and juvenile), Pacific halibut, sand sole (\emph{Psettichthys melanostictus}) and several rockfish species.
 
 \section{\fishnamePOP}
 \subsection{\LH}
@@ -151,14 +199,18 @@ no reports
 \section{\fishnameSGR}
 \subsection{\LH}
 \subsection{Prey and predators}
-nothing in 2014 stock assessment
+\fishnameSGR\ feed mainly on fish (74\% of diet) but also feed on euphausiids (Pearsall and Fargo 2007.
 \subsection{Environment}
 \subsection{Other species}
 
 \section{\fishnameSST}
 \subsection{\LH}
 \subsection{Prey and predators}
-no information in working paper
+Over 70\% of adult shortspine thornyhead diet measured in the early 1990s was shrimp, including both commercial (Pandalid) shrimp and non-commercial (Non-Pandalid shrimp) in equal and to a lesser extent deepwater crabs(Gaichas and Ianelli 2005 GoA Thornyheads). 
+
+Other important prey of shortspine thornyheads include crabs, zooplankton, amphipods, and other benthic invertebrates, and thornyheads are estimated to consume up to an additional 1,000 metric tons of each of these prey annually in the GOA (Figure 14-15). Juvenile thornyheads have diets similar to adults, but they are estimated to consume far less prey overall than adults, as might be expected when a relatively small proportion of the population is in the juvenile stage at any given time (Gaichas and Ianelli 2005)
+
+Shortspine thornyheads are consumed by a variety of piscivores, including arrowtooth flounder, sablefish, "toothed whales" (sperm whales), and sharks. Juvenile shortspine thornyheads are thought to be consumed almost exclusively by adult thornyheads. Thornyheads are an uncommon prey in the Gulf of Alaska, as they generally make up less than 2\% of even their primary predators' diets (Lowe et al 2007 GoA Thornyheads). 
 \subsection{Environment}
 \subsection{Other species}
 
@@ -221,6 +273,10 @@ The residuals between the observed ($p_{t,a}$) and predicted proportions ($\wide
 \begin{equation}\label{eq:widehat}
 \eta_{t,a}=\ln(p_{t,a})-\ln(\widehat{p}_{t,a})-\frac{1}{A}\sum_{a=1}^A\left[\ln(p_{t,a})-\ln(\widehat{p}_{t,a}) \right]
 \end{equation}
+
+
 \clearpage
 
 \newpage
+
+
