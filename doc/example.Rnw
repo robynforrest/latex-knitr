@@ -157,6 +157,11 @@
 \newcommand{\familynameARF}{Pleuronectidae}
 \newcommand{\commonnameARF}{Turbot}
 
+\newcommand{\fishnameBOR}{Bocaccio}
+\newcommand{\sciencenameBOR}{Sebastes paucispinis}
+\newcommand{\familynameBOR}{Sebastidae}
+\newcommand{\commonnameBOR}{}
+
 \newcommand{\fishnameCAR}{Canary Rockfish}
 \newcommand{\sciencenameCAR}{Sebastes pinniger}
 \newcommand{\familynameCAR}{Sebastidae}
@@ -226,6 +231,11 @@
 \newcommand{\sciencenameSGR}{Sebastes brevispinis}
 \newcommand{\familynameSGR}{Sebastidae}
 \newcommand{\commonnameSGR}{}
+
+\newcommand{\fishnameSBF}{Sablefish}
+\newcommand{\sciencenameSBF}{Anoplopoma fimbria}
+\newcommand{\familynameSBF}{Anoplopomatidae}
+\newcommand{\commonnameSBF}{Black Cod}
 
 \newcommand{\fishnameSST}{Shortspine Thornyhead}
 \newcommand{\sciencenameSST}{Sebastolobus alascanus}
