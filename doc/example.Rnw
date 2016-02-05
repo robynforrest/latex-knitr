@@ -9,6 +9,7 @@
 \usepackage{resDocSty}
 \usepackage{appendix}
 \usepackage{cite}
+%%\usepackage(natbib) %conflicts with cite package
 %% need array when specifying a ragged right column:  >{\raggedright\arraybackslash}{p2in}.
 \usepackage{longtable,array}
 %% \renewcommand{\chaptername}{Appendix}
