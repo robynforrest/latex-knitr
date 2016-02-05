@@ -1,0 +1,1746 @@
+% appendix-A.Rnw
+
+% Some macros for equations found in tables
+\def\beq{\vspace{-5ex} \begin{fleqn} \begin{equation}}
+\def\eeq{\end{equation} \end{fleqn} \vspace{-5ex}}
+\def\tabline{\vspace{2ex} \hrule \vspace{2ex}}
+% new page macro
+\def\newp{\vfill \break}
+
+\clearpage
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+
+\chapter{SPECIES SUMMARIES}
+\label{chap:example.1}
+
+\section{\fishnameARF}
+\subsection{\LH}
+They are mainly found on soft bottoms from Central California to the eastern Bering Sea \citep{hart1973}. They occur from the surface to 900 m depth but are common up to 400 m deep \citep{as88}. Larvae have been sampled between the surface and 200 m depth off northern \bc\ in June \citep{tay1967, hart1973}.
+
+The maximum recorded length is 84 cm \citep{esch1983}.
+
+\subsection{\PrPr}
+Predators include the bony fishes \fishnameSBF\ (\emph{Anoplopoma fimbria}), \fishnamePAC\ (\emph{Gadus macrocephalus}), Alaska Pollock (\emph{Gadus chalcogrammus}) and \fishnameARF\ (\emph{Reinhardtius stomias}). Steller Sea Lions (\emph{Eumetopias jubatus}) and the Pacific Sleeper Shark (\emph{Somniosus pacificus}) are also known predators.
+\fishnameARF\ larvae off the coast of \bc\ are known to eat juvenile and adult copepods and eggs. Adults feed on crustaceans and fishes that include shrimp species, Pacific Herring \citep{hart1973, esch1983} and Walleye Pollock \emph{Gadus chalcogrammus} \citep{liv93}.
+Migration patterns are not well understood but it is believed that \fishnameARF\ move into deeper waters as they grow, similar to other flatfish species \citep{zg96}.
+They spawn in deep water (> 400 m) from fall to winter along the continental shelf break in winter and move to shallower water during the summer \citep{arf1995, bmb07}.
+
+\subsection{Environment}
+
+\subsection{Other species}
+\fishnameARF\ is primarily taken by the groundfish bottom trawl fishery but is also caught in small quantities by hook and line fisheries, particularly those that are targeting Pacific Halibut (\emph{Hippoglossus stenolepis}) \citep{arf15}.
+
+
+\newpage
+
+\subsection{Figures}
+%\begin{figure}[!htp]
+%\begin{center}
+%\includegraphics[width=6in,keepaspectratio=true]{ARF/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+%\end{center}
+
+%\caption{Mean survey catch (kg) of \fishnameARF\ in grid cells 3 km x 3 km. The shaded cells give an approximation of the area where \fishnameARF\ was encountered by fishing events from all groundfish trawl surveys for all years. See Table XX for a list of surveys.}
+%\label{fig:surveycatchARF}
+%\end{figure}
+
+%\newpage
+
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{ARF/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameARF\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchARF}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{ARF/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameARF\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthARF}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{ARF/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameARF\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexARF}
+        \end{subfigure}
+        \quad    %adjusts distance between panels
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{ARF/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameARF\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityARF}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnameARF\ data. The shaded cells give an approximation of the area where \fishnameARF\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:ARFfigures}
+    \end{figure*}
+
+%%placeholder for figures still to be created
+\newpage
+\clearpage
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{ARF/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.ARF}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{ARF/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.ARF}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameARF\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:ARF.cdf.figures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\section{\fishnameBOR}
+\subsection{\LH}
+\fishnameBOR\ are distributed from Baja California to the Alaska Peninsula. A few sites within \bc\, northern Washington, along the California coast and Baja California  may be the last areas within significant abundance \citep{lyt02}. Adults have been observed between 12 and 478 m but are most abundant between 50 to 250 m depth \citep{lyt02}. Adults utilise rocky reefs, but are also common on open bottoms (Eschmeyer et al 1983). Juveniles are found in shallow water and move to deeper water with age \citep{lyt02}. 
+
+Larvae are most commonly found between December and April, and have been found as far as 480 km offshore \citep{lyt02}. Young \fishnameBOR\ may stay in the upper water column for up to 5.5 months, most settle by 3.5 months \citep{lyt02}. In California, juveniles recruit to nearshore waters between February and August with a peak between May and July \citep{lyt02}. Juveniles will often recruit to rocky areas covered with algae or sand habitat with eelgrass and drift algae \citep{lyt02}. Adults are usually associated with high relief boulder fields and rocks while the largest individuals remain sedentary in caves and crevices \citep{lyt02}. Young \fishnameBOR\ form schools \citep{esch1983}. 
+\fishnameBOR\ are difficult to age but the oldest known individual is 50 years \citep{andrews05}.
+
+\subsection{\PrPr}
+\fishnameBOR\ are predated on by Chinook salmon (\emph{Oncorhynchus tshawytscha}), Least Terns (\emph{Sternula antillarum}, Rhinoceros Auklet (\emph{Cerorhinca monocerata}), Blue Shark (\emph{Prionace glauca}) and Harbour Seal (\emph{Phoca vitulina}) \citep{harv89, lyt02, mills07}.
+Larval \fishnameBOR\ feed on larval krill, diatoms and dinoflagellates. Pelagic juveniles feed on fish larvae, copepods and krill. Larger juveniles and adults feed on other rockfish, Pacific Hake, Northern Anchovy (\emph{Engraulis mordax}), Lanternfishes and squid \citep{lyt02}.
+
+\subsection{Environment}
+
+\subsection{Other species}
+Adults school with \fishnameWWR\, Yellowtail Rockfish (\emph{Sebastes flavidus}), Vermilion Rockfish (\emph{Sebastes miniatus}) and Speckled Rockfish (\emph{Sebastes ovalis}) \citep{lyt02}.
+
+\newpage
+\clearpage
+
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{BOR/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameBOR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:surveycatchBOR}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{BOR/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameBOR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthBOR}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{BOR/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameBOR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexBOR}
+        \end{subfigure}
+        \quad    %adjusts distance between panels
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{BOR/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameBOR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityBOR}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnameBOR\ data. The shaded cells give an approximation of the area where \fishnameBOR\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:BORfigures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{BOR/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.BOR}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{BOR/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.BOR}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameBOR\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:BOR.cdf.figures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\section{\fishnameCAR}
+\subsection{\LH}
+\fishnameCAR\ (\emph{Sebastes pinniger}) is one of over 102 rockfish species of the genus Sebastes, 96 of which are found in the North Pacific. There are over 39 species present in \bc\ waters \citep{car09}.
+
+\fishnameCAR\ are found from northern Baja California to the western Gulf of Alaska \citep{lyt02}, but populations are most abundant between northern California and \bc \citep{car09}. Little is known about the distribution of young \fishnameCAR\ in \bc\ waters although they have been captured by gillnets in nearshore sub-tidal depths. They appear to move deeper as they become older and larger. Most of the late stage juveniles and adults are caught over depths of 100 m to 225 m on the continental shelf. Most \fishnameCAR\ will probably die if released after capture \citep{car09}. Adults congregate in loose groups above hard bottoms \citep{lamb86}
+
+Mean size  or age in the \fishnameCAR\ samples tends to increase with depth but other than the assumption that juveniles aggregate over hard bottom, there are no known nursery areas \citep{car09}.
+
+\fishnameCAR\ give birth to live young (ovoviviparous) in January or later in \bc\ \citep{hart1973}. In California studies, larvae and pelagic juvenile \fishnameCAR\ are reported to occupy the top 100 m for up to 3-4 months after parturition, and then settle to benthic habitats gradually moving deeper as they grow and age \citep{lyt02}. However, little is actually known about the spatial distribution of larval and juvenile stages in \bc\ waters \citep{car09}. Later stage juveniles and adults are typically captured in \bc\ by hook-and-line (HL) or trawl gear over rocky, gravel, or sandy bottom on the continental shelf. \fishnameCAR\ are a marine and sub-tidal species; thus all Canadian habitat is within Federal waters.
+
+Work in Oregon has shown that movements by adults can migrate further than 100 km \citep{demott83}.
+
+\subsection{\PrPr}
+Pelagic juveniles feed on an array of planktonic items. Adults and subadults primarily eat krill and small fishes \citep{esch1983}. Significant predators probably include lingcod \citep{car09}. 
+
+\subsection{Environment}
+Unpublished information (presented as pers. comm. within \citet{car09}) suggests observed declines in dissolved oxygen, which appear to be correlated with apparent shifts in distribution of many groundfish species to shallower depths, may be a source of concern. These observations are preliminary and their longterm significance is unknown and it is not known if these shifts are outside expected long term variation. This observation could act to reduce both the quality and quantity of available habitat for \fishnameCAR\ \citep{car09}.
+
+\subsection{Other species}
+\newpage
+
+\subsection{Figures}
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{CAR/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameCAR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchCAR}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{CAR/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameCAR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthCAR}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{CAR/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameARF\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexCAR}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{CAR/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameCAR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityCAR}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnameCAR\ data. The shaded cells give an approximation of the area where \fishnameCAR\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+      \label{fig:CARfigures}
+    \end{figure*}
+
+%%placeholder for figures still to be created
+\newpage
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{CAR/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.CAR}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{CAR/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.CAR}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameCAR\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:CAR.cdf.figures}
+    \end{figure*}
+    
+\newpage
+\clearpage 
+
+\section{\fishnameDOG}
+\subsection{\LH}
+In British Columbia, there are two discrete stocks of \fishnameDOG\; an outside stock that extends from Baja California to Alaska and an inside stock, in the Strait of Georgia. \fishnameDOG\, like most shark species grow slowly, mature late (35-36 years for females) and produce between 2 and 17 offspring (pups) per year resulting in very low intrinsic rates of population increase \citep{dfo10}.
+
+In Hecate Strait and Dixon Entrance, \fishnameDOG\ are available only during summer but it is unclear whether their movements are mainly horizontal or with depth \citep{hart1973}. \fishnameDOG\ occur in brackish to marine waters from the surface to depths of 730 m \citep{hart1973, ebert10}. 
+The \fishnameDOG\ is a small, gregarious shark belonging to the order Squaliformes and inhabiting temperate waters off the east and west coasts of North America. Recent reexamination of differences in natural history and demography between Pacific and Atlantic populations has resulted in a recommendation that these two populations should be reseparated into two different species, \emph{S. suckleyi} in the Pacific and \emph{S. acanthias} in the Atlantic \citep{dfo10}.
+
+Reproduction in the \fishnameDOG\ is carried out through internal fertilization. Breeding occurs during the late fall and early spring. Large eggs, approximately 35 mm in diameter and numbering 2 to 17, are released from the ovaries of the females, where they then pass through the shell gland for simultaneous fertilization and encapsulation in thick, rubbery "shells" before proceeding into the oviducts. Development is ovoviviparous (internal). Encapsulated eggs remain in the oviducts for nearly 2 years (18-22 months), a gestation period almost unmatched by any other species. During gestation, the shells dissolve and the free embryos are nourished by yolk material which they gradually deplete until they reach a full-term size averaging between 26 and 27 cm. In British Columbia waters, average fecundity in the \fishnameDOG\ is between six and seven (range from 2 to 16 pups) \citep{dfo10}. Young \fishnameDOG\, born as miniature replicas of their parents, are released in midwater layers overlying depths of 165 - 350 m.
+
+As a result of their low metabolic rate, \fishnameDOG\ in the Northeast Pacific exhibit exceptionally slow growth. Age-at-maturity in females is approximately 35-36 years (Strait of Georgia) corresponding to approximately 94 cm total length. The maximum recorded age in females is 80 years old, and the recorded maximum size is approximately 130 cm total length, which corresponds to an estimated age of 90 years, based on growth \citep{dfo10}.
+
+\subsection{\PrPr}
+After birth, juveniles immediately begin feeding on a variety of small invertebrates. As growth progresses and juveniles begin to assume a more bottomdwelling existence, their diet gradually shifts to fish \citep{dfo10}. As opportunistic feeders, adult spiny dogfish prey on a number of species of fish including herring, capelin and eulachon, rising only occasionally in the water column to feed on surface swarms of euphasiids (Hart 1988). They are also known to feed on commercial crab species, shrimps and octopus \citep{hart1973}. Digestion is a slow process in spiny dogfish, with an observed time between feeding events of 16 days in \bc\ waters. The relationship between \fishnameDOG\ and higher trophic level predators such as lingcod, sablefish, other shark species, and northern sea lions is not well understood \citep{dfo10}.
+
+\subsection{Environment}
+They  prefer 7 \textdegree C to 15 \textdegree C water and it is believed that they will migrate to follow this temperature preference \citep{ebert03}.
+
+\subsection{Other species}
+
+\newpage
+
+\subsection{Figures}
+
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{DOG/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameDOG\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchDOG}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{DOG/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameDOG\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthDOG}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{DOG/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameDOG\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexDOG}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{DOG/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameDOG\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityDOG}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnameDOG\ data. The shaded cells give an approximation of the area where \fishnameDOG\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:DOGfigures}
+    \end{figure*}
+
+\newpage
+\clearpage
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{DOG/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.DOG}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{DOG/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.DOG}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameDOG\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:DOG.cdf.figures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\section{\fishnameDOL}
+\subsection{\LH}
+\fishnameDOL\ are distributed from the northern Baja California to the Bering Sea and are found at the surface to depths of 1,100 m (Hart 1973). Two discrete populations have been identified in \bc\ waters with the southern population occurring off the west coast of Vancouver Island while the northern populations occurs in Queen Charlotte Sound, Hecate Strait and the west coast of Haida Gwaii (Fargo 1999). Adults occur on mud bottoms \citep{esch1983}. 
+\fishnameDOL\ can live for 45 years. They spawn annually in deepwater during the winter at depths between 800 and 1,000 m. Females beging to spawn at age 5 while males begin to spawn at 4 year of age \citep{dol09}. 
+Spawning in California occurs between November and February. Their eggs range in diameter between 2.05 and 2.57 mm with an average of 2.33 mm. The pelagic life of larvae is prolonged over several months and is longer in duration than other flatfish species \citep{hart1973}.  Males are mature at 39 cm while females are mature at 45 cm in length. Off the coast of Oregon 50 percent of females are  mature at 38 to 40 cm in length \citep{hart1973}. Their reach a maximum length of 76.0 cm \citep{esch1983}. 
+This species does not appear to migrate along the coast; however, in Washington they have been observed to 200 km northward and 680 km southward. 
+\subsection{\PrPr}
+Potential predators include the Pacific Sleeper Shark (\emph{Somniosus pacificus}), California Sea Lion (\emph{Zalophus californiaus}), Harbour Seal and Pacific halibut (\emph{Hippoglossus stenolepis}).
+\fishnameDOL\ mainly prey upon zoobenthos which include worms, crustaceans, echinoderms and mollusks \citep{pearcy78}.
+
+\subsection{Environment}
+\subsection{Other species}
+
+\newpage
+
+\subsection{Figures}
+
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{DOL/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameDOL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchDOL}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{DOL/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameDOL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthDOL}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{DOL/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameDOL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexDOL}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{DOL/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameDOL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityDOL}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnameDOL\ data. The shaded cells give an approximation of the area where \fishnameDOL\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:DOLfigures}
+    \end{figure*}
+\newpage
+\clearpage
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{DOL/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.DOL}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{DOL/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.DOL}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameDOL\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:DOL.cdf.figures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\section{\fishnameENL}
+\subsection{\LH}
+\fishnameENL\ are distributed from California to south east Alaska, but abundance declines with increasing latitude and Hecate Strait is near the northern limit for this species \citep{fargo2000}. Their preferred depth range is between 5 and 150 m, with mature fish at deeper depths and the shallow depths being used by pre-recruits \citep{fargo98}. Adults inhabit sand and mud bottoms \citep{clem61}.
+Females attain larger sizes than  males and they reach sexual maturity  around 300 mm \citep{fargo2000}. After that age males stop growing and put their energy into reproduction. Females grow to a maximum length of approximately 500 mm. \fishnameENL\ are believed to live up to 22 years of age \citep{chilton82, starr09}.
+Spawning occurs in \bc\ from January to March \citep{hart1973, starr09}. Fifty percent maturity occurs at  29.5 cm for females and at 26.0 cm for males. \fishnameENL\ larvae are pelagic 6 to 10 weeks after they are laid as eggs \citep{hart1973}. Early on, juveniles occur in the intertidal zone and the shallow subtidal zone and move deeper as they age. In general, adults move into relatively shallow waters during the spring and deep water during the winter. 
+\fishnameENL\ can travel 7 km during a single day and are known to migrate as far as 960 km from \bc\ waters to northern California \citep{hart1973}. 
+
+\subsection{\PrPr}
+\fishnameENL\ predators include the Pacific staghorn sculpin (\emph{Leptocottus armatus}), California sea lions and harbour seals. The crystal jelly (\emph{Aequorea victoria}) feeds on \fishnameENL\ larval stages.
+\fishnameENL\ feed on a variety of benthic crustaceans including ostracods, amphipods, shrimps, prawns, crabs and copepods. They also prey on worms, echinoderms, bivalves and gastropods.
+
+\subsection{Environment}
+\subsection{Other species}
+
+\newpage
+
+\subsection{Figures}
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{ENL/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameENL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchENL}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{ENL/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameENL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthENL}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{ENL/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameENL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexENL}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{ENL/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameENL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityENL}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnameENL\ data. The shaded cells give an approximation of the area where \fishnameENL\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:ENLfigures}
+    \end{figure*}
+\newpage
+\clearpage
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{ENL/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.ENL}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{ENL/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.ENL}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameENL\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:ENL.cdf.figures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\section{\fishnameGSR}
+\subsection{\LH}
+\fishnameGSR\ inhabit inshore and offshore areas from the Baja California to the Gulf of Alaska \citep{hart1973}. They commonly occur at depths between 90 and 365 m and unlike other rockfish species they prefer mud or sand bottoms \citep{lyt02}. 
+Both sexes mature between 18 and 24 cm but females grow larger than males \citep{lyt02}.  Mating occurs in December through February, fertilization occurs in early spring, with birth occurring in late spring (Shaw and Gunderson 2006).
+From \bc\ to Oregon young \fishnameGSR\ are likely born in late spring or early summer. Larvae are approximately 5 mm when they are released \citep{hart1973}. 
+
+\subsection{\PrPr}
+Predators of \fishnameGSR\ include Chinook salmon \citep{mills07}.
+
+\fishnameGSR\ feed on calenoid copepods, amphipods, krill, shrimps, squids and fishes \citep{lyt02}.
+
+\subsection{Environment}
+\subsection{Other species}
+Studies have found a higher abundance of \fishnameGSR\ at reefs with small numbers of piscivorous rockfish relative to reefs with higher numbers of piscivorous rockfish \citep{pfmc06}.
+
+\newpage
+
+\subsection{Figures}
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{GSR/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameGSR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchGSR}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{GSR/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameGSR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthGSR}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{GSR/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameGSR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexGSR}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{GSR/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameGSR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityGSR}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnameGSR\ data. The shaded cells give an approximation of the area where \fishnameGSR\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:GSRfigures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{GSR/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.GSR}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{GSR/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.GSR}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameGSR\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:GSR.cdf.figures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\section{\fishnameLST}
+\subsection{\LH}
+\fishnameLST\ occur on soft bottoms or offshore waters from southern Baja California to Aleutian Islands of Alaska at depths of 370 to 1,600 m \citep{hart1973}. They are abundant from 600 to 1200 m \citep{wake90}. Juveniles occur in at midwater depths \citep{esch1983}. \fishnameLST\ do not aggregate but are uniformly dispersed \citep{wake90}.  
+Approximately 50 to 60\% of both sexes have reached sexual maturity at 190 mm \citep{ilj94}. The larval phase is pelagic for a relatively long period of time and are dispersed over wide areas due to prevailing ocean currents \citep{jv96}. 
+
+\subsection{\PrPr}
+\fishnameLST\ are consumed by \fishnameSST\ and sablefish (\emph{Anoplopoma fimbria}) \citep{jv96, btsl99}
+\subsection{Environment}
+
+\subsection{Other species}
+\fishnameLST\ are captured in fisheries with \fishnameDOL\ and sablefish.
+
+\newpage
+
+\subsection{Figures}
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{LST/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameLST\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchLST}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{LST/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameLST\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthLST}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{LST/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameLST\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexLST}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{LST/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameLST\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityLST}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnameLST\ data. The shaded cells give an approximation of the area where \fishnameLST\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:LSTfigures}
+    \end{figure*}
+\newpage
+\clearpage
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{LST/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.LST}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{LST/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.LST}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameLST\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:LST.cdf.figures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\section{\fishnamePAC}
+\subsection{\LH}
+\subsection{\PrPr}
+\fishnamePAC\ are omnivores, eating a diet of mainly marine invertebrates, including amphipods, euphausiids, shrimp and crabs. At around 50 to 55 cm they also become piscivorous, with Pacific Sand Lance (\emph{Ammodytes hexapterus}) and Pacific Herring (\emph{Clupea harengus pallasi}) becoming important components of the diet \emph{west96}. Juvenile Sablefish (\emph{Anoplopoma fimbria}) and adult Pacific Hake (\emph{Merluccius productus}) have also been reported in the diet of Pacific Cod off the west coast of Vancouver Island \citep{ware86}. Pacific Cod have been reported in the diets of Pacific Halibut (\emph{Hippoglossus stenolepis}), North Pacific Spiny Dogfish, sea birds, seals and sea lions \emph{west96}.
+
+\citet{walters86} demonstrated a Pacific Cod-Herring predator-prey interaction in Hecate Strait, in contrast to \citep{ware86}. Simulation models were developed by \citet{walters86} to explicitly model the effects of Pacific Cod predation on Pacific Herring. The simulations were able to mimic recruitment trends in both species. \citet{walters86} concluded that availability of Pacific Herring prey could be an important driver of Pacific Cod production in Hecate Strait, and, similarly, that Pacific Cod predation could be a significant driver of Pacific Herring abundance. These authors acknowledged that there are alternative hypotheses for cycles in abundance of Pacific Cod and Pacific Herring (e.g., environmental forcing; see below) and suggested that large-scale management experiments may be the only way to distinguish among competing hypotheses.
+
+\subsection{Environment}
+A large number of studies have investigated linkages between recruitment and environmental indices for \fishnamePAC\ in Hecate Strait. The dominant hypothesis is an inverse relationship between recruitment and northward water transport (i.e., northward advection of larvae) \citep{tyler86, tyler91}. Northward water transport has been shown to be positively correlated with mean annual sea level at Prince Rupert during the spawning season, which in turn has been used as an explanatory variable for recruitment by a number of authors \citep{fourn83, sinc2001, sinc2005, Sinclair-Starr:2005}. \citet{west96} provides a review of the major alternative studies.
+
+\subsection{Other species}
+Other species caught with \fishnamePAC\ include \fishnameARF\ (\emph{Atheresthes stomias}), Yellowtail Rockfish (\emph{Sebastes flavidus}), \fishnamePOP\ (\emph{S. alutus}), Lingcod (\emph{Ophiodon elongatus}), \fishnameSGR\ (\emph{S. brevispinis}), \fishnameENL\ (\emph{Parophrys vetulus}) and Big Skate (\emph{Raja binoculata}).  
+
+\newpage
+
+\subsection{Figures}
+\begin{figure*}
+       \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{PAC/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnamePAC\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:surveycatchPAC}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{PAC/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnamePAC\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthPAC}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{PAC/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnamePAC\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+
+\label{fig:allsurveyssexPAC}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{PAC/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnamePAC\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityPAC}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnamePAC\ data. The shaded cells give an approximation of the area where \fishnamePAC\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:PACfigures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{PAC/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.PAC}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{PAC/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.PAC}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnamePAC\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:PAC.cdf.figures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\section{\fishnamePEL}
+\subsection{\LH}
+\fishnamePEL\ are distributed from northern Baja California to the Gulf of Alaska and Bering Sea. Individuals are distributed throughout coastal \bc\  with large concentrations along the west coast of Vancouver Island, off Cape Scott, through Queen Charlotte Sound and Hecate Strait, and in Dixon Entrance \citep{hart1973}. They are usually occur in deep water (80 to 550 m) but can be found near the surface \citep{hart1973, sf04}. Adults are found on sand bottoms. Juveniles (1 to 2 years old) have been found on the ocean floor  at depths of 18 to 71 m \citep{hart1973}. \fishnamePEL\ can live up to 30 years \citep{sf04}. Adults show tolerance for a wide range of bottom temperatures \citep{psf94}.
+
+\fishnamePEL\ move from shallow to deeper water during summer and winter, respectively. Spawning occurs during the winter. There seems to be very little norht-south movement by this species \citep{casillas98}.
+Success of spawning depends on meteorological and oceanographic conditions; therefore, it is variable from year to year which leads to changes in the abundance and size of the fish stock \citep{hart1973}. 
+
+Spawning occurs over the continental shelf and slope from December to April and peaks in January-February. \fishnamePEL\ spawn in the same general area from year to year.
+
+\subsection{\PrPr}
+Juvenile \fishnamePEL\ are prey items for large pollock, \fishnamePAC\ and \fishnameDOG\ \citep{sf04}.
+
+Adult \fishnamePEL\ prey on herring, cephalopods, euphasiids, shrimp and bottom fishes \citep{hart1973, pears07}. \fishnamePEL\ show seasonal changes in diet by consuming more fish, primarily herring, in the winter diet than the summer and fall diets, and no fish during the summer \citep{pears07}. 
+
+\subsection{Environment}
+\citet{cgl95} demonstrated that offshore Ekman transport of eggs and larvae accounted for 55\% and 65\% of the variation in \fishnamePEL\ year-class strength in PMFC Areas 2B and 3A, respectively. They concluded, as have previous investigators, that density-independent survival variation at the early life stages is high compared to variation in spawning biomass \citep{sf04}.
+
+\subsection{Other species}
+Petrale sole is an important component of the offshore ecosystem. Studies indicate that this species is a top end predator whose diet overlaps with that of \fishnameARF\ (adult and juvenile), \fishnameDOG\, \fishnamePAC\ (adult and juvenile), Pacific Halibut, Sand Sole (\emph{Psettichthys melanostictus}) and several rockfish species \citep{pears07}.
+
+\newpage
+
+\subsection{Figures}
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{PEL/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnamePEL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchPEL}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{PEL/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnamePEL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthPEL}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{PEL/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnamePEL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexPEL}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{PEL/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnamePEL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityPEL}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnamePEL\ data. The shaded cells give an approximation of the area where \fishnamePEL\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:PELfigures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{PEL/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.PEL}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{PEL/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.PEL}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnamePEL\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:PEL.cdf.figures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\section{\fishnamePOP}
+\subsection{\LH}
+\fishnamePOP\ Pacific Ocean Perch occurs along the North Pacific rim, ranging from Honshu (Japan), through the Bering Sea, along the Aleutian Islands (Alaska), then southward through BC down to central Baja California \citep{lyt02}. The species appears to be most abundant north of 50 \textdegree N \citep{as88}. They usually occur offshore from the surface to depths of approximately 825 m \citep{hart1973, as88}. They are commonly between 165 and 293 m \citep{ko95}. 
+The life history of POP follows similar patterns to other Sebastes species, with release of larvae that spend periods ranging from about three to twelve months as free-swimming pelagic larvae before settling to the bottom as juveniles. Reproduction appears to follow onshore-offshore migration patterns where females move onshore for insemination and then migrate deeper to the entrances of submarine gullies where they release larvae from February to May \citep{lyt02}. The larvae depend on vertical upwelling to bring them into the upper pelagic zone to facilitate growth and dispersal. The larvae can spend up to a year in the water column before settling on benthic habitat \citep{kl86}. Juvenile benthic habitat is shallow (100-200 m), compared to the depths occupied by adult POP, and comprises either rough rocky bottoms or high relief features such as boulders, anemones, sponges, and corals \citep{cs81, rbz07}. The maximum known age appears to be 103 y for a female specimen from Moresby Gully at 364 m in 2002, from the Department of Fisheries and Oceans Canada (DFO) Groundfish database GFBio \citep{esh12,esh13}.  
+\subsection{\PrPr}
+Predators of \fishnamePOP\ include sablefish, Alaska Pollock, Atka Mackerel (\emph{Pleurogrammus monopterygius}), Chum Salmon (\emph{Oncorhynchus keta}), Pacific Halibut, Albacore (\emph{Thunnus alalunga}), and Sperm Whales (\emph{Physeter macrocephalus}) \citep{hart1973, ms70, orlov01}. 
+\fishnamePOP\ feed on zooplankton, including pteropods and euphausiids, and benthic organisms such as copepods, amphipods, shrimps, prawns, annelids, and juvenile and adult bony fishes \citep{rh76, sfmbt78}.
+
+\subsection{Environment}
+\subsection{Other species}
+
+\newpage
+
+\subsection{Figures}
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{POP/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnamePOP\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:surveycatchPOP}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{POP/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnamePOP\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthPOP}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{POP/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnamePOP\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexPOP}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{POP/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnamePOP\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityPOP}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnamePOP\ data. The shaded cells give an approximation of the area where \fishnamePOP\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:POPfigures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{POP/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.POP}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{POP/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.POP}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnamePOP\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:POP.cdf.figures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\section{\fishnameRAT}
+\subsection{\LH}
+\fishnameRAT\ is distributed from the Gulf and Baja of California to southeast Alaska \citep{wil54, grin65}. \fishnameRAT\ are found in bays, sounds and inland seas at the northern extent of its range. In inland Canadian waters it is most abundant  from 90 to 275 m and from 180 to 260 m in offshore waters.  They generally occur in deep-water over the continental shelf and slope to depths of 913 m \citep{apr64}. In \bc\ \fishnameRAT\ have been caught in commercial bottom trawls at depths of 1029 m (J. King, unpublished data in \citet{km15}).
+In \bc\ the maximum observed size is 670 mm (PCL) for males and 690 mm (PCL) for females (J. King unpub. data in \citet{km15}) which is larger than what has been observed from Washington to California \citep{beec09}.
+Gestation is approximately 9 to 12 months \citep{dean06} and parturition peaks between May and October \citep{bec09}. \fishnameRAT are oviparous and lay individual eggs on the ocean floor.
+
+\subsection{\PrPr}
+\fishnameRAT\ are predated upon by Pacific Halibut and shark species \citep{arm96}.
+They are known to feed on mollusks, crustaceans, echinoderms, worms and fishes \citep{arm96, aguero97}.
+
+\subsection{Environment}
+\subsection{Other species}
+
+\newpage
+
+\subsection{Figures}
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{RAT/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameRAT\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchRAT}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{RAT/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameRAT\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthRAT}
+       \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{RAT/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameRAT\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexRAT}
+        \end{subfigure}
+%        \quad
+%        \begin{subfigure}[b]{0.475\textwidth}   
+%            \centering 
+ %           \includegraphics[width=\textwidth]{RAT/MeanMaturityAllSu%rveys_grid_3km_gridded.eps}
+%            \caption[]%
+%            {{\small Mean survey fish maturity (scored from 0 to 7)  %of \fishnameRAT\ in grid cells 3 km x 3 km for fishing events from %all groundfish trawl surveys for all years.}}    
+%            \label{fig:allsurveysmaturityRAT}
+%        \end{subfigure}
+        \caption[]%
+        {\small Summary of \fishnameRAT\ data. The shaded cells give an approximation of the area where \fishnameRAT\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+       \label{fig:RATfigures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{RAT/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.RAT}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{RAT/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.RAT}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameRAT\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:RAT.cdf.figures}
+    \end{figure*}
+    
+\newpage
+
+
+%\section{\fishnameROL}
+%\subsection{\LH}
+%\fishnameROL\ extends from southern California to the Bering and %Okhotsk seas to Korea and the Sea of Japan. The species is ubiquitous throughout \bc\ and is particularly abundant from Cape Scott to Dixon Entrance \citep{hart1973}. It is mostly caught at shallow depths (37 m to 55 m) but occurs from the surface to 575 m. Generally, it is scarce below 183 m depth \citep{forr69, hart1973, as88}. Adults utilise sand and gravel bottom habitat \citep{om00}.
+%Spawning grounds north of Vancouver Island and in Hecate Strait have not be located. Their eggs are yellowish-orange, demersal and adhesive with a diameter of 0.92 mm. \fishnameROL\ larvae are approximately 5 mm long after hatching \citep{hart1973}. 
+%The oldest observed female was 22 years (52 cm) while the oldest male was 15 years (41 cm). 
+
+%\newpage
+%\subsection{\PrPr}
+%\fishnameROL\ are predated on by \fishnamePAC\.
+
+%Prey of \fishnameROL\ is diverse and includes amphipods, benthic copepods, bivalves, crabs, polychaetes, brittle stars, sea urchins, shrimps, prawns and bony fish \citep{bl88}.
+
+\subsection{Environment}
+
+\subsection{Other species}
+
+\newpage
+\clearpage
+
+\subsection{Figures}
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{ROL/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameROL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchROL}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{ROL/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameROL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthROL}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{ROL/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameROL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexROL}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{ROL/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameROL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityROL}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnameROL\ data. The shaded cells give an approximation of the area where \fishnameROL\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:ROLfigures}
+    \end{figure*}
+    
+\newpage
+
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{ROL/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.ROL}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{ROL/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.ROL}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameROL\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:ROL.cdf.figures}
+    \end{figure*}
+    
+\newpage
+
+
+\section{\fishnameRSR}
+
+\subsection{\LH}
+There is little life history information available in the literature for \fishnameRSR\. However, they occur from southern California to Alaska and the Bering Sea at depths ranging from 12 m to 425 m \citep{as88}. They occur where rocky reefs or steep silt-covered cliff faces meet gently sloping sand or mud bottoms \citep{lamb86}. 
+They oldest reported individual was 55 years old \citep{cail01} and a maximum length of 51 cm \citep{lmmc90}. 
+no reports
+\subsection{\PrPr} 
+\fishnameRSR\ have been found in the stomachs of Chinook Salmon off the coast of California \citep{mills07}. 
+They feed on krill, shrimps and small fishes \citep{lyt02}.
+\subsection{Environment}
+\subsection{Other species}
+
+\newpage
+
+\subsection{Figures}
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{RSR/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameRSR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchRSR}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{RSR/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameRSR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthRSR}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{RSR/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameRSR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexRSR}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{RSR/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameRSR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityRSR}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnameRSR\ data. The shaded cells give an approximation of the area where \fishnameRSR\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:RSRfigures}
+    \end{figure*}
+    
+\newpage
+
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{RSR/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.RSR}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{RSR/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.RSR}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameRSR\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:RSR.cdf.figures}
+    \end{figure*}
+    
+\newpage
+
+
+\section{\fishnameRXL}
+\subsection{\LH}
+\fishnameRXL\ are distributed from southern California to the Bering Sea and occur from the surface to 800 m \citep{grin65, meck02}. They are distributed uniformly throught \bc\ \citep{hart1973}. In the Gulf of Alaska they are most abundant from 100 to 200 m depths \citep{swm11}. They are found on sand or mud bottoms \citep{esch1983}.
+
+Little is known about the life history of \fishnameRXL\ in \bc\ but it is believed that in Hecate Strait spawning occurs in March or early April. In the Gulf of Alaska, the spawning season spans from October to May \citep{abook06}. Spawning occurs Off the coast of Oregon from January through June \citep{hh77}. Eggs are fertilized on the ocean floor, become pelagic, and hatch after a few weeks \citep{hh77}. Larvae remain the pelagic stage for approximately a year before settling on the bottom as 5 cm juveniles \citep{swm11}. Young are not found nearshore but juveniles (10 cm long) are occassionally observed in shallow water to 110 m depths \citep{hart1973}. Females are more common catches than males.
+
+\subsection{\PrPr}
+Predators of \fishnameRXL\ include Pacific sleeper sharks, \fishnamePAC\, California sea lions, harbour seals and \fishnameARF\ 
+\citep{lomw90, yn99, yp99, bld02}. 
+
+\fishnameRXL\ feed on amphiphods, euphasiids, polychaetes and some shrimp \citep{pearcy78, bl88, swm11}. 
+\subsection{Environment}
+\subsection{Other species}
+
+\newpage
+
+\subsection{Figures}
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{RXL/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameRXL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchRXL}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{RXL/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameRXL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthRXL}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{RXL/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameRXL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexRXL}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{RXL/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameRXL\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityRXL}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnameRXL\ data. The shaded cells give an approximation of the area where \fishnameRXL\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:RXLfigures}
+    \end{figure*}
+ 
+ \newpage
+
+ 
+ \graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{RXL/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.RXL}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{RXL/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.RXL}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameRXL\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:RXL.cdf.figures}
+    \end{figure*}
+    
+\newpage
+
+
+\section{\fishnameSBF}
+\subsection{\LH}
+\fishnameSBF\ inhabit shelf and slope waters from Baja California to the Aleutian Islands and Bering Sea to Hokkaido, Japan along mud bottoms \citep{hart1973, esch1983}. Their depth range is between 175 and 2740 m; however, they are most abundant at depths between 366 and 915 m \citep{bp69, as88}. \fishnameSBF\ move into deeper water during the winter \citep{alv60, hart1973}.
+Spawning occurs from January to March along the continental shelf at depths greater than 300 m. Juveniles migrate inshore over the following six months and rear in near shore and shelf habitats until the ages 2 to 5 when they migrate offshore to deeper waters \citep{sbf11}. Young-of-the-year juveniles are found near the surface and in nearshore waters \citep{arm96}. Sub-adults are found within shallower waters including the Strait of Georgia, Puget Sound and Juan de Fuca Strait. 
+
+The oldest reported \fishnameSBF\ in \bc\ waters is 92 years \citep{sbf13}. 
+
+\subsection{\PrPr}
+Predators of \fishnameSBF\ include other \fishnameSBF\, \fishnamePAC\, Lingcod, Pacific Halibut, \fishnameARF\, \fishnameWWR\, Black Rockfish (\emph{Sebastes melanops}), seabirds, Blue Shark and Orca (\emph{Orcinus orca}) \citep{rom88, harv89, arm96, orlov97, yn99}.
+
+\fishnameSBF\ prey on a variety of amphipods, crabs, cephalopods (cuttlefish and octopi), echinoderms (brittle stars and sea cucumbers), shrimps, prawns and bony fish. Crab species include Tanner Crabs (\emph{Chionoecetes bairdi}) and Snow Crab (\emph{Chionoecetes opilio}) \citep{orlov97, yn99}. Shrimp and prawn food items include Pacific Glass Shrimp (\emph{Pasiphaea pacifica}), Smooth Pink Shrimp (\emph{Pandalopsis dispar}), Humpy Shrimp (\emph{Pandalus goniurus}) and Northern Prawn (\emph{Pandalus borealis}) \citep{yn99}. Fish species include other \fishnameSBF\, Smooth Lumpfish (\emph{Aptocyclus ventricosus}), Pacific Herring, Capelin and Alaska Pollock \citep{orlov97, yn99}. 
+
+\subsection{Environment}
+Within this range, \fishnameSBF\ also tolerate relatively low oxygen concentrations, which allow this species to occupy the entire slope region to depths greater than 1500 m.
+
+\subsection{Other species}
+\fishnameSBF\ are caught incidentally by longline hook fisheries directed at Pacific Halibut, rockfishes, lingcod, \fishnameDOG\ and other demersal species \citep{sbf13}.
+
+\newpage
+
+\subsection{Figures}
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{SBF/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameSBF\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchSBF}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{SBF/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameSBF\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthSBF}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{SBF/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameSBF\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexSBF}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{SBF/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameSBF\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturitySBF}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnameSBF\ data. The shaded cells give an approximation of the area where \fishnameSBF\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:SBFfigures}
+    \end{figure*}
+       
+\newpage
+
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{SBF/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.SBF}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{SBF/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.SBF}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameSBF\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:SBF.cdf.figures}
+    \end{figure*}
+    
+\newpage
+
+
+\section{\fishnameSGR}
+\subsection{\LH}
+\fishnameSGR\ are distributed from southern California to the Bering Sea \citep{stra65}. 
+\fishnameSGR\ occur just off the bottom and are sometimes found in rocky crevices and caverns \citep{lamb86}. 
+Mating is believed to take place from September through January but peaks from December through January \citep{sk00}. Parturition in \bc\ occurs from April through July with it peaking in June \citep{sk00}. 
+Off the coast of Oregon it is believed that young are likely not released until late spring or summer; however, they are released in June in Washington \citep{dd62, hitz62}. 
+The maximum ages observed in \bc\ waters were 82 and 81 years for males and females, respectively \citep{sk00}.
+
+\subsection{\PrPr}
+No information on predators of \fishnameSGR\ was available.
+
+\fishnameSGR\ feed mainly on fish (74\% of diet) but also feed on euphausiids \citep{pears07}.
+
+\subsection{Environment}
+\subsection{Other species}
+They form loose groups with other rockfish species \citep{lyt02}. 
+
+\newpage
+
+\subsection{Figures}
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{SGR/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameSGR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchSGR}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{SGR/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameSGR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthSGR}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{SGR/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameSGR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexSGR}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{SGR/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameSGR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturitySGR}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnameSGR\ data. The shaded cells give an approximation of the area where \fishnameSGR\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:SGRfigures}
+    \end{figure*}
+    
+\newpage
+
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{SGR/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.SGR}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{SGR/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.SGR}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameSGR\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:SGR.cdf.figures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\section{\fishnameSST}
+\subsection{\LH}
+\fishnameSST\ are distributed from Baja California to the Okhotsk and Japan seas. They are found between 17 and 1,524 m depth  prefer deep water (90 to 1460 m). \fishnameSST\ are most abundant from the Northern Kuril Islands to southern California. They are concentrated between 150 and 450 m depth in cooler northern waters, and are generally found in deeper waters (up to 1000 m) in the warmer waters of their range \citep{lyt02}. \fishnameSST\ are common off the \bc\ coast in areas such as Juan de Fuca Strait, Strait of Georgia and Queen Charlotte Sound \citep{hart1973}.
+
+\fishnameSST\ spawn a mass of fertilized eggs which floats in the water column \citep{lyt02}. This is unlike most rockfish species (genus \emph{Sebastes}) which retain fertilized eggs internally and release fully developed larvae. \fishnameSST\ spawning takes place in the late spring, between April and July in the Gulf of Alaska and between December and May from Washington to California \citep{gund97}. After hatching, larvae and juveniles spend 14 to 15 months in a pelagic phase. \fishnameSST\ settle  in benthic habitats between 100 and 600 m depth and then migrate deeper with age \citep{lyt02} where they prefer soft substrate \citep{esch1983}.
+
+\fishnameSST\ live up to 80 to 100 years of age \citep{lyt02}.
+
+\subsection{\PrPr}
+Shortspine thornyheads are consumed by a variety of piscivores, including arrowtooth flounder, sablefish, California sea lions, sperm whales, and sharks. Juvenile shortspine thornyheads are thought to be consumed almost exclusively by adult thornyheads. Thornyheads are an uncommon prey in the Gulf of Alaska, as they generally make up less than 2\% of even their primary predators' diets \citep{lowe07}.
+
+Over 70\% of adult shortspine thornyhead diet measured in the early 1990s was shrimp, including both commercial (pandalid) shrimp and non-commercial (non-pandalid shrimp), and to a lesser extent deepwater crabs \citep{gi05}. 
+
+Other important prey of shortspine thornyheads include crabs, zooplankton, amphipods, gastropods, sculpins (family Cottidae) and Capelin \emph{Mallotus villosus} \citep{yn99}. 
+
+\subsection{Environment}
+\clearpage
+\subsection{Other species}
+\fishnameSST\ distribute themselves evenly across their habitat and appear to prefer minimal intra-specific interactions.
+
+\newpage
+\clearpage
+
+\subsection{Figures}
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{SST/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameSST\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchSST}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{SST/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameSST\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthSST}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{SST/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameSST\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexSST}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{SST/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameSST\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturitySST}
+        \end{subfigure}
+        \caption[ ]
+       {\small Summary of \fishnameSST\ data. The shaded cells give an approximation of the area where \fishnameSST\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:SSTfigures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{SST/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.SST}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{SST/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.SST}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameSST\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:SST.cdf.figures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\section{\fishnameWWR}
+\subsection{\LH}
+\fishnameWWR\ occur from Baja California to southeast Alaska. They are found at depths of 90 to 365 m \citep{mw65}. They are found in midwater above rocky reefs or steep shorelines and will hide among caves and crevices \citep{lamb86}.
+
+Along the coast of Oregon young are produced predominantly during January and February \citep{hitz62}(Phillips, J.B. 1964. Life history studies of ten species of rockfish (genus Sebastodes), Calif. Dep. fish game Fish. Bull. 126: 70 p.). 
+
+Oregon data indicates that mating occurs mainly in December with fertilization taking place during January. Gestation lasts 1 to 3 months and spawning occurs once annually (Moser 1967)(Lenarz and Gunderson 1987). In \bc\, April is when most parturition occurs (Westrheim 1975). Young can be found in shallow water (Eschmeyer, W.N., E.S. Herald and H. Hammann, 1983. A field guide to Pacific coast fishes of North America. Houghton Mifflin Company, Boston, U.S.A. 336 p.).
+
+Adults are sometime solitary but they generally form large schools \citep{lyt02}.
+
+\subsection{\PrPr}
+No predators were found within the literature but it is assumed they are similar to other mid-water rockfish species.
+
+\fishnameWWR\ have been observed to mainly feed on plankton in California and smallfin lanternfish (\emph{Benthosema suborbitale}) in Oregon (Peyrera, W.T., W.G. Pearcy, and F.E. Carvey Jr. 1969. Sebastodes flavidus, a shelf rockfish feeding on mesopelagic fauna, with consideration of the ecological implications. J. Fish. Res. Bd. Canada 26(8): 2211-2215.) Eschmeyer et al. (1983) state that they feed predominantly on small pelagic crustaceans and fishes.
+
+\subsection{Environment}
+\subsection{Other species}
+Adults associate with Yellowtail Rockfish (\emph{Sebastes flavidus}), and 
+\newpage
+
+\subsection{Figures}
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{WWR/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameWWR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchWWR}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{WWR/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameWWR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthWWR}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{WWR/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameWWR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexWWR}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{WWR/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameWWR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityWWR}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnameWWR\ data. The shaded cells give an approximation of the area where \fishnameWWR\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:WWRfigures}
+    \end{figure*}
+    
+\newpage
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{WWR/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.WWR}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{WWR/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.WWR}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameWWR\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:WWR.cdf.figures}
+    \end{figure*}
+    
+\newpage
+\clearpage
+
+\section{\fishnameYMR}
+\subsection{\LH}
+\fishnameYMR\ occur from northern California to northern Gulf of Alaska with a depth range of 100 to 431 m \citep{lyt02}. They are predominantly between 274 and 366 m (Kramer, D.E. and V.M. O'Connell, 1995. Guide to Northeast Pacific rockfishes. Genera Sebastes and Sebastolobus. Alaska Sea Grant, Marine Advisory Bulletin No. 25.). Adults aggregate at mid-water over high rugosity habitat \citep{lyt02}. There are also density 'hotspots' off the southwest coast of Haida Gwaii (near Cape St. James), off Rennell Sound, off the northwest coast of Haida Gwaii, and off the northwest coast of Vancouver Island. Densities of YMR appear to be low off the west coast of Vancouver Island south of Brooks Peninsula (Edwards et al 2012).
+
+In \bc\ larvae are released from April to June and parturition peaks in May in  \citep{hart1973, Haigh-Starr:2008a}(Westrheim 1975). Pelagic juveniles have been caught in June and July along the Oregon coast \citep{lyt02}. 
+
+They can live up to 99 years of age with a maximum length of 54 cm \citep{lyt02}. Fish from northern \bc\ tend to grow more slowly than those from southern end of the province \citep{lyt02}.
+
+\subsection{\PrPr}
+No information on predation on \fishnameYMR\ is currently available. Juveniles of similar rockfish species (e.g. Darkblotched Rockfish, \emph{Sebastes crameri}) are preyed upon by Pacific Hake in US waters (Harvey, C.J., K. Gross, V.H. Simon and J. Hastie 2008 Trophic and fishery interactions between Pacific hake and rockfish: effect on rockfish population rebuilding times. Marine Ecology Progress Series 365:165-176) and comprise a significant portion of seabird and Chinook Salmon diets in California (Mills et al 2007).
+
+Information on \fishnameYMR\ prey is also lacking. Similar to other rockfish species, \fishnameYMR\ larvae likely feed on copepods, euphasiids and other invertebrates (Enticknap, B. and W. Sheard 2005 Conservation and management of North Pacific rockfishes. Alaska Marine Conservation Council, Anchorage, AK. 49 pp.). As rockfish mature they switch to fish and crustacean prey which includes Pacific Herring, Sandlance, crabs, shrimps and euphasiids (Fort, K. K. Amey and M. Dunn 2006 Scott Islands Marine Wildlife Area Study Area: an ecosystems overview report. Technical Report Series No. 427. Canadian Wildlife Service, Pacific and Yukon Region.).
+
+\subsection{Environment} 
+
+Similar to other rockfish species, \fishnameYMR\ are small (4 to 9 mm) at birth and are weak swimmers (Wourms, J.P. 1991. Reproduction and development of Sebastes in the context of the evolution of piscine viviparity. Environmental Biology of Fishes 30:111-126). Therefore, survival is stronly affected by environmental factors, such as upwelling events and ocean currents (Shanks, A.L. and G.L. and Eckert 2005 Population persistence of California current fishes and benthic crustaceans: a marine drift paradox. Ecological Monographs 74(4):505-524). It is estimated that exceptional recruitment occurs every 15 to 20 years in \bc\ (Yamanaka, K.L. and L.C. and Lacko 2001 Inshore rockfish (Sebastes ruberrimus, S. maliger, S. caurinus, S. melanops, S. nigrocinctus, and S. nebulosus) stock assessment for the west coast of Canada and recommendations for management. Canadian Science Advisory Secretariat Research Document 2001/139. 102 pp. Fisheries and Oceans Canada, Nanaimo, B.C.). DFO research and fishery data indicate that 1982 was a particularly strong recruitment year for \fishnameYMR\ \citep{Haigh-Starr:2008a}.
+
+\subsection{Other species}
+The depth at which yellowmouth rockfish occurs most frequently is dominated by \fishnamePOP\ with a substantial presence of \fishnameARF\, \fishnameRSR\, \fishnameSGR\ and yellowtail rockfish (\emph{S. flavidus}).
+\newpage
+
+\subsection{Figures}
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{YMR/SurveyCatchAllSurveys_grid_3km_gridded.eps}
+            \caption[]
+            {{\small Mean survey catch (kg) of \fishnameYMR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
+            \label{fig:surveycatchYMR}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{YMR/MeanLengthAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish length (mm) of \fishnameYMR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+           \label{fig:allsurveyslengthYMR}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{YMR/MeanSexAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish sex of \fishnameYMR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years. Classified as 1 for male and 2 for female.}}    
+            \label{fig:allsurveyssexYMR}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{YMR/MeanMaturityAllSurveys_grid_3km_gridded.eps}
+            \caption[]%
+            {{\small Mean survey fish maturity (scored from 0 to 7)  of \fishnameYMR\ in grid cells 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
+            \label{fig:allsurveysmaturityYMR}
+        \end{subfigure}
+        \caption[ ]
+        {\small Summary of \fishnameYMR\ data. The shaded cells give an approximation of the area where \fishnameYMR\ was encountered by fishing events from all groundfish trawl surveys for all years.  See Table XX for a list of surveys.} 
+        \label{fig:YMRfigures}
+    \end{figure*}
+    
+\newpage
+
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/Species/} }
+\begin{figure*}
+        \centering
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{YMR/cdf_depth.eps}
+            \caption[]
+            {{\small }}    
+            \label{fig:cdf.depth.YMR}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{YMR/cdf_temp.eps}
+            \caption[]%
+            {{\small }}    
+           \label{fig:cdf.temp.YMR}
+        \end{subfigure}
+        \caption[ ]
+        {\small Cumulative frequency distributions of habitat variables and \fishnameYMR\ catch-weighted data for all groundfish trawls surveys for all years.} 
+        \label{fig:YMR.cdf.figures}
+    \end{figure*}
+    
+
+
+\newpage
+
+
