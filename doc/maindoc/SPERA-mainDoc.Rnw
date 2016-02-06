@@ -28,18 +28,54 @@ In the long-term, the project will provide important baseline data for understan
 
 \bigskip
 
-\section{METHODS} 
+\section{METHODS}
+\subsection{Groundfish Bottom Trawl Survey}
+Groundfish bottom trawl survey data for our analyses were based on data collected during the DFO's Hecate Strait Synoptic Trawl Survey and the Queen Charlotte Sound Synoptic Trawl Survey between 1984 and 2015. 
+Tows began at pre-determined locations as part of a stratifiedrandom sampling design with strata based on (?????). Fish were identified to species, lengths measured, sexed (0 = unknown, 1 = male, 2 = female, 3 = ?), and characterised by maturity (categories 1 to 7). A sub-sample of each fish species from every tow were grouped by species and weighed to the nearest kilogram (kg). Tow length and travel speed were also recorded. The data use this analysis are therefore the biomass of each species in each tow, and in some cases, standardised as catch per unit of trawl effort (cach per square kilometre). 
+
+During the groundfish bottom trawl survey average net depth and ocean temperature data were collected from sensors attached to the net. These data are not available for all tows.
+
+
+\subsection{Habitat Data}
+Substrate type (e.g. hard, sandy, muddy) and ocean depth for the study area was obtained from the \bc Marine Conservation Analysis database.
 
 \subsection{Cumulative Distribution Functions}
-To identify associations of fish species with environmental factors
+The purpose this component of the study was to identify significant associations between environmental parameters and the distributions of 20 species of northeast Pacific Ocean groundfish. It was also meant to be a continuation and an update on what was presented by \citet{psf94}. We used cumulative distribution functions (cdf) of fish catch (CPUE) and the  environmental factors described above (substrate, salinity, temperature and depth) \citep{ps94, psf94}. This technique calculates the empirical cdf's for the environmental parameters alone and the environmental parameters weighted by the CPUE of a particular species \citep{ps94, psf94}. 
+The probability associated with each observation in a cdf is 1/\emph{n}. Therefore the cdf for a given habitat variable ($x_{i}$) is of the form \citep{cd86}:
+
+
+\begin{align} \label{eq:cdf1}
+\emph{f}(t) = \sum_{h}\sum_{i}\frac{1}{1}\emph{I}({x_{i}})
+\end{align}
+
+\begin{addmargin}[3em]{1em}
+with the indicator function
+\end{addmargin}
+
+\begin{align}
+\emph{I}({x_{i}}) = 1,0 if ({x_{i}}) %$\leqslant  t$; otherwise
+\end{align}
+
+
+Where \emph{t} represents an index, ranging from the lowest to the highest values of the habitat parameter at a step appropriate for the desired resolution. Equation 1 is calculated over all values of \emph{t} for each habitat measurement ($x_{i}$) available. 
+
+The cdf's derived from Equation 1 can be used to determine the proportion of the environmental-weighted catch within any range of the environmental variable during the survey.
+
+Copied directly from Perry and Smith 1994. Including the survey stratification scheme via the $W_h$/$n_h$ terms ensures that we have an unbiased estimate of the frequency distribution for the habitat measurement. Ignoring the stratification by replacing $W_h$/$n_h$ with 1/\emph{n} would result in either under- or overestimating the area associated with any particular value of the habitat measurement. However, he term  $W_h$/$n_h$ does simplify to 1/\emph{n}  when the number of sets allocated to each stratum is proportional to the size of the stratum (i.e., $n_h$ = $nW_h$). That is stratification can be ignored when the allocation of sets is strictly proportional to the stratum size.
+Next, we associate the catch of fish (in weight) of a particular species in each tow with the habitat parameters during that tow as  weight in the form:
+
+\begin{align} \label{eq:cdf2}
+g(t) = \sum_{h}\sum_{i}\frac{1}{1}\emph{I}({x_{i}})
+\end{align}
+
 
 \subsection{Models}
-The project will apply a mix of established and recently-published statistical approaches to achieve the deliverables of the project. An earlier study [1] applied a set of multivariate statistical models to classify groundfish species in Hecate Strait according to their relationships with invariant and variable environmental factors. Recent studies have further developed these types of approaches for Alaskan groundfish species (e.g., [2][3]). A problem with spatial datasets for many marine species is the high proportion of zero observations, which can bias results. One approach to solving this problem is to use a two-stage model to first predict presence and absence, then analyse relationships between environmental variables and abundance [10]. More recently, the problem has been addressed using an elegant new Bayesian hierarchical model developed by co-investigator Dr. Lecomte,  which estimates both the probability of zero observations and abundance in a hierarchical framework [4][5]. Within this framework, a geostatistical approximation, consisting of a linear model with spatially-correlated errors, is used to efficiently predict spatial abundance as a function of environmental factors [5]. The model outputs spatial predictions of abundance, and predictive probability distributions of the effects of each environmental factor on abundance for each species. 
-Models are calibrated with spatial abundance observations. Analyses can be done on different size-classes of the population to better understand differences in adult and juvenile distribution and improve understanding of productivity. Dr Jean-Baptiste Lecomte is the primary author of the hierarchical Bayesian model, and is currently a post-doctoral fellow at the Pacific Biological Station. This work is highly relevant to current ecosystem management needs, and the project represents an excellent opportunity for Dr Lecomte to transfer his knowledge to Canadian scientists in the Pacific Region. This project will extend Dr Lecomte's current post-doctoral fellowship by six months. Dr Lecomte's co-author, Dr Marie Etienne (UMR 518 AgroParisTech), is also an expert in this methodology and will collaborate on the project through contract (Year 1, Task 8). In addition to the hierarchical model, the datasets will be used in simpler, multivariate statistical analyses (e.g., [1][3]), and to model distribution of adults and juveniles along environmental gradients, using methods developed by our external collaborator, Dr Christopher Rooper [2].
+The project will apply a mix of established and recently-published statistical approaches to achieve the deliverables of the project. An earlier study [1] applied a set of multivariate statistical models to classify groundfish species in Hecate Strait according to their relationships with invariant and variable environmental factors. Recent studies have further developed these types of approaches for Alaskan groundfish species (e.g., [2][3]). A problem with spatial datasets for many marine species is the high proportion of zero observations, which can bias results. One approach to solving this problem is to use a two-stage model to first predict presence and absence, then analyse relationships between environmental variables and abundance [10]. More recently, the problem has been addressed using new Bayesian hierarchical models which estimates both the probability of zero observations and abundance in a hierarchical framework [4][5]. Within this framework, a geostatistical approximation, consisting of a linear model with spatially-correlated errors, is used to efficiently predict spatial abundance as a function of environmental factors [5]. The model outputs spatial predictions of abundance, and predictive probability distributions of the effects of each environmental factor on abundance for each species. 
+Models are calibrated with spatial abundance observations. Analyses can be done on different size-classes of the population to better understand differences in adult and juvenile distribution and improve understanding of productivity. 
 
 \subsection{Data}
 The project utilised spatial data from DFO's Groundfish Synoptic Bottom Trawl Surveys in Hecate Strait and Queen Charlotte Sound. These biennial surveys have been operating since 2003 and employ a random, stratified sampling design. Spatially-resolved catch weight of more than 100 species is recorded from each tow. Length, weight, sex, maturity and age data were collected, according to a prioritized sampling protocol. Temperature, dissolved oxygen and salinity and depth data were also recorded. Highly spatially-resolved, commercial logbook data were available from BC's 100\%-observed groundfish bottom trawl fishery. All these data are held in Oracle databases, co-managed by the Pacific Groundfish Statistics Program. Spatially-gridded predictions of temperature and salinity data for Hecate Strait and Queen Charlotte Sound, were output from the Regional Oceanographic Model System at the Institute of Ocean Sciences. Spatial bottom-type data at 100 m and 20 m resolution were available at the Pacific Biological Station. Scientists at NOAA's Alaska Fisheries Science Center are currently engaged in developing distribution maps for all commercially-fished species in Alaska. Some of these data were available, via our external collaborator Dr. Rooper.
-Software: A version of the hierarchical Bayesian model has already been written using the OpenBUGS programming language. Dr. Lecomte will provided this code, which was customized and refined for this project. All other statistical models and graphic outputs were developed using the R-programming language. Species abundance and data distribution maps were made using ArcGIS or a similar (e.g., QGIS, PBSMapping).
+Software: A version of the hierarchical Bayesian model has already been written using the OpenBUGS programming language. This code was customized and refined for this project. All other statistical models and graphic outputs were developed using the R-programming language. Species abundance and data distribution maps were made using ArcGIS or a similar (e.g., QGIS, PBSMapping).
 
 \subsection{Data Management}
 Spatially-gridded Canadian datasets and gridded predictions of distribution and abundance were transferred to a database managed by the Pacific Groundfish Statistics program.  They were available internally to Pacific stock assessment scientists, and by request externally. Maps were incorporated into an intranet-based tool, making them available to Pacific scientists and managers. 
@@ -97,14 +133,24 @@ Spatially-gridded Canadian datasets and gridded predictions of distribution and 
 \section{RESULTS}
 %Equations are fairly straightforward, and if organized using the same label prefix (\textbf{eq:}), they will be numbered automatically. Here are some example equations from the 2015 \fishnameARF\ assessment with added margins for captions:
 
-\begin{align} \label{eq:length-temp-lm}
-\overline{L}_s = B_{0} + \overline{T}_{D_s} + Y_s + \overline{D}_{s} + \overline{T}_{D_s} * \overline{D}_{s} * Y_s
-%B_y = \sum_{i=1}^kC_{y_i}A_i=\sum_{i=1}^kB_{y_i}
-\end{align}
+%\begin{align} \label{eq:length-temp-lm}
 
-\begin{addmargin}[3em]{1em}
-where $\overline{L}$ is the mean \fishnameARF\ length...
-\end{addmargin}
+%B_y = \sum_{i=1}^kC_{y_i}A_i=\sum_{i=1}^kB_{y_i}
+%\end{align}
+
+%\begin{addmargin}[3em]{1em}
+%where $\overline{L}$ is the mean \fishnameARF\ length...
+%\end{addmargin}
+
+%\begin{align} \label{eq:length-temp-lm}
+%\overline{L}_s = B_{0} + \overline{T}_{D_s} + Y_s + \overline{D}_{s} + \overline{T}_{D_s} * \overline{D}_{s} * Y_s
+%B_y = \sum_{i=1}^kC_{y_i}A_i=\sum_{i=1}^kB_{y_i}
+%\end{align}
+
+%\begin{addmargin}[3em]{1em}
+%where $\overline{L}$ is the mean \fishnameARF\ length...
+%\end{addmargin}
+
 
 %CPUE ($C_{y_i}$) for \fishnameARF\ in stratum $i$ for year $y$ was calculated as a density in $kg/km^2$ by:
 

@@ -31,6 +31,7 @@
 \usepackage{pdfpages}          % So we can import PDFs into the document (e.g. request for science advice).
 \usepackage[parfill]{parskip}  % So paragraphs will have a blank line between them
 \usepackage{subcaption}         % added for creating 2x2 panel plots. Conflicts with \usepackage{subfig} so that package was commented out below
+\usepackage{amssymb}          %for some mathematical symbols
 
 \setlength{\parskip}{12pt}
 
