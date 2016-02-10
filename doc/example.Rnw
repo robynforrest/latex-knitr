@@ -32,6 +32,7 @@
 \usepackage[parfill]{parskip}  % So paragraphs will have a blank line between them
 \usepackage{subcaption}         % added for creating 2x2 panel plots. Conflicts with \usepackage{subfig} so that package was commented out below
 \usepackage{amssymb}          %for some mathematical symbols
+\usepackage{amsmath}          %for some mathematical symbols and equation functions
 
 \setlength{\parskip}{12pt}
 

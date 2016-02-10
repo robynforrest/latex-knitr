@@ -30,32 +30,48 @@ In the long-term, the project will provide important baseline data for understan
 
 \section{METHODS}
 \subsection{Groundfish Bottom Trawl Survey}
-Groundfish bottom trawl survey data for our analyses were based on data collected during the DFO's Hecate Strait Synoptic Trawl Survey and the Queen Charlotte Sound Synoptic Trawl Survey between 1984 and 2015. 
-Tows began at pre-determined locations as part of a stratifiedrandom sampling design with strata based on (?????). Fish were identified to species, lengths measured, sexed (0 = unknown, 1 = male, 2 = female, 3 = ?), and characterised by maturity (categories 1 to 7). A sub-sample of each fish species from every tow were grouped by species and weighed to the nearest kilogram (kg). Tow length and travel speed were also recorded. The data use this analysis are therefore the biomass of each species in each tow, and in some cases, standardised as catch per unit of trawl effort (cach per square kilometre). 
+Groundfish bottom trawl survey data for our analyses were  collected during the DFO's biennial Hecate Strait Synoptic Trawl Survey and the Queen Charlotte Sound Synoptic Trawl Survey between 1984 and 2015. 
+Tows began at pre-determined locations as part of a random, stratified sampling design with strata based on (?????). Fish were identified to species, lengths measured, sexed (0 = unknown, 1 = male, 2 = female, 3 = ?), and characterised by maturity (categories 1 to 7) according to a prioritized sampling protocol. A sub-sample of each fish species from every tow were grouped by species and weighed to the nearest kilogram (kg). Tow length and travel speed were also recorded. The data used these analyses are therefore the biomass of each species in each tow, and in some cases, standardised as catch per unit of trawl effort (catch per square kilometre). 
 
-During the groundfish bottom trawl survey average net depth and ocean temperature data were collected from sensors attached to the net. These data are not available for all tows.
+\subsection{Environmental Data}
 
+During the groundfish bottom trawl survey average net depth (m) and ocean temperature ($^\circ$C) data were also collected from sensors attached to the net. 
+Highly spatially-resolved, commercial logbook data were available from BC's 100\%-observed groundfish bottom trawl fishery. All these data are held in Oracle databases, co-managed by the Pacific Groundfish Statistics Program. Spatially-gridded predictions of temperature and salinity data for Hecate Strait and Queen Charlotte Sound, were output from the Regional Oceanographic Model System at the Institute of Ocean Sciences. Spatial bottom-type data at 100 m and 20 m resolution were available at the Pacific Biological Station. Scientists at NOAA's Alaska Fisheries Science Center are currently engaged in developing distribution maps for all commercially-fished species in Alaska. Some of these data were available, via our external collaborator Dr. Rooper at the Alaska Fisheries Science Center.
 
-\subsection{Habitat Data}
 Substrate type (e.g. hard, sandy, muddy) and ocean depth for the study area was obtained from the \bc Marine Conservation Analysis database.
 
+Software: A version of the hierarchical Bayesian model has already been written using the OpenBUGS programming language. This code was customized and refined for this project. All other statistical models and graphic outputs were developed using the R-programming language. Species abundance and data distribution maps were made using ArcGIS or a similar (e.g., QGIS, PBSMapping).
+
+\subsection{Data Management}
+Spatially-gridded Canadian datasets and gridded predictions of distribution and abundance were transferred to a database managed by the Pacific Groundfish Statistics program. They were available internally to Pacific stock assessment scientists, and by request externally. Maps were incorporated into an intranet-based tool, making them available to Pacific scientists and managers.
+
 \subsection{Cumulative Distribution Functions}
-The purpose this component of the study was to identify significant associations between environmental parameters and the distributions of 20 species of northeast Pacific Ocean groundfish. It was also meant to be a continuation and an update on what was presented by \citet{psf94}. We used cumulative distribution functions (cdf) of fish catch (CPUE) and the  environmental factors described above (substrate, salinity, temperature and depth) \citep{ps94, psf94}. This technique calculates the empirical cdf's for the environmental parameters alone and the environmental parameters weighted by the CPUE of a particular species \citep{ps94, psf94}. 
+The purpose of this component of the study was to identify significant associations between environmental parameters and the distributions of 20 species of northeast Pacific Ocean groundfish. It was also meant to be a continuation of the analysis presented by \citet{psf94}. We used cumulative distribution functions (cdf's) of fish catch (CPUE) and the  environmental factors described above (substrate, salinity, temperature and depth) \citep{ps94, psf94}. This technique calculates the empirical cdf's for the environmental parameters alone and the environmental parameters weighted by the CPUE of a particular species \citep{ps94, psf94}. 
+
 The probability associated with each observation in a cdf is 1/\emph{n}. Therefore the cdf for a given habitat variable ($x_{i}$) is of the form \citep{cd86}:
 
+%\begin{equation}
+%\frac{1}{k}\log_2 c(f)\;\tfrac{1}{k}\log_2 c(f)\;
+%\sqrt{\frac{1}{k}\log_2 c(f)}\;\sqrt{\dfrac{1}{k}\log_2 c(f)}
+%\end{equation}
 
-\begin{align} \label{eq:cdf1}
-\emph{f}(t) = \sum_{h}\sum_{i}\frac{1}{1}\emph{I}({x_{i}})
-\end{align}
 
-\begin{addmargin}[3em]{1em}
+\begin{equation}
+\label{eq:cdf1}
+\emph{f}(t) = \sum_{h}\sum_{i}\frac{W_h}{n_h}~I({x_hi}) %within align you need brackets around subscripts, for equation you do not
+\end{equation}
+
+
+%\begin{addmargin}[3em]{1em}
 with the indicator function
-\end{addmargin}
+%\end{addmargin}
 
-\begin{align}
-\emph{I}({x_{i}}) = 1,0 if ({x_{i}}) %$\leqslant  t$; otherwise
-\end{align}
-
+\begin{equation*}  %the * removes the numbering
+{I}~({x_{hi}})=\begin{cases}
+1,& \text{if $x_hi$}\leq t;\\
+0,& \text{otherwise}.
+\end{cases}
+\end{equation*}
 
 Where \emph{t} represents an index, ranging from the lowest to the highest values of the habitat parameter at a step appropriate for the desired resolution. Equation 1 is calculated over all values of \emph{t} for each habitat measurement ($x_{i}$) available. 
 
@@ -65,7 +81,7 @@ Copied directly from Perry and Smith 1994. Including the survey stratification s
 Next, we associate the catch of fish (in weight) of a particular species in each tow with the habitat parameters during that tow as  weight in the form:
 
 \begin{align} \label{eq:cdf2}
-g(t) = \sum_{h}\sum_{i}\frac{1}{1}\emph{I}({x_{i}})
+g(t) = \sum_{h}\sum_{i}\frac{W_h}{n_h}\frac{y_{hi}}{y_{st}}~I({x_{hi}}). %within align you need brackets around subscripts, for equation you do not.
 \end{align}
 
 
@@ -73,12 +89,7 @@ g(t) = \sum_{h}\sum_{i}\frac{1}{1}\emph{I}({x_{i}})
 The project will apply a mix of established and recently-published statistical approaches to achieve the deliverables of the project. An earlier study [1] applied a set of multivariate statistical models to classify groundfish species in Hecate Strait according to their relationships with invariant and variable environmental factors. Recent studies have further developed these types of approaches for Alaskan groundfish species (e.g., [2][3]). A problem with spatial datasets for many marine species is the high proportion of zero observations, which can bias results. One approach to solving this problem is to use a two-stage model to first predict presence and absence, then analyse relationships between environmental variables and abundance [10]. More recently, the problem has been addressed using new Bayesian hierarchical models which estimates both the probability of zero observations and abundance in a hierarchical framework [4][5]. Within this framework, a geostatistical approximation, consisting of a linear model with spatially-correlated errors, is used to efficiently predict spatial abundance as a function of environmental factors [5]. The model outputs spatial predictions of abundance, and predictive probability distributions of the effects of each environmental factor on abundance for each species. 
 Models are calibrated with spatial abundance observations. Analyses can be done on different size-classes of the population to better understand differences in adult and juvenile distribution and improve understanding of productivity. 
 
-\subsection{Data}
-The project utilised spatial data from DFO's Groundfish Synoptic Bottom Trawl Surveys in Hecate Strait and Queen Charlotte Sound. These biennial surveys have been operating since 2003 and employ a random, stratified sampling design. Spatially-resolved catch weight of more than 100 species is recorded from each tow. Length, weight, sex, maturity and age data were collected, according to a prioritized sampling protocol. Temperature, dissolved oxygen and salinity and depth data were also recorded. Highly spatially-resolved, commercial logbook data were available from BC's 100\%-observed groundfish bottom trawl fishery. All these data are held in Oracle databases, co-managed by the Pacific Groundfish Statistics Program. Spatially-gridded predictions of temperature and salinity data for Hecate Strait and Queen Charlotte Sound, were output from the Regional Oceanographic Model System at the Institute of Ocean Sciences. Spatial bottom-type data at 100 m and 20 m resolution were available at the Pacific Biological Station. Scientists at NOAA's Alaska Fisheries Science Center are currently engaged in developing distribution maps for all commercially-fished species in Alaska. Some of these data were available, via our external collaborator Dr. Rooper.
-Software: A version of the hierarchical Bayesian model has already been written using the OpenBUGS programming language. This code was customized and refined for this project. All other statistical models and graphic outputs were developed using the R-programming language. Species abundance and data distribution maps were made using ArcGIS or a similar (e.g., QGIS, PBSMapping).
-
-\subsection{Data Management}
-Spatially-gridded Canadian datasets and gridded predictions of distribution and abundance were transferred to a database managed by the Pacific Groundfish Statistics program.  They were available internally to Pacific stock assessment scientists, and by request externally. Maps were incorporated into an intranet-based tool, making them available to Pacific scientists and managers. 
+ 
 
 %%Open the file \rnwexamplefile. Look at the first R code chunk, starting on line 191. This is where the R environment is loaded so that the figures and tables can be made, and values can be referenced later in the document. There are two choices: source the R file, or load a binary R environment. Sourcing the file works fine, but if there is a lot of loading of data or calculations that have to happen during the sourcing the build will take a long time. A much quicker way is to open an R session, and source the \rfile\ manually, then save the R environment to a file called \rdata\ in the \emph{r} directory. If this method is used, make sure to set \textbf{\lstinline{use.binary.envir <- TRUE}} on line 209 of \rnwexamplefile.
 
@@ -98,8 +109,6 @@ Spatially-gridded Canadian datasets and gridded predictions of distribution and 
 
 %Some \latex packages may have to be installed. If so, the package manager dialog will open. You must choose to install from internet, then make sure to select \emph{ctan} using \emph{HTTP} protocol from \emph{BC}. The default settings will most likely not work.
 
-\subsection{More Results}
-
 %When \emph{knitr} is called, it parses the \emph{\rnwexamplefile} file, looking for special parenthesis characters which are called \emph{R code chunks}. The chunks begin with a set of parentheses and equals sign \verb!<< >>=! and end with the \emph{at} symbol \verb!@!. Anything between them is an R code chunk which will be evaluated by \emph{knitr}. Inside the beginning parentheses, you can define many \emph{chunk options}. The official page listing these options is here: \href{http://yihui.name/knitr/options/}{Knitr chunk options}. In this document the file \emph{\rnwexamplefile} holds one chunk which loads the R environment, and \emph{\rnwmaindocfile} holds the figure chunks (one for each figure) which each hold simple commands to plot some examples. For example, figure \ref{fig:example-half-torus} is called like this:
 
 %% Outputs the chunk as code into the document by using eval=FALSE and literal=TRUE
@@ -107,12 +116,9 @@ Spatially-gridded Canadian datasets and gridded predictions of distribution and 
 %\verb!half.torus()! \\
 %\verb!@!
 
-\subsubsection{Even more results}
 %One should always write calculated values or data by using a reference to the R objects instead of typing the numbers in as text. This way, if something changes you don't have to read and verify every number in your document, they will be updated automatically by \emph{knitr}.
 
 %Here's how you write some values by reference from your R environment inside \latex text block: For example to get the mean of x you would use the command: \$\ShowSexpr{mean(x)}\$ which in this case evaluates to $\Sexpr{mean(x)}$. The \verb!$\Sexpr{}$! construct represents an S-expression, where S was the predecessor to R. For some reason it hasn't yet been changed to \verb!$\Rexpr{}$!. In this example, the values for the x vector were read in from \emph{example.r} at the beginning of the knitting process and is accessible throughout the document. You can call simple R commands using the \verb!$\Sexpr{}$! command inside \latex. You can do more than one command by separating with a semicolon, for example the command \$\ShowSexpr{z=x+y;mean(z)}\$ evaluates to $\Sexpr{z=x+y;mean(z)}$ for the x and y values loaded from \emph{example.r}.\\
-
-\subsection{Even  more and more results}
 
 %If there's an error, the first thing to do is check the \emph{knitrOutput.log} file. This will contain all messages both regular and error which \emph{knitr} outputs. If there was an error during the knitting process, you will find it there. The last lines of the file should say:
 %\begin{alltt}
@@ -189,7 +195,7 @@ Spatially-gridded Canadian datasets and gridded predictions of distribution and 
 
 \section{ENVIRONMENTAL COVARIATES} \label{sec:enviro.covar}
 
-Environmental covariates considered during this study included ocean depth, and bottom temperature and depth. Temperature and salinity data were collected during the groundfish trawl surveys and were available from the Regional Oceanographic Model System (ROMS). 
+Environmental covariates considered during this analysis included average trawl net depth, and bottom temperature and salinity. Trawl net depth was recorded during each tow. Temperature and salinity data were collected during the groundfish trawl surveys and were also available from the Regional Oceanographic Model System (ROMS).  
 
 \newpage
 \graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/} }

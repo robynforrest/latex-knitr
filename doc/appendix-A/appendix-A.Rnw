@@ -1571,20 +1571,20 @@ Other important prey of shortspine thornyheads include crabs, zooplankton, amphi
 \subsection{\LH}
 \fishnameWWR\ occur from Baja California to southeast Alaska. They are found at depths of 90 to 365 m \citep{mw65}. They are found in midwater above rocky reefs or steep shorelines and will hide among caves and crevices \citep{lamb86}.
 
-Along the coast of Oregon young are produced predominantly during January and February \citep{hitz62}(Phillips, J.B. 1964. Life history studies of ten species of rockfish (genus Sebastodes), Calif. Dep. fish game Fish. Bull. 126: 70 p.). 
+Along the coast of Oregon young are produced predominantly during January and February \citep{hitz62, phil64}. 
 
-Oregon data indicates that mating occurs mainly in December with fertilization taking place during January. Gestation lasts 1 to 3 months and spawning occurs once annually (Moser 1967)(Lenarz and Gunderson 1987). In \bc\, April is when most parturition occurs (Westrheim 1975). Young can be found in shallow water (Eschmeyer, W.N., E.S. Herald and H. Hammann, 1983. A field guide to Pacific coast fishes of North America. Houghton Mifflin Company, Boston, U.S.A. 336 p.).
+Oregon data indicates that mating occurs mainly in December with fertilization taking place during January. Gestation lasts 1 to 3 months and spawning occurs once annually \citep{moser67, bwe87}. In \bc\, April is when most parturition occurs \citep{west75}. Young can be found in shallow water \citep{esch1983}.
 
-Adults are sometime solitary but they generally form large schools \citep{lyt02}.
+Adults are sometimes solitary but they generally form large schools \citep{lyt02}.
 
 \subsection{\PrPr}
 No predators were found within the literature but it is assumed they are similar to other mid-water rockfish species.
 
-\fishnameWWR\ have been observed to mainly feed on plankton in California and smallfin lanternfish (\emph{Benthosema suborbitale}) in Oregon (Peyrera, W.T., W.G. Pearcy, and F.E. Carvey Jr. 1969. Sebastodes flavidus, a shelf rockfish feeding on mesopelagic fauna, with consideration of the ecological implications. J. Fish. Res. Bd. Canada 26(8): 2211-2215.) Eschmeyer et al. (1983) state that they feed predominantly on small pelagic crustaceans and fishes.
+\fishnameWWR\ have been observed to mainly feed on plankton in California and smallfin lanternfish (\emph{Benthosema suborbitale}) in Oregon \citep{west75, ppc83}. \citet{esch1983} state that they feed predominantly on small pelagic crustaceans and fishes.
 
 \subsection{Environment}
 \subsection{Other species}
-Adults associate with Yellowtail Rockfish (\emph{Sebastes flavidus}), and 
+Adults associate with Yellowtail Rockfish (\emph{Sebastes flavidus}), and in the northern part of their range, Dusky Rockfish \emph{Sebastes ciliatus} \citep{lyt02}.
 \newpage
 
 \subsection{Figures}
@@ -1656,20 +1656,20 @@ Adults associate with Yellowtail Rockfish (\emph{Sebastes flavidus}), and
 
 \section{\fishnameYMR}
 \subsection{\LH}
-\fishnameYMR\ occur from northern California to northern Gulf of Alaska with a depth range of 100 to 431 m \citep{lyt02}. They are predominantly between 274 and 366 m (Kramer, D.E. and V.M. O'Connell, 1995. Guide to Northeast Pacific rockfishes. Genera Sebastes and Sebastolobus. Alaska Sea Grant, Marine Advisory Bulletin No. 25.). Adults aggregate at mid-water over high rugosity habitat \citep{lyt02}. There are also density 'hotspots' off the southwest coast of Haida Gwaii (near Cape St. James), off Rennell Sound, off the northwest coast of Haida Gwaii, and off the northwest coast of Vancouver Island. Densities of YMR appear to be low off the west coast of Vancouver Island south of Brooks Peninsula (Edwards et al 2012).
+\fishnameYMR\ occur from northern California to northern Gulf of Alaska with a depth range of 100 to 431 m \citep{lyt02}. They are predominantly between 274 and 366 m \citep{ko95}. Adults aggregate at mid-water over high rugosity habitat \citep{lyt02}. There are also density 'hotspots' off the southwest coast of Haida Gwaii (near Cape St. James), off Rennell Sound, off the northwest coast of Haida Gwaii, and off the northwest coast of Vancouver Island. Densities of YMR appear to be low off the west coast of Vancouver Island south of Brooks Peninsula \citep{ehs12}.
 
-In \bc\ larvae are released from April to June and parturition peaks in May in  \citep{hart1973, Haigh-Starr:2008a}(Westrheim 1975). Pelagic juveniles have been caught in June and July along the Oregon coast \citep{lyt02}. 
+In \bc\ larvae are released from April to June and parturition peaks in May in  \citep{hart1973, west75, Haigh-Starr:2008a}. Pelagic juveniles have been caught in June and July along the Oregon coast \citep{lyt02}. 
 
 They can live up to 99 years of age with a maximum length of 54 cm \citep{lyt02}. Fish from northern \bc\ tend to grow more slowly than those from southern end of the province \citep{lyt02}.
 
 \subsection{\PrPr}
-No information on predation on \fishnameYMR\ is currently available. Juveniles of similar rockfish species (e.g. Darkblotched Rockfish, \emph{Sebastes crameri}) are preyed upon by Pacific Hake in US waters (Harvey, C.J., K. Gross, V.H. Simon and J. Hastie 2008 Trophic and fishery interactions between Pacific hake and rockfish: effect on rockfish population rebuilding times. Marine Ecology Progress Series 365:165-176) and comprise a significant portion of seabird and Chinook Salmon diets in California (Mills et al 2007).
+No information on predation on \fishnameYMR\ is currently available. Juveniles of similar rockfish species (e.g. Darkblotched Rockfish, \emph{Sebastes crameri}) are preyed upon by Pacific Hake in US waters \citep{hgsh08} and comprise a significant portion of seabird and Chinook Salmon diets in California \citep{mills07}.
 
-Information on \fishnameYMR\ prey is also lacking. Similar to other rockfish species, \fishnameYMR\ larvae likely feed on copepods, euphasiids and other invertebrates (Enticknap, B. and W. Sheard 2005 Conservation and management of North Pacific rockfishes. Alaska Marine Conservation Council, Anchorage, AK. 49 pp.). As rockfish mature they switch to fish and crustacean prey which includes Pacific Herring, Sandlance, crabs, shrimps and euphasiids (Fort, K. K. Amey and M. Dunn 2006 Scott Islands Marine Wildlife Area Study Area: an ecosystems overview report. Technical Report Series No. 427. Canadian Wildlife Service, Pacific and Yukon Region.).
+Information on \fishnameYMR\ prey is also lacking. Similar to other rockfish species, \fishnameYMR\ larvae likely feed on copepods, euphasiids and other invertebrates \citep{es05}. As rockfish mature they switch to fish and crustacean prey which includes Pacific Herring, Sandlance, crabs, shrimps and euphasiids \citep{fad06}.
 
 \subsection{Environment} 
 
-Similar to other rockfish species, \fishnameYMR\ are small (4 to 9 mm) at birth and are weak swimmers (Wourms, J.P. 1991. Reproduction and development of Sebastes in the context of the evolution of piscine viviparity. Environmental Biology of Fishes 30:111-126). Therefore, survival is stronly affected by environmental factors, such as upwelling events and ocean currents (Shanks, A.L. and G.L. and Eckert 2005 Population persistence of California current fishes and benthic crustaceans: a marine drift paradox. Ecological Monographs 74(4):505-524). It is estimated that exceptional recruitment occurs every 15 to 20 years in \bc\ (Yamanaka, K.L. and L.C. and Lacko 2001 Inshore rockfish (Sebastes ruberrimus, S. maliger, S. caurinus, S. melanops, S. nigrocinctus, and S. nebulosus) stock assessment for the west coast of Canada and recommendations for management. Canadian Science Advisory Secretariat Research Document 2001/139. 102 pp. Fisheries and Oceans Canada, Nanaimo, B.C.). DFO research and fishery data indicate that 1982 was a particularly strong recruitment year for \fishnameYMR\ \citep{Haigh-Starr:2008a}.
+Similar to other rockfish species, \fishnameYMR\ are small (4 to 9 mm) at birth and are weak swimmers \citep{wourms91}. Therefore, survival is strongly affected by environmental factors, such as upwelling events and ocean currents \citep{se05}. It is estimated that exceptional recruitment occurs every 15 to 20 years in \bc\ \citep{yl01}. DFO research and fishery data indicate that 1982 was a particularly strong recruitment year for \fishnameYMR\ \citep{Haigh-Starr:2008a}.
 
 \subsection{Other species}
 The depth at which yellowmouth rockfish occurs most frequently is dominated by \fishnamePOP\ with a substantial presence of \fishnameARF\, \fishnameRSR\, \fishnameSGR\ and yellowtail rockfish (\emph{S. flavidus}).
