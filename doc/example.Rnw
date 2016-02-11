@@ -9,6 +9,7 @@
 \usepackage{resDocSty}
 \usepackage{appendix}
 \usepackage{cite}
+%%\usepackage(natbib) %conflicts with cite package
 %% need array when specifying a ragged right column:  >{\raggedright\arraybackslash}{p2in}.
 \usepackage{longtable,array}
 %% \renewcommand{\chaptername}{Appendix}
@@ -29,6 +30,10 @@
 \usepackage{arydshln}          % For dashed lines in tables (has to be loaded after other stuff)
 \usepackage{pdfpages}          % So we can import PDFs into the document (e.g. request for science advice).
 \usepackage[parfill]{parskip}  % So paragraphs will have a blank line between them
+\usepackage{subcaption}         % added for creating 2x2 panel plots. Conflicts with \usepackage{subfig} so that package was commented out below
+\usepackage{amssymb}          %for some mathematical symbols
+\usepackage{amsmath}          %for some mathematical symbols and equation functions
+
 \setlength{\parskip}{12pt}
 
 % For hyperlinked references (figures and citations, etc.). The bookmarksdepthlevel allows
@@ -69,7 +74,7 @@
 %%    app: appendix subsection
 \usepackage{xspace}            %% Provide the LaTeX and TeX symbols
 \usepackage{hypcap}            %% So links will anchor at figure, not caption
-\usepackage{subfig}            %% For two-panel plots
+%\usepackage{subfig}            %% For two-panel plots
 \usepackage{scrextend}         %% For indenting blocks of text with 'addmargin'
 \usepackage{relsize}           %% For mathlarger, which makes equations bigger
 \usepackage{algorithm}         %% For display of pseudocode
@@ -135,9 +140,9 @@
 \newcommand{\rfile}{example.r}
 \newcommand{\texfile}{example.tex}
 \newcommand{\rnwexamplefile}{example.Rnw}
-\newcommand{\rnwmaindocfile}{maindoc.Rnw}
-\newcommand{\rnwappendixonefile}{appendix-1.Rnw}
-\newcommand{\rnwappendixtwofile}{appendix-2.Rnw}
+\newcommand{\rnwmaindocfile}{SPERA-mainDoc.Rnw}
+\newcommand{\rnwappendixAfile}{appendix-A.Rnw}
+\newcommand{\rnwappendixBfile}{appendix-B.Rnw}
 
 %% Next two lines provide the LaTeX and TeX symbols (from xspace package)
 \newcommand{\latex}{\LaTeX\xspace}
@@ -154,6 +159,11 @@
 \newcommand{\sciencenameARF}{Atheresthes stomias}
 \newcommand{\familynameARF}{Pleuronectidae}
 \newcommand{\commonnameARF}{Turbot}
+
+\newcommand{\fishnameBOR}{Bocaccio}
+\newcommand{\sciencenameBOR}{Sebastes paucispinis}
+\newcommand{\familynameBOR}{Sebastidae}
+\newcommand{\commonnameBOR}{}
 
 \newcommand{\fishnameCAR}{Canary Rockfish}
 \newcommand{\sciencenameCAR}{Sebastes pinniger}
@@ -225,6 +235,11 @@
 \newcommand{\familynameSGR}{Sebastidae}
 \newcommand{\commonnameSGR}{}
 
+\newcommand{\fishnameSBF}{Sablefish}
+\newcommand{\sciencenameSBF}{Anoplopoma fimbria}
+\newcommand{\familynameSBF}{Anoplopomatidae}
+\newcommand{\commonnameSBF}{Black Cod}
+
 \newcommand{\fishnameSST}{Shortspine Thornyhead}
 \newcommand{\sciencenameSST}{Sebastolobus alascanus}
 \newcommand{\familynameSST}{Sebastidae}
@@ -247,7 +262,7 @@
 \newcommand{\BC}{British Columbia}
 
 \newcommand{\LH}{Life History}
-\newcommand{\PrPr}{Prey and Predators}
+\newcommand{\PrPr}{Predators and Prey}
 %% For subscripts in text mode
 \newcommand{\subscr}[1]{$_{\text{#1}}$}
 
@@ -326,7 +341,7 @@ if(use.binary.envir){
 %% Here is where the maindoc Rnw file is inserted.
 %% It is simply pasted in here by knitr, just before the knitting is done,
 %% So the final tex file will include everything.
-<<main-doc, child='maindoc/maindoc.Rnw'>>=
+<<main-doc, child='maindoc/SPERA-maindoc.Rnw'>>=
 @
 
 \clearpage
@@ -353,12 +368,12 @@ if(use.binary.envir){
 %% so they see the same R objects and those objects can be referenced directly.
 %% There is no difference between this and maindoc, they are both pasted in directly
 %% before the code is knitted.
-\rfoot{Appendix A -- Species Results}
-<<appendix-1, child='appendix-1/appendix-1.Rnw'>>=
+\rfoot{Appendix A -- Species Summaries}
+<<appendix-A, child='appendix-A/appendix-A.Rnw'>>=
 @
 
 \rfoot{Appendix B -- Modeling Inputs}
-<<appendix-2, child='appendix-2/appendix-2.Rnw'>>=
+<<appendix-B, child='appendix-B/appendix-B.Rnw'>>=
 @
 
 %% Used when you need to insert outside documents:
