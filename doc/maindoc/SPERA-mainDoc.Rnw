@@ -20,11 +20,11 @@ Usually the french version of the abstract goes here, but it is included here to
 \section{INTRODUCTION}
 Hecate Strait and Queen Charlotte Sound contain some of the most productive fishing grounds in British Columbia (BC), providing key habitat for many commercially important groundfish species. This project will employ multivariate statistics and geostatistical approaches to analyse relationships between environmental factors and distribution and productivity of key groundfish populations in Hecate Strait and Queen Charlotte Sound. The project will improve advice for management of Pacific groundfish stocks by: (i) improving understanding of environmental drivers of groundfish distribution and productivity needed for ecosystem-based management; (ii) improved estimates of abundance for key species; (iii) identification of juvenile habitats;  (iv) provision of a baseline for understanding impacts of environmental change on species distribution; and (v) identification of species that could indicate ecosystem change through shifts in distribution and productivity.
 
-Distribution and abundance of groundfish species is associated with invariant (e.g., depth, bottom-type) and variable (e.g., temperature, salinity) environmental factors \citep{psf94, roop05, roop08}.  Measuring relationships between these factors and distribution and abundance is the first step in understanding drivers of productivity (recruitment, growth, mortality), which is a critical component of ecosystem-based management. This project will employ statistical and hierarchical Bayesian geostatistical models \citep{roop05, roop08, lec13, lec13b} to analyse relationships between environmental factors and distribution, abundance and size structure of a set of key, commercially harvested groundfish species in Hecate Strait and Queen Charlotte Sound. Models will utilize data from commercial trawl logbooks and fishery independent surveys. Temperature and salinity data from the Regional Oceanographic Model System (ROMS) \citep{mf12} will provide key model inputs.
+Distribution and abundance of groundfish species is associated with invariant (e.g., depth, bottom-type) and variable (e.g., temperature, salinity) environmental factors \citep{psf94, roop05, roop08}.  Measuring relationships between these factors and distribution and abundance is the first step in understanding drivers of productivity (recruitment, growth, mortality), which is a critical component of ecosystem-based management. This project will employ statistical and hierarchical Bayesian geostatistical models \citep{roop05, roop08, lec13, lec13b} to analyse relationships between environmental factors and distribution, abundance and size structure of a set of key, commercially harvested groundfish species in Hecate Strait and Queen Charlotte Sound. Models will utilize data from commercial trawl logbooks and fishery independent surveys. Temperature and salinity data from the Regional Oceanographic Model System (ROMS) \citep{mf12} provided key model inputs.
 
-Results for each species will include maps of predicted distribution and abundance of adults and juveniles; Bayesian predictive probability distributions of the relationships between habitat and environmental factors and abundance; and plots of the distribution of adults and juveniles along environmental gradients. Species most likely to be impacted by large environmental changes (e.g., ocean temperature) will be identified. Working with our external collaborator, results for a subset of species will be compared to results from Alaska to test generality of results and identify key differences. The project will provide updated estimates of abundance for the species of interest and will identify locations that may represent critical juvenile habitat. Results will be published in the primary literature, and in a CSAS Research Document reviewed through the Centre for Science Advice Pacific.
+Results for each species will include maps of predicted distribution and abundance of adults and juveniles; Bayesian predictive probability distributions of the relationships between habitat and environmental factors and abundance; and plots of the distribution of adults and juveniles along environmental gradients. Species most likely to be impacted by large environmental changes (e.g., ocean temperature) will be identified. Working with our external collaborator, results for a subset of species will be compared to results from Alaska to test generality of results and identify key differences. The project will provide updated estimates of abundance for the species of interest and will identify locations that may represent critical juvenile habitat. 
 
-In the long-term, the project will provide important baseline data for understanding potential future impacts of environmental change. Some species (e.g., Pacific Cod) are known to vary their habitat with depth to maintain a limited temperature range [1], indicating that their distribution could be strongly affected by long-term changes in ocean temperature. Published studies have shown that large-scale redistribution of north Pacific fish populations may occur under future climate scenarios, with the potential for large impacts on ecosystem structure and function [7][8]. Groundfish indicator species most likely to be affected by environmental change will be identified in this project.  Finally, ecosystem-based fishery management is based on principles of understanding the structure and function of the living components of marine ecosystems. In the US, NOAA is mandated to identify habitats essential for every managed fish species and identify those habitats that contribute most to survival, growth and productivity [9]. The analyses in this project will form an important component of this understanding for central and northern BC waters. Through partnership with our external collaborator, comparative analyses will test generality of results and identify differences between BC and Alaska.
+In the long-term, the project will provide important baseline data for understanding potential future impacts of environmental change. Some species (e.g., Pacific Cod) are known to vary their habitat with depth to maintain a limited temperature range \citep{psf94}, indicating that their distribution could be strongly affected by long-term changes in ocean temperature. Published studies have shown that large-scale redistribution of north Pacific fish populations may occur under future climate scenarios, with the potential for large impacts on ecosystem structure and function \citep{jc14, cheung15}. Groundfish indicator species most likely to be affected by environmental change will be identified in this project.  Finally, ecosystem-based fishery management is based on principles of understanding the structure and function of the living components of marine ecosystems. In the US, NOAA is mandated to identify habitats essential for every managed fish species and identify those habitats that contribute most to survival, growth and productivity \citep{sig12}. The analyses in this project will form an important component of this understanding for central and northern BC waters. Through partnership with our external collaborator, comparative analyses will test generality of results and identify differences between BC and Alaska.
 
 \bigskip
 
@@ -38,7 +38,7 @@ Tows began at pre-determined locations as part of a random, stratified sampling 
 During the groundfish bottom trawl survey average net depth (m) and ocean temperature ($^\circ$C) data were also collected from sensors attached to the net. 
 Highly spatially-resolved, commercial logbook data were available from BC's 100\%-observed groundfish bottom trawl fishery. All these data are held in Oracle databases, co-managed by the Pacific Groundfish Statistics Program. Spatially-gridded predictions of temperature and salinity data for Hecate Strait and Queen Charlotte Sound, were output from the Regional Oceanographic Model System at the Institute of Ocean Sciences. Spatial bottom-type data at 100 m and 20 m resolution were available at the Pacific Biological Station. Scientists at NOAA's Alaska Fisheries Science Center are currently engaged in developing distribution maps for all commercially-fished species in Alaska. Some of these data were available, via our external collaborator Dr. Rooper at the Alaska Fisheries Science Center.
 
-Substrate type (e.g. hard, sandy, muddy) and ocean depth for the study area was obtained from the \bc Marine Conservation Analysis database.
+Substrate type (e.g., hard, sandy, muddy) and ocean depth for the study area was obtained from the \bc Marine Conservation Analysis database.
 
 Software: A version of the hierarchical Bayesian model has already been written using the OpenBUGS programming language. This code was customized and refined for this project. All other statistical models and graphic outputs were developed using the R-programming language. Species abundance and data distribution maps were made using ArcGIS or a similar (e.g., QGIS, PBSMapping).
 
@@ -48,45 +48,73 @@ Spatially-gridded Canadian datasets and gridded predictions of distribution and 
 \subsection{Cumulative Distribution Functions}
 The purpose of this component of the study was to identify significant associations between environmental parameters and the distributions of 20 species of northeast Pacific Ocean groundfish. It was also meant to be a continuation of the analysis presented by \citet{psf94}. We used cumulative distribution functions (cdf's) of fish catch (CPUE) and the  environmental factors described above (substrate, salinity, temperature and depth) \citep{ps94, psf94}. This technique calculates the empirical cdf's for the environmental parameters alone and the environmental parameters weighted by the CPUE of a particular species \citep{ps94, psf94}. 
 
-The probability associated with each observation in a cdf is 1/\emph{n}. Therefore the cdf for a given habitat variable ($x_{i}$) is of the form \citep{cd86}:
-
-%\begin{equation}
-%\frac{1}{k}\log_2 c(f)\;\tfrac{1}{k}\log_2 c(f)\;
-%\sqrt{\frac{1}{k}\log_2 c(f)}\;\sqrt{\dfrac{1}{k}\log_2 c(f)}
-%\end{equation}
-
+The probability associated with each observation in a cdf is 1/\emph{n}, but the stratified random survey design results in a probability of 1/$n_{h}$ within each stratum (all symbols are provided in Table XX). Therefore the cdf for a given habitat variable ($x_{i}$) is of the form \citep{cd86}:
 
 \begin{equation}
 \label{eq:cdf1}
-\emph{f}(t) = \sum_{h}\sum_{i}\frac{W_h}{n_h}~I({x_hi}) %within align you need brackets around subscripts, for equation you do not
+\emph{f}(t) = \sum_{h}\sum_{i}\frac{W_h}{n_h}~I({x_{hi}}) %within align you need brackets around subscripts, for equation you do not
 \end{equation}
 
-
-%\begin{addmargin}[3em]{1em}
 with the indicator function
-%\end{addmargin}
 
 \begin{equation*}  %the * removes the numbering
 {I}~({x_{hi}})=\begin{cases}
-1,& \text{if $x_hi$}\leq t;\\
+1,& \text{if $x_{hi}$}\leq t;\\    %try \displaystyle to fix this
 0,& \text{otherwise}.
 \end{cases}
 \end{equation*}
 
-Where \emph{t} represents an index, ranging from the lowest to the highest values of the habitat parameter at a step appropriate for the desired resolution. Equation 1 is calculated over all values of \emph{t} for each habitat measurement ($x_{i}$) available. 
+Where \emph{t} represents an index, ranging from the lowest to the highest values of the habitat parameter at a step appropriate for the desired resolution. Equation 1 is calculated over all values of \emph{t} for each habitat measurement ($x_{hi}$) available. The cdf's derived from equation \ref{eq:cdf1} can be used to determine the proportion of the environmental-weighted catch within any range of the environmental variable during the survey. For example, the range of depths that occurred within the central 50\% (between the 25th and 75th percentiles) or the central 95\% (between the 2.5th and 97.5th percentiles) of the area surveyed can easily be calculated from each species' cdf figures.
 
-The cdf's derived from Equation 1 can be used to determine the proportion of the environmental-weighted catch within any range of the environmental variable during the survey.
-
-Copied directly from Perry and Smith 1994. Including the survey stratification scheme via the $W_h$/$n_h$ terms ensures that we have an unbiased estimate of the frequency distribution for the habitat measurement. Ignoring the stratification by replacing $W_h$/$n_h$ with 1/\emph{n} would result in either under- or overestimating the area associated with any particular value of the habitat measurement. However, he term  $W_h$/$n_h$ does simplify to 1/\emph{n}  when the number of sets allocated to each stratum is proportional to the size of the stratum (i.e., $n_h$ = $nW_h$). That is stratification can be ignored when the allocation of sets is strictly proportional to the stratum size.
+Copied directly from Perry and Smith 1994. Including the survey stratification scheme via the $W_h$/$n_h$ terms ensures that we have an unbiased estimate of the frequency distribution for the habitat measurement. Ignoring the stratification by replacing $W_h$/$n_h$ with 1/\emph{n} would result in either under- or overestimating the area associated with any particular value of the habitat measurement. However, the term  $W_h$/$n_h$ does simplify to 1/\emph{n}  when the number of sets allocated to each stratum is proportional to the size of the stratum (i.e., $n_h$ = $nW_h$). That is, stratification can be ignored when the allocation of sets is strictly proportional to the stratum size.
 Next, we associate the catch of fish (in weight) of a particular species in each tow with the habitat parameters during that tow as  weight in the form:
 
 \begin{align} \label{eq:cdf2}
-g(t) = \sum_{h}\sum_{i}\frac{W_h}{n_h}\frac{y_{hi}}{y_{st}}~I({x_{hi}}). %within align you need brackets around subscripts, for equation you do not.
+g(t) = \sum_{h}\sum_{i}\frac{W_h}{n_h}\frac{y_{hi}}{y_{st}}~I({x_{hi}}). %within align you need brackets around subscripts, for equations you do not.
 \end{align}
 
+Scaling the number of fish caught (\emph{$Y_{hi}$}) by the stratified mean number of fish caught $(\overline{y}_{st})$ in equation \ref{eq:cdf2} results in \emph{g(t)} summing to 1 over all values of \emph{t}. If large values of (\emph{$Y_{hi}$})/$\overline{y}_{st}$ are consistently associated with particular habitat conditions, then this suggests a strong association between the fish species and those habitat conditions. The cumulative distribution functions calculated from equation \ref{eq:cdf2} illustrate the range of conditions at which the species occurred and can be compared with the habitat conditions available in the sampled area as calculated with equation \ref{eq:cdf1}. For example, 50\% of the depths surveyed in ..... (curve \emph{f(t)}, Fig. XX) were less than XX m, while 50\% of the XX \fishnameARF\ (curve \emph{g(t)}, Fig. XX) were caught at depths less than XX m. The curve \emph{g(t)} can differ widely from the habitat curve \emph{f(t)} depending on the range of conditions occupied by the fish. At one extreme, if the fish were associated with one depth only (e.g., 100 m), \emph{g(t)} would be zero for \emph{t} < 100 and equal to 1.0 for t $\geq$ 100. If there was no particular association between fish distributions and the habitat variable within the area surveyed, for example if the fish were randomly distributed with respect to the habitat variable, then \emph{g(t)} and \emph{f(t)} would be almost identical.
+
+The third step is to determine the strength of the association between catch and the habitat variable by assessing the degree of difference between the the two curves, \emph{g(t)} and \emph{f(t)}. Our test statistic's similar to that used for comparing empirical cdf's in Kolmogorov-Smirnov tests (see Conover 1980). We calculate the maximum absolute vertical distance between \emph{g(t)} and \emph{f(t)} as:
+
+\begin{equation} \label{eq:cdf3}
+\max\limits_{\forall t} \vert g(t) - f(t)\vert = \max\limits_{\forall t} \bigg|  \sum_{h}\sum_{i} \frac{W_h}{n_h} \bigg( \frac{{y_{hi}}-\overline{y}_{st}}{{\overline{y}_{st}}} \bigg) ~I({x_{hi}}) \bigg|
+%  \
+%_st}  
+\end{equation}
+
+where |\emph{g(t) - f(t)}| indicates the absolute value of the difference between \emph{g(t)} and \emph{f(t)} at any point \emph{t}.
+The stratified random survey design complicates the distributional assumptions for the test statistic in equation \ref{eq:cdf3}, and therefore the standard tables for the Kolmogorov-Smirnov test, or indeed any goodness-of-fit test, cannot be used (see Rao and Thomas 1989). Instead, we developed a randomization procedure (Noreen 1989) to evaluate the significance of the test statistics. We modelled the distribution of the test statistic under the null hypothesis of random association between fish catch (numbers) and habitat variable through Monte-Carlo sampling. This was done by randomizing the pairings of ($W_h/n_h$)[($y_{hi}$ - $\overline{y}_{st}$)/$\overline{y}_{st}$] and $x_{hi}$ over all \emph{h} and \emph{i} for the data within a survey and then calculating the test statistic in equation \ref{eq:cdf3} for the new pairs. The $x_{hi}$ for the pairings were obtained by sampling with replacement the observed $x_{hi}$ with probability $W_h$$n_h$. This procedure was repeated a large number of times to give a pseudo-population of test statistics under the null hypothesis. The test statistic for XX species and depth in MONTH YEAR (Fig XX) was equal to XX (also indicated as "max" in Fig XX) which was greater than or equal to XX\% (2000 out of 2001) of the test statistics in a randomized distribution.. There were 2001 test statistics when the original observed pairing of the data was included. Interpreting these results similar to a standard statistical hypothesis test, we note that the probability of obtaining a test statistic as large as XX by chance is close to zero (\emph{p} = XX) and conclude that there was a very strong association by XX species with a specific range of depths available in the survey area during MONTH YEAR. This randomization test is a two-sided test, since it is the magnitudes of the absolute differences between \emph{g(t)} and \emph{f(t)} that are of interest.
+However, environmental conditions are often correlated, for example where temperature decreases with increasing depth, which suggests that an association between a species and a particular depth range may also be confounded by an associated with temperature. This problem can be explicitly considered by extending equations \ref{eq:cdf2} and \ref{eq:cdf3} to two (or more) habitat variables simultaneously. For \emph{k} variables, equations \ref{eq:cdf1} and \ref{eq:cdf2} can be written as
+
+\begin{equation}
+\label{eq:cdf4}
+\emph{f}(t) = \sum_{h}\sum_{i}\frac{W_h}{n_h}~I({x_{hi}}) %within align you need brackets around subscripts, for equation you do not
+\end{equation}
+
+\begin{align}
+g(t) = \sum_{h}\sum_{i}\frac{W_h}{n_h}\frac{y_{hi}}{y_{st}}~I({x_{hi}}) %within align you need brackets around subscripts, for equations you do not.
+\end{align}
+
+where
+
+\begin{equation*}  %the * removes the numbering
+{I}~({x_{hi}})=\begin{cases}
+1,& \text{if ($x_{hi}$}\leq t_{1},x_{hi~2} \leq t_2,...,x_{hi~k} \leq t_{k});\\    %try \displaystyle to fix this
+0,& \text{otherwise}.
+\end{cases}
+\end{equation*}
+
+Boldface type text for $\boldsymbol{t}$ and $\boldsymbol{x}$ indicates vectors of habitat variables. In the two-variable case, \emph{g(\textbf{t}}) can be represented as a three-dimensional surface in which the cumulative frequency forms the vertical axis. The test statistic (equation \ref{eq:cdf3}) is modified as
+
+\begin{equation} \label{eq:cdf5}
+\max\limits_{\forall t} \vert g(\boldsymbol{t}) - f(\boldsymbol{t})\vert = \max\limits_{\forall t} \bigg|  \sum_{h}\sum_{i} \frac{W_h}{n_h} \bigg( \frac{{y_{hi}}-\overline{y}_{st}}{{\overline{y}_{st}}} \bigg) ~I(\boldsymbol{x}_{hi}) \bigg|.
+%  \
+%_st}  
+\end{equation}
 
 \subsection{Models}
-The project will apply a mix of established and recently-published statistical approaches to achieve the deliverables of the project. An earlier study [1] applied a set of multivariate statistical models to classify groundfish species in Hecate Strait according to their relationships with invariant and variable environmental factors. Recent studies have further developed these types of approaches for Alaskan groundfish species (e.g., [2][3]). A problem with spatial datasets for many marine species is the high proportion of zero observations, which can bias results. One approach to solving this problem is to use a two-stage model to first predict presence and absence, then analyse relationships between environmental variables and abundance [10]. More recently, the problem has been addressed using new Bayesian hierarchical models which estimates both the probability of zero observations and abundance in a hierarchical framework [4][5]. Within this framework, a geostatistical approximation, consisting of a linear model with spatially-correlated errors, is used to efficiently predict spatial abundance as a function of environmental factors [5]. The model outputs spatial predictions of abundance, and predictive probability distributions of the effects of each environmental factor on abundance for each species. 
+The project will apply a mix of established and recently-published statistical approaches to achieve the deliverables of the project. An earlier study \citep{psf94} applied a set of multivariate statistical models to classify groundfish species in Hecate Strait according to their relationships with invariant and variable environmental factors. Recent studies have further developed these types of approaches for Alaskan groundfish species (e.g., \citet{roop05,roop08}). A problem with spatial datasets for many marine species is the high proportion of zero observations, which can bias results. One approach to solving this problem is to use a two-stage model to first predict presence and absence, then analyse relationships between environmental variables and abundance \citep{rm09}. More recently, the problem has been addressed using new Bayesian hierarchical models which estimates both the probability of zero observations and abundance in a hierarchical framework \citep{lec13, lec13b}. Within this framework, a geostatistical approximation, consisting of a linear model with spatially-correlated errors, is used to efficiently predict spatial abundance as a function of environmental factors \citep{lec13b}. The model outputs spatial predictions of abundance, and predictive probability distributions of the effects of each environmental factor on abundance for each species. 
 Models are calibrated with spatial abundance observations. Analyses can be done on different size-classes of the population to better understand differences in adult and juvenile distribution and improve understanding of productivity. 
 
  
@@ -137,6 +165,17 @@ Models are calibrated with spatial abundance observations. Analyses can be done 
 \bigskip
 
 \section{RESULTS}
+%\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/} }
+%\begin{figure}[!htp]
+%\begin{center}
+%\includegraphics[width=6in,keepaspectratio=true]{ROMSTemp3km_gridd%ed_Panel_1.eps}
+%\end{center}
+%\vspace{0mm}
+% To get the grid size in km^2 for the caption:
+% While in the gui for the map, type mean(xtcall(PBSmap)$pdata$area) for the map you currently have loaded.
+%\caption{ROMS ocean bottom temperature ($^\circ$C) from 1979 to 2011.}
+%\label{fig:roms.ann.temp} \end{figure}
+
 %Equations are fairly straightforward, and if organized using the same label prefix (\textbf{eq:}), they will be numbered automatically. Here are some example equations from the 2015 \fishnameARF\ assessment with added margins for captions:
 
 %\begin{align} \label{eq:length-temp-lm}
@@ -193,63 +232,113 @@ Models are calibrated with spatial abundance observations. Analyses can be done 
 
 \bigskip
 
-\section{ENVIRONMENTAL COVARIATES} \label{sec:enviro.covar}
+\subsection{Environmental Covariates} \label{sec:enviro.covar}
 
 Environmental covariates considered during this analysis included average trawl net depth, and bottom temperature and salinity. Trawl net depth was recorded during each tow. Temperature and salinity data were collected during the groundfish trawl surveys and were also available from the Regional Oceanographic Model System (ROMS).  
 
+
+%%%%%%%%% ROMS DEPTH FIGURE
 \newpage
 \graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/} }
-\begin{figure*}
-        \centering
-        \begin{subfigure}[b]{0.475\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{Depth3km_gridded.eps}
-            \caption[]
-            {{\small Mean ocean depth (m) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.  }}    
-            \label{fig:allsurveysdepth}
-        \end{subfigure}
-        \hfill
-        \begin{subfigure}[b]{0.475\textwidth}  
-            \centering 
-            \includegraphics[width=\textwidth]{SurveyTemp3km_gridded.eps}
-            \caption[]%
-            {{\small Mean bottom temperature ($^\circ$C) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}}    
-           \label{fig:allsurveystemp}
-        \end{subfigure}
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{Depth3km_gridded.eps}
+\end{center}
+\caption{Mean ocean depth (m) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}
+\label{fig:allsurveysdepth}
+\end{figure}
 
-        \caption[ ]
-        {\small Summary of environmental covariate data. See Table XX for a list of surveys.} 
-        \label{fig:covariatefigures}
-    \end{figure*}
+\newpage            
+%%%%%%%%% ROMS TEMP PANEL FIGURES       
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSTemp3km_gridded_Panel_1.eps}
+\end{center}
+
+\caption{ROMS mean bottom temperature ($^\circ$C) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 1979 to 1987.}
+\label{fig:ROMStemp79to87}
+\end{figure}
 
 \newpage
+
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSTemp3km_gridded_Panel_2.eps}
+\end{center}
+
+\caption{ROMS mean bottom temperature ($^\circ$C) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 1988 to 1996.}
+\label{fig:ROMStemp88to96}
+\end{figure}   
+
+\newpage
+
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSTemp3km_gridded_Panel_3.eps}
+\end{center}
+
+\caption{ROMS mean bottom temperature ($^\circ$C) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 1997 to 2005.}
+\label{fig:ROMStemp97to05}
+\end{figure}   
+
+\newpage
+
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSTemp3km_gridded_Panel_4.eps}
+\end{center}
+
+\caption{ROMS mean bottom temperature ($^\circ$C) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 2006 to 2011.}
+\label{fig:ROMStemp06to11}
+\end{figure}
+
+\newpage
+%%%%%%%%% ROMS SALINITY PANEL FIGURES 
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSSalinity3km_gridded_Panel_1.eps}
+\end{center}
+
+\caption{ROMS mean bottom salinity (PSU) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 1979 to 1987.}
+\label{fig:ROMSsal79to87}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSSalinity3km_gridded_Panel_2.eps}
+\end{center}
+
+\caption{ROMS mean bottom salinity (PSU) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 1988 to 1996.}
+\label{fig:ROMSsal88to96}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSSalinity3km_gridded_Panel_3.eps}
+\end{center}
+
+\caption{ROMS mean bottom salinity (PSU) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 1997 to 2005.}
+\label{fig:ROMSsal97to05}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSSalinity3km_gridded_Panel_4.eps}
+\end{center}
+
+\caption{ROMS mean bottom salinity (PSU) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 2006 to 2011.}
+\label{fig:ROMSsal06to11}
+\end{figure}
+
+
 \clearpage
-
-\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/} }
-\begin{figure*}
-        \centering
-        \begin{subfigure}[b]{0.475\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{ROMSTemp3km_gridded.eps}
-            \caption[]
-            {{\small Ocean floor temperature ($^\circ$C) from ROMS in grid cells of 3 km x 3 km for XX years.}}    
-            \label{fig:ROMStemp}
-        \end{subfigure}
-        \hfill
-        \begin{subfigure}[b]{0.475\textwidth}  
-            \centering 
-            \includegraphics[width=\textwidth]{ROMSSalinity3km_gridded.eps}
-            \caption[]%
-            {{\small Mean bottom salinity (PSU) from ROMS in grid cells of 3 km x 3 km for XX years.}}    
-           \label{fig:ROMSsalinity}
-        \end{subfigure}
-        \caption[ ]
-        {\small Regional Oceanographic Model System (ROMS) ocean floor temperature ($^\circ$C) and salinity (PSU) data from XX years.} 
-        \label{fig:ROMSfigures}
-    \end{figure*}
-
 \newpage
-
 
 \section{HOW REFERENCES WORK} \label{sec:how.refs.work}
 
@@ -323,26 +412,27 @@ Here's a reference to an appendix: % \ref{chap:propfemale} and \ref{chap:agecomp
 %% If it wasn't there, figures and tables would be mixed together due to latex's auto-placement algorithms
 \begin{table}[H]
 \centering
-\caption{\label{tab:parampriors}Estimated and fixed parameters and prior probablilty distributions used in the Reference Case.}
-\begin{tabular}{lcrr}
+\caption{\label{tab:cdfdefs}Definitions of quantities associated with trawl survey calculations (Cochran 1977, p.89-92; Smith 1988) and equations in text.}
+\begin{tabular}{p{1.5cm}p{14.5cm}} %{ll}  %justifies both columns to their left hand side
 \hline
-\textbf{Parameter} & \specialcell{\textbf{Number}\\\textbf{estimated}} & \specialcell{\textbf{Bounds}\\\textbf{[low,high]}} & \specialcell{\textbf{Prior (Mean, SD)}\\\textbf{(single value=fixed)}} \\
 \hline
-Log recruitment ($\ln(R_0)$)                                &  1 & [-2,6]  & Uniform \\
-Steepness ($h$)                                            &  1 & [0.2,1] & Beta($\alpha=13.4$,$\beta=2.40$) \\
-Log natural mortality ($\ln(M)$)                           &  1 & [-5,0]  & Normal($\ln(0.2)$,$0.2$) \\
-Log mean recruitment ($\ln(\overline{R})$)                  &  1 & [-2,6]  & Uniform \\
-Log initial recruitment ($\ln(\overline{R}_{init})$)         &  1  & [-2,6] & Uniform \\
-Variance ratio ($\rho$)                                     &  0 & Fixed   & $0.059$ \\
-Inverse total variance ($\vartheta^2$)                     &  0 & Fixed   & $1.471$ \\
-Survey age at 50\% selectivity ($\hat{a}_k$)               &  3 & [0,1]   & None \\
-Fishery age at 50\% selectivity ($\hat{a}_k$)               &  1 & [0,1]   & None \\
-Survey SD of logistic selectivity ($\hat{\gamma}_k$)        &  3 & [0,Inf) & None \\
-Fishery SD of logistic selectivity ($\hat{\gamma}_k$)       &  1 & [0,Inf) & None \\
-Survey catchability ($q_k$)                                 &  4 & None    & Normal($0.5$,$1.0$) \\
-Log fishing mortality values ($\Gamma_{k,t}$)                & 19 & [-30,3] & [-30,3] \\
-Log recruitment deviations ($\omega_t$)                     & 19 & None    & Normal($0$,$\tau$) \\
-Initial log recruitment deviations ($\omega_{init,t}$)        & 19 & None    & Normal($0$,$\tau$) \\
+$n_h~$ $=$ & number of hauls or sets in stratum $h$~($h$ = 1, ...,$L$)\\
+\\
+$n~~~$   $=$ & $\sum_{h=1} ^L n_h$ (in the stratified case), total number of hauls\\
+\\
+$N_h~$ $=$ & total number of possible sets in stratum $h$\\
+\\
+$N~~$ $=$ & $\sum_{h=1} ^L N_h$, total number of possible sets overall\\
+ \\
+$W_h$ $=$ & $N_h$/$N$, proportion of the survey area in stratum $h$\\
+\\
+$y_{hi}~$ $=$ & number of fish of a particular species caught in set $i$ ($i$ = 1, ...,$n_h$) and stratum $h$;$y_i$ is the same quantity but for the random (nonstratified) survey design\\
+\\
+$\overline{y}_{h}~~$ $=$ & estimated mean abundance of a particular species of fish in stratum $h$; $\overline{y}$ is the same quantity but for the random (nonstratified survey design)\\
+\\
+$\overline{y}_{st}~ =$ & $\sum_{h=1}^L W_h \overline{y}_{h}$, estimated stratified mean abundance for a particular species of fish\\
+\\
+$x_{hi}~ =$ & measurement for a hydrographic variable in set $i$ of stratum $h$; $x_{hij}$ indexes the measurement for hydrographic variable $j$ in set $i$ of stratum $h$ when more than one hydrographic variable is considered simultaneously\\
 \hline
 \end{tabular}
 \end{table}
@@ -362,7 +452,7 @@ make.xtable(seed=c(1,2,3,4), xcaption=paste0("Example using xtable with some pse
 \begin{table}[H]
 \centering
 \caption{\label{tab:annmeansSD}\fishnameARF\ mean lengths (mm), maturity, sex and total sample weight (kg) ${\pm}$ standard deviation (SD) from 1984 to 2015.}
-\begin{tabular}{lrrrrrrrr}%%lrr puts first column left-justified and the next two columns right-justified
+\begin{tabular}{lrrrrrrrr}%%lrr puts first column left-justified and the next eight columns right-justified
 \hline
 \textbf{Survey Year} & \textbf{$\overline{L}$} & \textbf{SD} & \textbf{$\overline{S}$} & \textbf{SD} & \textbf{$\overline{M}$} & \textbf{SD} & \textbf{$\overline{TotWt}_s$} & \textbf{SD}\\ 
 \hline
@@ -447,19 +537,19 @@ WCVISS & 0.061 & 0.104 & 0.172 & 0.022 & 0.059 & 0.118 \\
 \section{FIGURES}
 
 %%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[H]
-\begin{center}
-<<fig.height=9, fig.width=8>>=
-random.stuff()
+%\begin{figure}[H]
+%\begin{center}
+%<<fig.height=9, fig.width=8>>=
+%random.stuff()
 @
-\end{center}
+%\end{center}
 %\vspace{0mm}
-\caption{Random points example... Degrees are represented in \latex like this 0.1$^\circ$ and superscript like this km$^2$)}
-\label{fig:example-random-stuff}
-\end{figure}
+%\caption{Random points example... Degrees are represented in \latex %like this 0.1$^\circ$ and superscript like this km$^2$)}
+%\label{fig:example-random-stuff}
+%\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%
-\clearpage
-
+%\clearpage
+ 
 
 %%\begin{figure}[!htp]
 %%\begin{center}
