@@ -1,0 +1,602 @@
+%% mainDoc.Rnw - Main part of the document
+%% Note the variables such as \fishname are global from the calling file (example.Rnw)
+
+\nonumsection*{ABSTRACT}\addcontentsline{toc}{section}{ABSTRACT}
+
+Summary of objectives, methods and results...
+
+\newpage
+
+\nonumsection*{R\'ESUM\'E}\addcontentsline{toc}{section}{R\'ESUM\'E}
+
+Usually the french version of the abstract goes here, but it is included here to show how accents might be added to text and how non-numbered sections work.
+
+\clearpage
+
+%% Need numbering back to Arabic.
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{INTRODUCTION}
+Hecate Strait and Queen Charlotte Sound contain some of the most productive fishing grounds in British Columbia (BC), providing key habitat for many commercially important groundfish species. This project will employ multivariate statistics and geostatistical approaches to analyse relationships between environmental factors and distribution and productivity of key groundfish populations in Hecate Strait and Queen Charlotte Sound. The project will improve advice for management of Pacific groundfish stocks by: (i) improving understanding of environmental drivers of groundfish distribution and productivity needed for ecosystem-based management; (ii) improved estimates of abundance for key species; (iii) identification of juvenile habitats;  (iv) provision of a baseline for understanding impacts of environmental change on species distribution; and (v) identification of species that could indicate ecosystem change through shifts in distribution and productivity.
+
+Distribution and abundance of groundfish species is associated with invariant (e.g., depth, bottom-type) and variable (e.g., temperature, salinity) environmental factors \citep{psf94, roop05, roop08}.  Measuring relationships between these factors and distribution and abundance is the first step in understanding drivers of productivity (recruitment, growth, mortality), which is a critical component of ecosystem-based management. This project will employ statistical and hierarchical Bayesian geostatistical models \citep{roop05, roop08, lec13, lec13b} to analyse relationships between environmental factors and distribution, abundance and size structure of a set of key, commercially harvested groundfish species in Hecate Strait and Queen Charlotte Sound. Models will utilize data from commercial trawl logbooks and fishery independent surveys. Temperature and salinity data from the Regional Oceanographic Model System (ROMS) \citep{mf12} provided key model inputs.
+
+Results for each species will include maps of predicted distribution and abundance of adults and juveniles; Bayesian predictive probability distributions of the relationships between habitat and environmental factors and abundance; and plots of the distribution of adults and juveniles along environmental gradients. Species most likely to be impacted by large environmental changes (e.g., ocean temperature) will be identified. Working with our external collaborator, results for a subset of species will be compared to results from Alaska to test generality of results and identify key differences. The project will provide updated estimates of abundance for the species of interest and will identify locations that may represent critical juvenile habitat. 
+
+In the long-term, the project will provide important baseline data for understanding potential future impacts of environmental change. Some species (e.g., Pacific Cod) are known to vary their habitat with depth to maintain a limited temperature range \citep{psf94}, indicating that their distribution could be strongly affected by long-term changes in ocean temperature. Published studies have shown that large-scale redistribution of north Pacific fish populations may occur under future climate scenarios, with the potential for large impacts on ecosystem structure and function \citep{jc14, cheung15}. Groundfish indicator species most likely to be affected by environmental change will be identified in this project.  Finally, ecosystem-based fishery management is based on principles of understanding the structure and function of the living components of marine ecosystems. In the US, NOAA is mandated to identify habitats essential for every managed fish species and identify those habitats that contribute most to survival, growth and productivity \citep{sig12}. The analyses in this project will form an important component of this understanding for central and northern BC waters. Through partnership with our external collaborator, comparative analyses will test generality of results and identify differences between BC and Alaska.
+
+\bigskip
+
+\section{METHODS}
+\subsection{Groundfish Bottom Trawl Survey}
+Groundfish bottom trawl survey data for our analyses were  collected during the DFO's biennial Hecate Strait Synoptic Trawl Survey and the Queen Charlotte Sound Synoptic Trawl Survey between 1984 and 2015. 
+Tows began at pre-determined locations as part of a random, stratified sampling design with strata based on (?????). Fish were identified to species, lengths measured, sexed (0 = unknown, 1 = male, 2 = female, 3 = ?), and characterised by maturity (categories 1 to 7) according to a prioritized sampling protocol. A sub-sample of each fish species from every tow were grouped by species and weighed to the nearest kilogram (kg). Tow length and travel speed were also recorded. The data used these analyses are therefore the biomass of each species in each tow, and in some cases, standardised as catch per unit of trawl effort (catch per square kilometre). 
+
+\subsection{Environmental Data}
+
+During the groundfish bottom trawl survey average net depth (m) and ocean temperature ($^\circ$C) data were also collected from sensors attached to the net. 
+Highly spatially-resolved, commercial logbook data were available from BC's 100\%-observed groundfish bottom trawl fishery. All these data are held in Oracle databases, co-managed by the Pacific Groundfish Statistics Program. Spatially-gridded predictions of temperature and salinity data for Hecate Strait and Queen Charlotte Sound, were output from the Regional Oceanographic Model System at the Institute of Ocean Sciences. Spatial bottom-type data at 100 m and 20 m resolution were available at the Pacific Biological Station. Scientists at NOAA's Alaska Fisheries Science Center are currently engaged in developing distribution maps for all commercially-fished species in Alaska. Some of these data were available, via our external collaborator Dr. Rooper at the Alaska Fisheries Science Center.
+
+Substrate type (e.g., hard, sandy, muddy) and ocean depth for the study area was obtained from the \bc Marine Conservation Analysis database.
+
+Software: A version of the hierarchical Bayesian model has already been written using the OpenBUGS programming language. This code was customized and refined for this project. All other statistical models and graphic outputs were developed using the R-programming language. Species abundance and data distribution maps were made using ArcGIS or a similar (e.g., QGIS, PBSMapping).
+
+\subsection{Data Management}
+Spatially-gridded Canadian datasets and gridded predictions of distribution and abundance were transferred to a database managed by the Pacific Groundfish Statistics program. They were available internally to Pacific stock assessment scientists, and by request externally. Maps were incorporated into an intranet-based tool, making them available to Pacific scientists and managers.
+
+\subsection{Cumulative Distribution Functions}
+The purpose of this component of the study was to identify significant associations between environmental parameters and the distributions of 20 species of northeast Pacific Ocean groundfish. It was also meant to be a continuation of the analysis presented by \citet{psf94}. We used cumulative distribution functions (cdf's) of fish catch (CPUE) and the  environmental factors described above (substrate, salinity, temperature and depth) \citep{ps94, psf94}. This technique calculates the empirical cdf's for the environmental parameters alone and the environmental parameters weighted by the CPUE of a particular species \citep{ps94, psf94}. 
+
+The probability associated with each observation in a cdf is 1/\emph{n}, but the stratified random survey design results in a probability of 1/$n_{h}$ within each stratum (all symbols are provided in Table XX). Therefore the cdf for a given habitat variable ($x_{i}$) is of the form \citep{cd86}:
+
+\begin{equation}
+\label{eq:cdf1}
+\emph{f}(t) = \sum_{h}\sum_{i}\frac{W_h}{n_h}~I({x_{hi}}) %within align you need brackets around subscripts, for equation you do not
+\end{equation}
+
+with the indicator function
+
+\begin{equation*}  %the * removes the numbering
+{I}~({x_{hi}})=\begin{cases}
+1,& \text{if $x_{hi}$}\leq t;\\    %try \displaystyle to fix this
+0,& \text{otherwise}.
+\end{cases}
+\end{equation*}
+
+Where \emph{t} represents an index, ranging from the lowest to the highest values of the habitat parameter at a step appropriate for the desired resolution. Equation 1 is calculated over all values of \emph{t} for each habitat measurement ($x_{hi}$) available. The cdf's derived from equation \ref{eq:cdf1} can be used to determine the proportion of the environmental-weighted catch within any range of the environmental variable during the survey. For example, the range of depths that occurred within the central 50\% (between the 25th and 75th percentiles) or the central 95\% (between the 2.5th and 97.5th percentiles) of the area surveyed can easily be calculated from each species' cdf figures.
+
+Copied directly from Perry and Smith 1994. Including the survey stratification scheme via the $W_h$/$n_h$ terms ensures that we have an unbiased estimate of the frequency distribution for the habitat measurement. Ignoring the stratification by replacing $W_h$/$n_h$ with 1/\emph{n} would result in either under- or overestimating the area associated with any particular value of the habitat measurement. However, the term  $W_h$/$n_h$ does simplify to 1/\emph{n}  when the number of sets allocated to each stratum is proportional to the size of the stratum (i.e., $n_h$ = $nW_h$). That is, stratification can be ignored when the allocation of sets is strictly proportional to the stratum size.
+Next, we associate the catch of fish (in weight) of a particular species in each tow with the habitat parameters during that tow as  weight in the form:
+
+\begin{align} \label{eq:cdf2}
+g(t) = \sum_{h}\sum_{i}\frac{W_h}{n_h}\frac{y_{hi}}{y_{st}}~I({x_{hi}}). %within align you need brackets around subscripts, for equations you do not.
+\end{align}
+
+Scaling the number of fish caught (\emph{$Y_{hi}$}) by the stratified mean number of fish caught $(\overline{y}_{st})$ in equation \ref{eq:cdf2} results in \emph{g(t)} summing to 1 over all values of \emph{t}. If large values of (\emph{$Y_{hi}$})/$\overline{y}_{st}$ are consistently associated with particular habitat conditions, then this suggests a strong association between the fish species and those habitat conditions. The cumulative distribution functions calculated from equation \ref{eq:cdf2} illustrate the range of conditions at which the species occurred and can be compared with the habitat conditions available in the sampled area as calculated with equation \ref{eq:cdf1}. For example, 50\% of the depths surveyed in ..... (curve \emph{f(t)}, Fig. XX) were less than XX m, while 50\% of the XX \fishnameARF\ (curve \emph{g(t)}, Fig. XX) were caught at depths less than XX m. The curve \emph{g(t)} can differ widely from the habitat curve \emph{f(t)} depending on the range of conditions occupied by the fish. At one extreme, if the fish were associated with one depth only (e.g., 100 m), \emph{g(t)} would be zero for \emph{t} < 100 and equal to 1.0 for t $\geq$ 100. If there was no particular association between fish distributions and the habitat variable within the area surveyed, for example if the fish were randomly distributed with respect to the habitat variable, then \emph{g(t)} and \emph{f(t)} would be almost identical.
+
+The third step is to determine the strength of the association between catch and the habitat variable by assessing the degree of difference between the the two curves, \emph{g(t)} and \emph{f(t)}. Our test statistic's similar to that used for comparing empirical cdf's in Kolmogorov-Smirnov tests (see Conover 1980). We calculate the maximum absolute vertical distance between \emph{g(t)} and \emph{f(t)} as:
+
+\begin{equation} \label{eq:cdf3}
+\max\limits_{\forall t} \vert g(t) - f(t)\vert = \max\limits_{\forall t} \bigg|  \sum_{h}\sum_{i} \frac{W_h}{n_h} \bigg( \frac{{y_{hi}}-\overline{y}_{st}}{{\overline{y}_{st}}} \bigg) ~I({x_{hi}}) \bigg|
+%  \
+%_st}  
+\end{equation}
+
+where |\emph{g(t) - f(t)}| indicates the absolute value of the difference between \emph{g(t)} and \emph{f(t)} at any point \emph{t}.
+The stratified random survey design complicates the distributional assumptions for the test statistic in equation \ref{eq:cdf3}, and therefore the standard tables for the Kolmogorov-Smirnov test, or indeed any goodness-of-fit test, cannot be used (see Rao and Thomas 1989). Instead, we developed a randomization procedure (Noreen 1989) to evaluate the significance of the test statistics. We modelled the distribution of the test statistic under the null hypothesis of random association between fish catch (numbers) and habitat variable through Monte-Carlo sampling. This was done by randomizing the pairings of ($W_h/n_h$)[($y_{hi}$ - $\overline{y}_{st}$)/$\overline{y}_{st}$] and $x_{hi}$ over all \emph{h} and \emph{i} for the data within a survey and then calculating the test statistic in equation \ref{eq:cdf3} for the new pairs. The $x_{hi}$ for the pairings were obtained by sampling with replacement the observed $x_{hi}$ with probability $W_h$$n_h$. This procedure was repeated a large number of times to give a pseudo-population of test statistics under the null hypothesis. The test statistic for XX species and depth in MONTH YEAR (Fig XX) was equal to XX (also indicated as "max" in Fig XX) which was greater than or equal to XX\% (2000 out of 2001) of the test statistics in a randomized distribution.. There were 2001 test statistics when the original observed pairing of the data was included. Interpreting these results similar to a standard statistical hypothesis test, we note that the probability of obtaining a test statistic as large as XX by chance is close to zero (\emph{p} = XX) and conclude that there was a very strong association by XX species with a specific range of depths available in the survey area during MONTH YEAR. This randomization test is a two-sided test, since it is the magnitudes of the absolute differences between \emph{g(t)} and \emph{f(t)} that are of interest.
+However, environmental conditions are often correlated, for example where temperature decreases with increasing depth, which suggests that an association between a species and a particular depth range may also be confounded by an associated with temperature. This problem can be explicitly considered by extending equations \ref{eq:cdf2} and \ref{eq:cdf3} to two (or more) habitat variables simultaneously. For \emph{k} variables, equations \ref{eq:cdf1} and \ref{eq:cdf2} can be written as
+
+\begin{equation}
+\label{eq:cdf4}
+\emph{f}(t) = \sum_{h}\sum_{i}\frac{W_h}{n_h}~I({x_{hi}}) %within align you need brackets around subscripts, for equation you do not
+\end{equation}
+
+\begin{align}
+g(t) = \sum_{h}\sum_{i}\frac{W_h}{n_h}\frac{y_{hi}}{y_{st}}~I({x_{hi}}) %within align you need brackets around subscripts, for equations you do not.
+\end{align}
+
+where
+
+\begin{equation*}  %the * removes the numbering
+{I}~({x_{hi}})=\begin{cases}
+1,& \text{if ($x_{hi}$}\leq t_{1},x_{hi~2} \leq t_2,...,x_{hi~k} \leq t_{k});\\    %try \displaystyle to fix this
+0,& \text{otherwise}.
+\end{cases}
+\end{equation*}
+
+Boldface type text for $\boldsymbol{t}$ and $\boldsymbol{x}$ indicates vectors of habitat variables. In the two-variable case, \emph{g(\textbf{t}}) can be represented as a three-dimensional surface in which the cumulative frequency forms the vertical axis. The test statistic (equation \ref{eq:cdf3}) is modified as
+
+\begin{equation} \label{eq:cdf5}
+\max\limits_{\forall t} \vert g(\boldsymbol{t}) - f(\boldsymbol{t})\vert = \max\limits_{\forall t} \bigg|  \sum_{h}\sum_{i} \frac{W_h}{n_h} \bigg( \frac{{y_{hi}}-\overline{y}_{st}}{{\overline{y}_{st}}} \bigg) ~I(\boldsymbol{x}_{hi}) \bigg|.
+%  \
+%_st}  
+\end{equation}
+
+\subsection{Models}
+The project will apply a mix of established and recently-published statistical approaches to achieve the deliverables of the project. An earlier study \citep{psf94} applied a set of multivariate statistical models to classify groundfish species in Hecate Strait according to their relationships with invariant and variable environmental factors. Recent studies have further developed these types of approaches for Alaskan groundfish species (e.g., \citet{roop05,roop08}). A problem with spatial datasets for many marine species is the high proportion of zero observations, which can bias results. One approach to solving this problem is to use a two-stage model to first predict presence and absence, then analyse relationships between environmental variables and abundance \citep{rm09}. More recently, the problem has been addressed using new Bayesian hierarchical models which estimates both the probability of zero observations and abundance in a hierarchical framework \citep{lec13, lec13b}. Within this framework, a geostatistical approximation, consisting of a linear model with spatially-correlated errors, is used to efficiently predict spatial abundance as a function of environmental factors \citep{lec13b}. The model outputs spatial predictions of abundance, and predictive probability distributions of the effects of each environmental factor on abundance for each species. 
+Models are calibrated with spatial abundance observations. Analyses can be done on different size-classes of the population to better understand differences in adult and juvenile distribution and improve understanding of productivity. 
+
+ 
+
+%%Open the file \rnwexamplefile. Look at the first R code chunk, starting on line 191. This is where the R environment is loaded so that the figures and tables can be made, and values can be referenced later in the document. There are two choices: source the R file, or load a binary R environment. Sourcing the file works fine, but if there is a lot of loading of data or calculations that have to happen during the sourcing the build will take a long time. A much quicker way is to open an R session, and source the \rfile\ manually, then save the R environment to a file called \rdata\ in the \emph{r} directory. If this method is used, make sure to set \textbf{\lstinline{use.binary.envir <- TRUE}} on line 209 of \rnwexamplefile.
+
+%To build this document, open a command line and enter \textbf{buildtex.bat}. When you run buildtex.bat two things happen:
+%\begin{enumerate}[noitemsep,nolistsep]
+%  \item Rscript calls knitr which goes through and \emph{knits} your \emph{\rnwexamplefile} file, which means it runs all the R code it finds, stores figures in the \emph{knitr-cache} directory, and creates a \tex file which \latex can then understand. It also creates a file called knitrOutput.log which contains all output and errors encountered during the knitting procedure. That is where to first look when there are problems compiling your document. Here is the line in buildtex.bat that does this:
+ %% alltt allows us to enter code with a bunch of special characters without having to escape all of them explicitly.
+%    \begin{alltt}
+%      Rscript -e "library(knitr);knit('./\rnwexamplefile')" 1> knitrOutput.log 2>&1
+%    \end{alltt}
+%  \item \latex runs through the newly-created \tex file (\emph{\texfile}) and calls \emph{bibtex} to find the references and make the bibliography. There are three output formats of the document: .ps, .dvi, and .pdf. The .ps and .dvi formats require special viewers (Yap and GhostView respectively) and do not incorporate the reference links that are so convinient in the .pdf file. During development of very complex documents, you can leave the last part of this call out to avoid PDF generation, and put it back in when ready to complete the document.
+%    \begin{alltt}
+%      @latex -synctex=1 "\texfile" && bibtex "example" && latex "\texfile"
+%        && latex "\texfile" && dvips "example.dvi" && ps2pdf "example.ps"
+%    \end{alltt}
+%\end{enumerate}
+
+%Some \latex packages may have to be installed. If so, the package manager dialog will open. You must choose to install from internet, then make sure to select \emph{ctan} using \emph{HTTP} protocol from \emph{BC}. The default settings will most likely not work.
+
+%When \emph{knitr} is called, it parses the \emph{\rnwexamplefile} file, looking for special parenthesis characters which are called \emph{R code chunks}. The chunks begin with a set of parentheses and equals sign \verb!<< >>=! and end with the \emph{at} symbol \verb!@!. Anything between them is an R code chunk which will be evaluated by \emph{knitr}. Inside the beginning parentheses, you can define many \emph{chunk options}. The official page listing these options is here: \href{http://yihui.name/knitr/options/}{Knitr chunk options}. In this document the file \emph{\rnwexamplefile} holds one chunk which loads the R environment, and \emph{\rnwmaindocfile} holds the figure chunks (one for each figure) which each hold simple commands to plot some examples. For example, figure \ref{fig:example-half-torus} is called like this:
+
+%% Outputs the chunk as code into the document by using eval=FALSE and literal=TRUE
+%\verb!<<fig.height=9, fig.width=8>>=! \\
+%\verb!half.torus()! \\
+%\verb!@!
+
+%One should always write calculated values or data by using a reference to the R objects instead of typing the numbers in as text. This way, if something changes you don't have to read and verify every number in your document, they will be updated automatically by \emph{knitr}.
+
+%Here's how you write some values by reference from your R environment inside \latex text block: For example to get the mean of x you would use the command: \$\ShowSexpr{mean(x)}\$ which in this case evaluates to $\Sexpr{mean(x)}$. The \verb!$\Sexpr{}$! construct represents an S-expression, where S was the predecessor to R. For some reason it hasn't yet been changed to \verb!$\Rexpr{}$!. In this example, the values for the x vector were read in from \emph{example.r} at the beginning of the knitting process and is accessible throughout the document. You can call simple R commands using the \verb!$\Sexpr{}$! command inside \latex. You can do more than one command by separating with a semicolon, for example the command \$\ShowSexpr{z=x+y;mean(z)}\$ evaluates to $\Sexpr{z=x+y;mean(z)}$ for the x and y values loaded from \emph{example.r}.\\
+
+%If there's an error, the first thing to do is check the \emph{knitrOutput.log} file. This will contain all messages both regular and error which \emph{knitr} outputs. If there was an error during the knitting process, you will find it there. The last lines of the file should say:
+%\begin{alltt}
+%  output file: \texfile
+
+%  [1] "\texfile"
+%\end{alltt}
+%If you see this message and the file \emph{\texfile} exists then the \emph{knitr} part has worked but the \latex part of the compilation has failed. The message in the case that \latex has failed will be something like \emph{l.132...error message}. In that case, the error happened on line 132 of the \emph{\texfile} file. You will have to look at this file first to see where the error is, then go back to your \rnwexamplefile\ file and fix it. Sometimes errors earlier on can trigger something later to fail, which makes it very hard to debug. The best advice is to compile after every change to make sure it is still working. A lot of time can be wasted tracking down errors if you haven't compiled in a long time and made many changes, where more than one error may have been introduced. Matching parenthesis errors can be particular insidious.
+
+%If there is an error stating:
+
+%\emph{**** Could not open the file example.pdf}
+
+%it means that you still have the PDF open and you need to close it and re-compile. If you have the GhostView viewer, you can keep the postscript (\emph{example.ps}) file open instead while developing. You won't get an error even if it stays open.
+
+\bigskip
+
+\section{RESULTS}
+%\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/} }
+%\begin{figure}[!htp]
+%\begin{center}
+%\includegraphics[width=6in,keepaspectratio=true]{ROMSTemp3km_gridd%ed_Panel_1.eps}
+%\end{center}
+%\vspace{0mm}
+% To get the grid size in km^2 for the caption:
+% While in the gui for the map, type mean(xtcall(PBSmap)$pdata$area) for the map you currently have loaded.
+%\caption{ROMS ocean bottom temperature ($^\circ$C) from 1979 to 2011.}
+%\label{fig:roms.ann.temp} \end{figure}
+
+%Equations are fairly straightforward, and if organized using the same label prefix (\textbf{eq:}), they will be numbered automatically. Here are some example equations from the 2015 \fishnameARF\ assessment with added margins for captions:
+
+%\begin{align} \label{eq:length-temp-lm}
+
+%B_y = \sum_{i=1}^kC_{y_i}A_i=\sum_{i=1}^kB_{y_i}
+%\end{align}
+
+%\begin{addmargin}[3em]{1em}
+%where $\overline{L}$ is the mean \fishnameARF\ length...
+%\end{addmargin}
+
+%\begin{align} \label{eq:length-temp-lm}
+%\overline{L}_s = B_{0} + \overline{T}_{D_s} + Y_s + \overline{D}_{s} + \overline{T}_{D_s} * \overline{D}_{s} * Y_s
+%B_y = \sum_{i=1}^kC_{y_i}A_i=\sum_{i=1}^kB_{y_i}
+%\end{align}
+
+%\begin{addmargin}[3em]{1em}
+%where $\overline{L}$ is the mean \fishnameARF\ length...
+%\end{addmargin}
+
+
+%CPUE ($C_{y_i}$) for \fishnameARF\ in stratum $i$ for year $y$ was calculated as a density in $kg/km^2$ by:
+
+%%\begin{align} \label{eq:cpuecalc}
+%C_{y_i}=\frac{\sum\limits_{j=1}^{n_{y_i}} \left[\frac{W_{y_i,j}}{D_{y_i,j}w_{y_i,j}}\right]}{n_{y_i}}
+%\end{align}
+%\begin{addmargin}[3em]{1em}
+%where $W_{y_i,j}$ is the catch weight in $kg$ for \fishnameARF\ in stratum $i$, year $y$, and tow $j$, $D_{y_i,j}$ is the distance travelled in $km$ for tow $j$ in stratum $i$ and year $y$, $w_{y_i,j}$ is the net opening in $km$ by tow $j$, stratum $i$, and year $y$, and $n_{y_i}$ is the number of tows in stratum $i$.
+%\end{addmargin}
+
+%The variance of the survey biomass estimate $V_y$ for \fishnameARF\ in year $y$ is calculated in $kg^2$ as follows:
+%\begin{align} \label{eq:indexvariance}
+%V_y=\sum_{i=1}^k\left[\frac{\sigma_{y_i}^2A_i^2}{n_{y_i}}\right]=\sum_{i=1}^kV_{y_i}
+%\end{align}
+%\begin{addmargin}[3em]{1em}
+%where $\sigma_{y_i}^2$ is the variance of the CPUE in $kg^2/km^4$ for year $y$ in stratum $i$, $V_{y_i}$ is the variance of \fishnameARF\ in stratum $i$ for year $y$, where $\sigma_{y_i}^2$ was obtained from bootstrapped samples (see below).
+%\end{addmargin}
+
+%The CV for \fishnameARF\ for each year $y$ was calculated as follows:
+%\begin{align} \label{eq:indexcv}
+%CV_y=\frac{\sqrt{V_y}}{B_y}
+%\end{align}
+%\begin{addmargin}[3em]{1em}
+%where $CV_y$ is the CV for year $y$.
+%\end{addmargin}
+
+%\subsubsection{A few more equation tidbits}
+
+%Here is an example of overline usage: $\overline{R}_{init}$.
+
+%Double dashes can be used to make a longer solid line to show value ranges: $0.308 y^{-1}$--$0.406 y^{-1}$.
+
+%Here's how you show a fraction inline: $\frac{B_{2016}}{B_{ReferencePoint}} < 1$.
+
+\bigskip
+
+\subsection{Environmental Covariates} \label{sec:enviro.covar}
+
+Environmental covariates considered during this analysis included average trawl net depth, and bottom temperature and salinity. Trawl net depth was recorded during each tow. Temperature and salinity data were collected during the groundfish trawl surveys and were also available from the Regional Oceanographic Model System (ROMS).  
+
+
+%%%%%%%%% ROMS DEPTH FIGURE
+\newpage
+\graphicspath{ {c:/GitHub/SPERA-Maps/Results/Figures/} }
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{Depth3km_gridded.eps}
+\end{center}
+\caption{Mean ocean depth (m) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys for all years.}
+\label{fig:allsurveysdepth}
+\end{figure}
+
+\newpage            
+%%%%%%%%% ROMS TEMP PANEL FIGURES       
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSTemp3km_gridded_Panel_1.eps}
+\end{center}
+
+\caption{ROMS mean bottom temperature ($^\circ$C) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 1979 to 1987.}
+\label{fig:ROMStemp79to87}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSTemp3km_gridded_Panel_2.eps}
+\end{center}
+
+\caption{ROMS mean bottom temperature ($^\circ$C) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 1988 to 1996.}
+\label{fig:ROMStemp88to96}
+\end{figure}   
+
+\newpage
+
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSTemp3km_gridded_Panel_3.eps}
+\end{center}
+
+\caption{ROMS mean bottom temperature ($^\circ$C) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 1997 to 2005.}
+\label{fig:ROMStemp97to05}
+\end{figure}   
+
+\newpage
+
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSTemp3km_gridded_Panel_4.eps}
+\end{center}
+
+\caption{ROMS mean bottom temperature ($^\circ$C) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 2006 to 2011.}
+\label{fig:ROMStemp06to11}
+\end{figure}
+
+\newpage
+%%%%%%%%% ROMS SALINITY PANEL FIGURES 
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSSalinity3km_gridded_Panel_1.eps}
+\end{center}
+
+\caption{ROMS mean bottom salinity (PSU) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 1979 to 1987.}
+\label{fig:ROMSsal79to87}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSSalinity3km_gridded_Panel_2.eps}
+\end{center}
+
+\caption{ROMS mean bottom salinity (PSU) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 1988 to 1996.}
+\label{fig:ROMSsal88to96}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSSalinity3km_gridded_Panel_3.eps}
+\end{center}
+
+\caption{ROMS mean bottom salinity (PSU) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 1997 to 2005.}
+\label{fig:ROMSsal97to05}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=6in,keepaspectratio=true]{ROMSSalinity3km_gridded_Panel_4.eps}
+\end{center}
+
+\caption{ROMS mean bottom salinity (PSU) in grid cells of 3 km x 3 km for fishing events from all groundfish trawl surveys 2006 to 2011.}
+\label{fig:ROMSsal06to11}
+\end{figure}
+
+
+\clearpage
+\newpage
+
+\section{HOW REFERENCES WORK} \label{sec:how.refs.work}
+
+\subsection{How the figure and table references work} \label{subsec:how.figure.refs.work}
+
+See Figures \ref{fig:example-random-stuff}, \ref{fig:example-brownian-motion}, \ref{fig:example-half-torus}, and \ref{fig:example-galaxy}. Note that these numbers are clickable and you can go directly to the figure. These are referenced figures.
+
+A figure/table reference works by adding a reference name to a figure/table, then remembering what is was and using a \verb!\ref! command to reference the figure/table. For example in Figure \ref{fig:example-random-stuff}, the figure reference code has a label tag like this \verb!\label{fig:example-random-stuff}!. The figure can be referenced anywhere in the latex document by using this syntax: \verb!\ref{fig:example-random-stuff}!. The numbering is taken care of for you and is separate for each type of reference. Here is a list of suggested prefixes to use for different reference types:
+
+\begin{enumerate}[noitemsep,nolistsep]
+  \item    \textbf{sec}: - section
+  \item \textbf{subsec}: - subsection
+  \item    \textbf{fig}: - figure
+  \item    \textbf{tab}: - table
+  \item     \textbf{eq}: - equation
+  \item    \textbf{lst}: - code listing
+  \item    \textbf{itm}: - enumerated list item (like this list)
+  \item   \textbf{chap}: - appendix
+\end{enumerate}
+
+\subsection{How appendix references work} \label{subsec:how.appendix.refs.work}
+
+Appendix references are much like chapters of a book. They can be added or commented out easily at the bottom of \emph{\rnwexamplefile}. This helps with the incremental form of development where you make sure the main document is compiling and then when ready, uncomment the appendix inclusion code and the appendix will be included in the document. Once included, any appendix references will be resolved.
+
+The code which adds an appendix is \emph{knitr} code because you want the appendix added before the knitting process so that any figures or R expressions are resolved, just like in the main document. This is an example of how appendix code is added:
+
+\verb!\rfoot{Appendix A -- Species Summaries}!
+
+\verb!<<appendix-A, child='appendix-A/appendix-A.Rnw'>>=! \\
+\verb!@!
+
+ To reference this appendix, use this syntax: \verb!\ref{chap:example.1}! which resolves to appendix \ref{chap:example.1}. This is also clickable and will take you directly to the appendix. The reference must be defined at the beginning of \emph{\rnwappendixAfile} like this: \verb!\label{chap:example.1}!. This method is repeated for all appendices. They will be lettered in the order in which they appear in \rnwexamplefile, so it is very easy to change the order of appendices and rebuild the document.
+ 
+\bigskip
+
+
+\section{SUMMARY}
+
+Here's a reference to an appendix: % \ref{chap:propfemale} and \ref{chap:agecompweight}.\\
+
+\addcontentsline{toc}{section}{BIBLIOGRAPHY}
+
+\bibliographystyle{resDoc}
+%% This tells latex that the bibliography file is two directories up and is called all.bib
+\bibliography{../../all}
+
+\clearpage
+
+\section{TABLES}
+
+%% \begin{table}[!htp]
+%% \centering
+%% \caption{\label{tab:surveySuitability} Attributes of fishery-independent surveys and evaluation of suitability for stock indexing. RS=Random stratified design, BT=Bottom trawl gear.}
+%% \begin{tabular}{lcccc}
+%% \hline
+%% \textbf{Attribute}              & \textbf{WCVISS} & \textbf{HSSS} & \textbf{HSMSAS} & \textbf{QCSSS} \\
+%% \hline
+%% \textbf{Design}                   &            RS &            RS &             RS &            RS \\
+%% \textbf{Gear}                     &            BT &            BT &             BT &            BT \\
+%% \textbf{Year Range (years)}       & 2004-2014 (6) & 2005-2013 (5) & 1984-2003 (11) & 2003-2013 (7) \\
+%% \textbf{Set Range (avg)}          & 106-179 (153) & 156-236 (189) &   88-161 (105) & 260-281 (269) \\
+%% \textbf{PFMA Areas}               &         3C,3D &         5C,5D &          5C,5D &         5A,5B \\
+%% \textbf{Depth Range (m)}          &        41-660 &        19-420 &         18-232 &        41-626 \\
+%% \textbf{Ageing done (yrs)}        &       Yes (5) &       Yes (5) &        Yes (1) &       Yes (4) \\
+%% \textbf{Comment}                  &               &               &                &               \\
+%% \hline
+%% \end{tabular}
+%% \end{table}
+
+%% The big [H] below tells latex to keep the table/figure here in this spot when using the float package
+%% If it wasn't there, figures and tables would be mixed together due to latex's auto-placement algorithms
+\begin{table}[H]
+\centering
+\caption{\label{tab:cdfdefs}Definitions of quantities associated with trawl survey calculations (Cochran 1977, p.89-92; Smith 1988) and equations in text.}
+\begin{tabular}{p{1.5cm}p{14.5cm}} %{ll}  %justifies both columns to their left hand side
+\hline
+\hline
+$n_h~$ $=$ & number of hauls or sets in stratum $h$~($h$ = 1, ...,$L$)\\
+\\
+$n~~~$   $=$ & $\sum_{h=1} ^L n_h$ (in the stratified case), total number of hauls\\
+\\
+$N_h~$ $=$ & total number of possible sets in stratum $h$\\
+\\
+$N~~$ $=$ & $\sum_{h=1} ^L N_h$, total number of possible sets overall\\
+ \\
+$W_h$ $=$ & $N_h$/$N$, proportion of the survey area in stratum $h$\\
+\\
+$y_{hi}~$ $=$ & number of fish of a particular species caught in set $i$ ($i$ = 1, ...,$n_h$) and stratum $h$;$y_i$ is the same quantity but for the random (nonstratified) survey design\\
+\\
+$\overline{y}_{h}~~$ $=$ & estimated mean abundance of a particular species of fish in stratum $h$; $\overline{y}$ is the same quantity but for the random (nonstratified survey design)\\
+\\
+$\overline{y}_{st}~ =$ & $\sum_{h=1}^L W_h \overline{y}_{h}$, estimated stratified mean abundance for a particular species of fish\\
+\\
+$x_{hi}~ =$ & measurement for a hydrographic variable in set $i$ of stratum $h$; $x_{hij}$ indexes the measurement for hydrographic variable $j$ in set $i$ of stratum $h$ when more than one hydrographic variable is considered simultaneously\\
+\hline
+\end{tabular}
+\end{table}
+
+%% How you call an xtable from latex. Note there is no need for anything other than
+%% the R call to make.xtable. The label can be referenced elsewhere in the document.
+<<results='asis', echo=FALSE>>=
+make.xtable(seed=c(1,2,3,4), xcaption=paste0("Example using xtable with some pseudo-random seeded numbers. The function ",
+            "get.align makes the left column justified left and the rest justified right which ",
+            "is how most tables giving values are shown."), xlabel="tab:example-xtable")
+@
+
+
+%\textbf{Parameter} & \specialcell{\textbf{Number}\\\textbf{estimated}} & \specialcell{\textbf{Bounds}\\\textbf{[low,high]}} & \specialcell{\textbf{Prior (Mean, SD)}\\\textbf{(single value=fixed)}} \\
+\newpage
+
+\begin{table}[H]
+\centering
+\caption{\label{tab:annmeansSD}\fishnameARF\ mean lengths (mm), maturity, sex and total sample weight (kg) ${\pm}$ standard deviation (SD) from 1984 to 2015.}
+\begin{tabular}{lrrrrrrrr}%%lrr puts first column left-justified and the next eight columns right-justified
+\hline
+\textbf{Survey Year} & \textbf{$\overline{L}$} & \textbf{SD} & \textbf{$\overline{S}$} & \textbf{SD} & \textbf{$\overline{M}$} & \textbf{SD} & \textbf{$\overline{TotWt}_s$} & \textbf{SD}\\ 
+\hline
+1984           & a                               & See Table \ref{tab:annmeansSD} \\
+1987             & a                      & $\vartheta^2=1.538$; $\rho=0.015$ \\
+1989             & a                       & $\vartheta^2$ estimated; $\rho=0.059$ \\
+1991             & a                        & $\vartheta^2=0.962$; $\rho=0.038$ \\
+1993             & a                       & $\vartheta^2=2.500$; $\rho=0.100$ \\
+1998             & a            & $h$ = Beta($\alpha=12.7$, $\beta=5.0$) \\
+2000             & a          & $\ln(M)$ = Normal($\ln(0.2)$, $0.05$) \\
+2002             & a          & $\ln(M)$ = Normal($\ln(0.2)$, $0.25$) \\
+2003           & a        & $\ln(M)$ = Normal($\ln(0.3)$, $0.20$) \\
+2004          & a         & $\ln(q_k)$ = Normal($\ln(1.0)$, $1.0$) \\
+2005          & a         & $\ln(q_k)$ = Normal($\ln(0.5)$, $1.5$) \\
+2007          & a            & $\hat{a}$ = $4.99$ yrs; $\hat{\gamma}$ = $1.27$ yrs \\
+2009          & a              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+2011         & Aa              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+2013          & a              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+2015         & a              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+\hline
+\end{tabular}
+\end{table}
+
+
+%\begin{table}[H]
+%\centering
+%\caption{\label{tab:meansSD}Fish species overall mean lengths (mm), maturity, sex and total sample weight (kg) ${\pm}$ standard deviation %(SD) for all surveys (1984 to 2015).}
+%\begin{tabular}{lrrrrrrrr}%%lrr puts first column left-justified and the next two columns right-justified
+%\hline
+%\textbf{Fish Species} & \textbf{$\overline{L}$} & \textbf{SD} & \textbf{$\overline{S}$} & \textbf{SD} & \textbf{$\overline{M}$} & \textbf{SD} & \textbf{$\overline{TotWt}_s$} & \textbf{SD} \\ 
+%\hline
+%\fishnameARF\           & a                               & See Table \ref{tab:meansSD} \\
+%\fishnameCAR\             & a                      & $\vartheta^2=1.538$; $\rho=0.015$ \\
+%\fishnameDOG\             & a                       & $\vartheta^2$ estimated; $\rho=0.059$ \\
+%\fishnameDOL\             & a                        & $\vartheta^2=0.962$; $\rho=0.038$ \\
+%\fishnameENL\             & a                       & $\vartheta^2=2.500$; $\rho=0.100$ \\
+%\fishnameGSR\             & a            & $h$ = Beta($\alpha=12.7$, $\beta=5.0$) \\
+%\fishnameLST\             & a          & $\ln(M)$ = Normal($\ln(0.2)$, $0.05$) \\
+%\fishnamePAC\             & a          & $\ln(M)$ = Normal($\ln(0.2)$, $0.25$) \\
+%\fishnamePEL\           & a  & $\ln(M)$ = Normal($\ln(0.3)$, $0.20$) \\
+%\fishnamePOP\          & a & $\ln(q_k)$ = Normal($\ln(1.0)$, $1.0$) \\
+%\fishnameRAT\          & a         & $\ln(q_k)$ = Normal($\ln(0.5)$, $1.5$) \\
+%\fishnameROL\          & a            & $\hat{a}$ = $4.99$ yrs; $\hat{\gamma}$ = $1.27$ yrs \\
+%\fishnameRSR\          & a              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+%\fishnameRXL\          & Aa              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+%\fishnameSGR\          & a              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+%\fishnameSST\          & a              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+%\fishnameWWR\          & Aa              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+%\fishnameYMR\          & a              & $\hat{a}$ = $6.00$ yrs; $\hat{\gamma}$ = $1.00$ yrs \\
+%\hline
+%\end{tabular}
+%\end{table}
+
+\begin{table}[H]
+\centering
+\caption{\label{tab:sensitivities-q}Sensitivity cases for $q_k$; posterior quantiles.}
+\begin{tabular}{lcccccc}
+\hline
+\textbf{Index}  & \multicolumn{3}{c}{\textbf{Sensitivity 10}} & \multicolumn{3}{c}{\textbf{Sensitivity 11}} \\
+\hline
+ $\mathbf{q_k}$ & \textbf{2.5\%} & \textbf{50\%} & \textbf{97.5\%} & \textbf{2.5\%} & \textbf{50\%} & \textbf{97.5\%} \\
+\hline
+QCSSS  & 0.081 & 0.158 & 0.508 & 0.029 & 0.083 & 0.226 \\
+HSMAS  & 0.079 & 0.121 & 0.155 & 0.035 & 0.081 & 0.136 \\
+HSSS   & 0.070 & 0.118 & 0.200 & 0.027 & 0.067 & 0.136 \\
+WCVISS & 0.061 & 0.104 & 0.172 & 0.022 & 0.059 & 0.118 \\
+\hline
+\end{tabular}
+\end{table}
+
+%% <<results='asis', echo=FALSE>>=
+%% # Note that the first column will not be set to have any decimal digits because it is the TAC/Catch projection
+%% cap <- "Decision Table for the Reference Case showing posterior probabilities that 2016 projected biomass B\\subscr{t} is below a set of candidate reference points and benchmarks (Table \\ref{tab:refpoints}), and probabilities that the 2015 projected harvest rate U\\subscr{t} is above U\\subscr{2014} or U\\subscr{MSY} for a given level of female-only catch."
+%% makeTable(1, 7, ci=ci, burnthin=burnthin, digits=3, retxtable=TRUE, xcaption=cap, xlabel="tab:Decisions")
+%% @
+%% <<results='asis', echo=FALSE>>=
+%% # Note that the first column will not be set to have any decimal digits because it is the TAC/Catch projection
+%% cap <- "Decision Table for a sensitivity model (Selectivity = Maturity, Table \\ref{tab:sensitivities}) showing posterior probabilities that 2016 projected biomass B\\subscr{t} is below a set of candidate reference points and benchmarks (Table \\ref{tab:refpoints}), and probabilities that the 2015 projected harvest rate U\\subscr{t} is above U\\subscr{2014} or U\\subscr{MSY} for a given level of female-only catch."
+%% makeTable(12, 7, ci=ci, burnthin=burnthin, digits=3, retxtable=TRUE, xcaption=cap, xlabel="tab:DecisionsSelMat")
+%% @
+
+\section{FIGURES}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}[H]
+%\begin{center}
+%<<fig.height=9, fig.width=8>>=
+%random.stuff()
+@
+%\end{center}
+%\vspace{0mm}
+%\caption{Random points example... Degrees are represented in \latex %like this 0.1$^\circ$ and superscript like this km$^2$)}
+%\label{fig:example-random-stuff}
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%
+%\clearpage
+ 
+
+%%\begin{figure}[!htp]
+%%\begin{center}
+%%\includegraphics[width=6in,keepaspectratio=true]{maindoc/ARFMaturity.png}
+%%\end{center}
+%\vspace{0mm}
+% To get the grid size in km^2 for the caption:
+% While in the gui for the map, type mean(xtcall(PBSmap)$pdata$area) for the map you currently have loaded.
+%\caption{Mean catch-per-unit-effort (CPUE, kg/h) of \fishname\ in grid cells 0.1$^\circ$ longitude by 0.075$^\circ$ latitude (roughly 57.8~km$^2$). The shaded cells give an approximation of the area where \fishname\ was encountered by fishing events from the groundfish trawl fishery from January 1, 1996 to October 7, 2014. Contours are 200 m and 1000 m isobaths. Red lines are PFMA area boundaries.} \label{fig:cpue} \end{figure}
+%%\caption{Mean Maturity} \label{fig:maturity} \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[H]
+\begin{center}
+<<fig.height=5, fig.width=8>>=
+brownian.motion()
+@
+\end{center}
+%\vspace{0mm}
+\caption{Brownian motion example..}
+\label{fig:example-brownian-motion}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+\begin{center}
+<<fig.height=9, fig.width=8>>=
+half.torus()
+@
+\end{center}
+%\vspace{0mm}
+\caption{Half torus example..}
+\label{fig:example-half-torus}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+\begin{center}
+<<fig.height=9, fig.width=8>>=
+plot.galaxy.data()
+@
+\end{center}
+%\vspace{0mm}
+\caption{Galaxy example}
+\label{fig:example-galaxy}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%
