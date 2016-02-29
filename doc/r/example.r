@@ -58,7 +58,7 @@ load.galaxy.data <- function(){
 plot.galaxy.data <- function(){
   A <- subset(A, ra > 9.5 & ra < 11.5 & dec > -10.3 & dec < -8.5)
   plot(dec ~ ra, data=A, pch=".")
-
+  
   G <- subset(A, type=="G")
   G <- subset(G, !is.na(Redshift) & Redshift < 0.2)
   G$cols <- as.character(ifelse(G$Redshift > 0.1, "red", "blue"))
@@ -82,14 +82,14 @@ get.align <- function(num){
 }
 
 make.xtable <- function(## seed is a vector of seeds to use for randomness
-                        seed,
-                        ## num.rows are the number of rows you want in the table
-                        num.rows = 20,
-                        ## Caption to use in an xtable
-                        xcaption = "default",
-                        ## xlabel is the reference label to use in an xtable
-                        xlabel = "default"
-                        ){
+  seed,
+  ## num.rows are the number of rows you want in the table
+  num.rows = 20,
+  ## Caption to use in an xtable
+  xcaption = "default",
+  ## xlabel is the reference label to use in an xtable
+  xlabel = "default"
+){
   ## This function allows you to make professional-looking tables in latex, by accessing the
   ## R data/output directly and avoiding having to type values into the latex document.
   ## If the values change for any reason, simply re-run the latex script to rebuild the
@@ -106,12 +106,12 @@ make.xtable <- function(## seed is a vector of seeds to use for randomness
   tab <- cbind(tab, apply(tab[,2:(length(seed)+1)], 1, mean))
   ## Two \\ are needed to escape latex control functions
   colnames <- c(colnames, "$\\overline{R}$")
-
+  
   ## Take standard deviation of columns
   tab <- cbind(tab, apply(tab[,2:(length(seed)+1)], 1, sd))
   colnames <- c(colnames, "$\\sigma$")
   colnames(tab) <- colnames
-
+  
   return(print(xtable(tab, caption=xcaption, label=xlabel, align=get.align(ncol(tab))),
                caption.placement = "top", include.rownames=FALSE, sanitize.text.function=function(x){x}))
 }

@@ -319,7 +319,7 @@ if(use.binary.envir){
   require(plot3D)
   require(KernSmooth)
   require(xtable) # For tables which can be inserted into latex docs with knitr
-  load("./r/.RData")
+  load("./r/old.RData")
 }else{
   source("./r/example.r")
 }

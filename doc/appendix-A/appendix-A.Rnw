@@ -84,7 +84,7 @@ They spawn in deep water (> 400 m) from fall to winter along the continental she
         \label{fig:ARFfigures}
     \end{figure*}
 
-%%placeholder for figures still to be created
+
 \newpage
 \clearpage
 
@@ -116,7 +116,7 @@ They spawn in deep water (> 400 m) from fall to winter along the continental she
 
 \section{\fishnameBOR}
 \subsection{\LH}
-\fishnameBOR\ are distributed from Baja California to the Alaska Peninsula. A few sites within \bc\, northern Washington, along the California coast and Baja California  may be the last areas within significant abundance \citep{lyt02}. Adults have been observed between 12 and 478 m but are most abundant between 50 to 250 m depth \citep{lyt02}. Adults utilise rocky reefs, but are also common on open bottoms (Eschmeyer et al 1983). Juveniles are found in shallow water and move to deeper water with age \citep{lyt02}. 
+\fishnameBOR\ are distributed from Baja California to the Alaska Peninsula. A few sites within \bc\, northern Washington, along the California coast and Baja California  may be the last areas within significant abundance \citep{lyt02}. Adults have been observed between 12 and 478 m but are most abundant between 50 to 250 m depth \citep{lyt02}. Adults utilise rocky reefs, but are also common on open bottoms \citep{esch1983}. Juveniles are found in shallow water and move to deeper water with age \citep{lyt02}. 
 
 Larvae are most commonly found between December and April, and have been found as far as 480 km offshore \citep{lyt02}. Young \fishnameBOR\ may stay in the upper water column for up to 5.5 months, most settle by 3.5 months \citep{lyt02}. In California, juveniles recruit to nearshore waters between February and August with a peak between May and July \citep{lyt02}. Juveniles will often recruit to rocky areas covered with algae or sand habitat with eelgrass and drift algae \citep{lyt02}. Adults are usually associated with high relief boulder fields and rocks while the largest individuals remain sedentary in caves and crevices \citep{lyt02}. Young \fishnameBOR\ form schools \citep{esch1983}. 
 \fishnameBOR\ are difficult to age but the oldest known individual is 50 years \citep{andrews05}.
@@ -130,9 +130,10 @@ Larval \fishnameBOR\ feed on larval krill, diatoms and dinoflagellates. Pelagic 
 \subsection{Other species}
 Adults school with \fishnameWWR\, Yellowtail Rockfish (\emph{Sebastes flavidus}), Vermilion Rockfish (\emph{Sebastes miniatus}) and Speckled Rockfish (\emph{Sebastes ovalis}) \citep{lyt02}.
 
-\newpage
 \clearpage
+\newpage
 
+\subsection{Figures}
 \begin{figure*}
         \centering
         \begin{subfigure}[b]{0.475\textwidth}
